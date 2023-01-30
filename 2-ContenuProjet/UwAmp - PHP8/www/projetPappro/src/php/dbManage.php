@@ -1,7 +1,7 @@
 <?php  
-///Auteur      : Dorian Capelli
-///Date        : 10.06.2022
-///Description : Gestion de la database
+///Author      : Dorian Capelli
+///Date        : 30.01.2023
+///Description : Database management
 
 class dbManage
 {
@@ -14,7 +14,7 @@ class dbManage
     {
         try
         {
-		    $this->connector = new PDO("mysql:host=localhost;dbname=db_perso;charset=utf8","conv","conv");
+		    $this->connector = new PDO("mysql:host=localhost;dbname=db_chess;charset=utf8","root","root");
 		}
 		catch (PDOException $e)
 		{

@@ -1,0 +1,109 @@
+ PMA_token |s:32:"773c795d7050674d5e46673c74565559"; HMAC_secret |s:16:"9]1#(CiynI6AKJI/";browser_access_time|a:1:{s:36:"5be64f8e-2db5-af46-185b-6d05bf2e07d3";i:1675085257;}encryption_key|s:32:"U!aP“jKÖüuV¦´¶~?íà­ÂN¥í&TwHúU";relation|a:1:{i:1;a:41:{s:11:"PMA_VERSION";s:5:"5.0.4";s:7:"relwork";b:1;s:11:"displaywork";b:1;s:12:"bookmarkwork";b:1;s:7:"pdfwork";b:1;s:8:"commwork";b:1;s:8:"mimework";b:1;s:11:"historywork";b:1;s:10:"recentwork";b:1;s:12:"favoritework";b:1;s:11:"uiprefswork";b:1;s:12:"trackingwork";b:1;s:14:"userconfigwork";b:1;s:9:"menuswork";b:1;s:7:"navwork";b:1;s:17:"savedsearcheswork";b:1;s:18:"centralcolumnswork";b:1;s:20:"designersettingswork";b:1;s:19:"exporttemplateswork";b:1;s:8:"allworks";b:1;s:4:"user";s:4:"root";s:2:"db";s:10:"phpmyadmin";s:8:"bookmark";s:13:"pma__bookmark";s:15:"central_columns";s:20:"pma__central_columns";s:11:"column_info";s:16:"pma__column_info";s:17:"designer_settings";s:22:"pma__designer_settings";s:16:"export_templates";s:21:"pma__export_templates";s:8:"favorite";s:13:"pma__favorite";s:7:"history";s:12:"pma__history";s:16:"navigationhiding";s:21:"pma__navigationhiding";s:9:"pdf_pages";s:14:"pma__pdf_pages";s:6:"recent";s:11:"pma__recent";s:8:"relation";s:13:"pma__relation";s:13:"savedsearches";s:18:"pma__savedsearches";s:12:"table_coords";s:17:"pma__table_coords";s:10:"table_info";s:15:"pma__table_info";s:13:"table_uiprefs";s:18:"pma__table_uiprefs";s:8:"tracking";s:13:"pma__tracking";s:10:"userconfig";s:15:"pma__userconfig";s:10:"usergroups";s:15:"pma__usergroups";s:5:"users";s:10:"pma__users";}}cache|a:3:{s:13:"server_1_root";a:17:{s:14:"mysql_cur_user";s:14:"root@localhost";s:17:"is_create_db_priv";b:1;s:14:"is_reload_priv";b:1;s:12:"db_to_create";s:0:"";s:30:"dbs_where_create_table_allowed";a:1:{i:0;s:1:"*";}s:11:"dbs_to_test";b:0;s:9:"proc_priv";b:1;s:10:"table_priv";b:1;s:8:"col_priv";b:1;s:7:"db_priv";b:1;s:12:"is_grantuser";b:1;s:13:"is_createuser";b:1;s:12:"is_superuser";b:1;s:11:"binary_logs";a:0:{}s:18:"menu-levels-server";a:13:{s:9:"databases";s:17:"Bases de donnÃ©es";s:3:"sql";s:3:"SQL";s:6:"status";s:5:"Ã‰tat";s:6:"rights";s:12:"Utilisateurs";s:6:"export";s:8:"Exporter";s:6:"import";s:8:"Importer";s:8:"settings";s:11:"ParamÃ¨tres";s:6:"binlog";s:15:"Journal binaire";s:11:"replication";s:12:"RÃ©plication";s:4:"vars";s:9:"Variables";s:7:"charset";s:19:"Jeux de caractÃ¨res";s:7:"plugins";s:10:"Extensions";s:6:"engine";s:7:"Moteurs";}s:19:"profiling_supported";b:1;s:14:"menu-levels-db";a:14:{s:9:"structure";s:9:"Structure";s:3:"sql";s:3:"SQL";s:6:"search";s:10:"Rechercher";s:5:"query";s:8:"RequÃªte";s:6:"export";s:8:"Exporter";s:6:"import";s:8:"Importer";s:9:"operation";s:11:"OpÃ©rations";s:10:"privileges";s:11:"PrivilÃ¨ges";s:8:"routines";s:21:"ProcÃ©dures stockÃ©es";s:6:"events";s:12:"Ã‰vÃ¨nements";s:8:"triggers";s:13:"DÃ©clencheurs";s:8:"tracking";s:5:"Suivi";s:8:"designer";s:10:"Concepteur";s:15:"central_columns";s:18:"Colonnes centrales";}}s:8:"server_1";a:4:{s:15:"userprefs_mtime";s:10:"1675080873";s:14:"userprefs_type";s:2:"db";s:12:"config_mtime";i:1611133573;s:9:"userprefs";a:4:{s:6:"Import";a:1:{s:7:"charset";s:5:"utf-8";}s:6:"Server";a:2:{s:7:"hide_db";s:0:"";s:7:"only_db";s:0:"";}s:4:"lang";s:2:"fr";s:7:"Console";a:2:{s:4:"Mode";s:8:"collapse";s:6:"Height";d:324.93999999999994;}}}s:13:"version_check";a:2:{s:8:"response";s:420:"{
+    "date": "2022-05-11", 
+    "version": "5.2.0", 
+    "releases": [
+        {
+            "date": "2022-05-11", 
+            "php_versions": ">=7.2,<8.1", 
+            "version": "5.2.0", 
+            "mysql_versions": ">=5.5"
+        }, 
+        {
+            "date": "2022-02-11", 
+            "php_versions": ">=5.5,<8.0", 
+            "version": "4.9.10", 
+            "mysql_versions": ">=5.5"
+        }
+    ]
+}";s:9:"timestamp";i:1675079735;}}tmpval|a:15:{s:14:"favoriteTables";a:1:{i:1;a:0:{}}s:12:"recentTables";a:1:{i:1;a:10:{i:0;a:2:{s:2:"db";s:8:"db_perso";s:5:"table";s:9:"t_artiste";}i:1;a:2:{s:2:"db";s:8:"db_perso";s:5:"table";s:9:"t_produit";}i:2;a:2:{s:2:"db";s:8:"db_perso";s:5:"table";s:7:"t_achat";}i:3;a:2:{s:2:"db";s:8:"db_perso";s:5:"table";s:8:"t_causer";}i:4;a:2:{s:2:"db";s:8:"db_perso";s:5:"table";s:8:"t_caisse";}i:5;a:2:{s:2:"db";s:8:"db_perso";s:5:"table";s:10:"t_benevole";}i:6;a:2:{s:2:"db";s:8:"db_perso";s:5:"table";s:8:"t_langue";}i:7;a:2:{s:2:"db";s:8:"db_perso";s:5:"table";s:7:"t_stock";}i:8;a:2:{s:2:"db";s:8:"db_perso";s:5:"table";s:8:"t_reduir";}i:9;a:2:{s:2:"db";s:8:"db_perso";s:5:"table";s:8:"t_vendre";}}}s:5:"query";a:10:{s:32:"1b7fc2c01711e3007c3853532846e195";a:8:{s:3:"sql";s:24:"create database db_chess";s:12:"repeat_cells";i:100;s:8:"max_rows";i:25;s:3:"pos";i:0;s:6:"pftext";s:1:"P";s:18:"relational_display";s:1:"K";s:9:"geoOption";s:4:"GEOM";s:14:"display_binary";b:1;}s:32:"78cd56fec3a5e3d9f26c88cc81eef65a";a:8:{s:3:"sql";s:12:"use db_chess";s:12:"repeat_cells";i:100;s:8:"max_rows";i:25;s:3:"pos";i:0;s:6:"pftext";s:1:"P";s:18:"relational_display";s:1:"K";s:9:"geoOption";s:4:"GEOM";s:14:"display_binary";b:1;}s:32:"23e98bb99bdf80a90a18b0259fcb04b5";a:8:{s:3:"sql";s:189:"-- Tables Section
+-- _____________ 
+
+create table t_user (
+     idUser INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+     useName char(10) not null,
+     usePassword varchar(255) not null)";s:12:"repeat_cells";i:100;s:8:"max_rows";i:25;s:3:"pos";i:0;s:6:"pftext";s:1:"P";s:18:"relational_display";s:1:"K";s:9:"geoOption";s:4:"GEOM";s:14:"display_binary";b:1;}s:32:"fdc7c4e04e26d2fb859caf1e99e4c3bf";a:8:{s:3:"sql";s:119:"create table t_category (
+     idCategory INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+     catName varchar(10) not null)";s:12:"repeat_cells";i:100;s:8:"max_rows";i:25;s:3:"pos";i:0;s:6:"pftext";s:1:"P";s:18:"relational_display";s:1:"K";s:9:"geoOption";s:4:"GEOM";s:14:"display_binary";b:1;}s:32:"a137bb543cb2f7590c1475358105122c";a:8:{s:3:"sql";s:113:"create table t_title (
+     idTitle INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+     titName varchar(25) not null)";s:12:"repeat_cells";i:100;s:8:"max_rows";i:25;s:3:"pos";i:0;s:6:"pftext";s:1:"P";s:18:"relational_display";s:1:"K";s:9:"geoOption";s:4:"GEOM";s:14:"display_binary";b:1;}s:32:"47557744ebad21319f5414f331a2c147";a:8:{s:3:"sql";s:544:"create table t_member (
+     idMember INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+     memLastName varchar(25) not null,
+     memFirstName varchar(50) not null,
+     memDateBirth date not null,
+     memPhoneNumber char(20) not null,
+     memLicencing char(50) not null,
+     memRanking int not null,
+     fkTitle int not null,
+     fkCategory int not null,
+     CONSTRAINT FKt_toAcquire_FK FOREIGN KEY (fkTitle) REFERENCES t_title (idTitle),
+     CONSTRAINT FKt_toBelongTo_FK FOREIGN KEY (fkCategory) REFERENCES t_category (idCategory))";s:12:"repeat_cells";i:100;s:8:"max_rows";i:25;s:3:"pos";i:0;s:6:"pftext";s:1:"P";s:18:"relational_display";s:1:"K";s:9:"geoOption";s:4:"GEOM";s:14:"display_binary";b:1;}s:32:"8cee1bf6a4d407f6ba51a37289b3d91e";a:8:{s:3:"sql";s:75:"create table t_team (
+     idTeam INT NOT NULL AUTO_INCREMENT PRIMARY KEY)";s:12:"repeat_cells";i:100;s:8:"max_rows";i:25;s:3:"pos";i:0;s:6:"pftext";s:1:"P";s:18:"relational_display";s:1:"K";s:9:"geoOption";s:4:"GEOM";s:14:"display_binary";b:1;}s:32:"f5ef886f60c3c8c9af3dcf7bc2194d67";a:8:{s:3:"sql";s:335:"create table t_play (
+     fkMember INT NOT NULL,
+     IsCaptain boolean not null,
+     fkTeam int not null,
+     CONSTRAINT ID_t_play_ID PRIMARY KEY (fkMember, fkTeam),
+     CONSTRAINT FKt_lead_FK FOREIGN KEY (fkMember) REFERENCES t_member (idMember),
+     CONSTRAINT FKt_team_FK FOREIGN KEY (fkTeam) REFERENCES t_team (idTeam))";s:12:"repeat_cells";i:100;s:8:"max_rows";i:25;s:3:"pos";i:0;s:6:"pftext";s:1:"P";s:18:"relational_display";s:1:"K";s:9:"geoOption";s:4:"GEOM";s:14:"display_binary";b:1;}s:32:"eccf9ee24feab6dab8cb9cec08bee9a5";a:8:{s:3:"sql";s:630:"-- Index Section
+-- _____________ 
+/*
+create unique index ID_t_user_IND
+     on t_user (idUser);
+
+create unique index ID_t_member_IND
+     on t_member (idMember);
+
+create index FKt_toAcquire_IND
+     on t_member (idTitle);
+
+create index FKt_toBelongTo_IND
+     on t_member (idCategory);
+
+create unique index ID_t_category_IND
+     on t_category (idCategory);
+
+create unique index ID_t_title_IND
+     on t_title (idTitle);
+
+create index FKt_p_t_t_IND
+     on t_play (idTeam);
+
+create unique index FKt_p_t_m_IND
+     on t_play (idMember);
+
+create unique index ID_t_team_IND
+     on t_team (idTeam);
+
+*/";s:12:"repeat_cells";i:100;s:8:"max_rows";i:25;s:3:"pos";i:0;s:6:"pftext";s:1:"P";s:18:"relational_display";s:1:"K";s:9:"geoOption";s:4:"GEOM";s:14:"display_binary";b:1;}s:32:"43f0bc96dd7bf268c7faa5bb91f6fea9";a:8:{s:3:"sql";s:36:"DROP DATABASE `db_imported_hospital`";s:12:"repeat_cells";i:100;s:8:"max_rows";i:25;s:3:"pos";i:0;s:6:"pftext";s:1:"P";s:18:"relational_display";s:1:"K";s:9:"geoOption";s:4:"GEOM";s:14:"display_binary";b:1;}}s:6:"pftext";s:1:"P";s:18:"relational_display";s:1:"K";s:9:"geoOption";s:4:"GEOM";s:14:"display_binary";b:1;s:12:"display_blob";b:0;s:19:"hide_transformation";b:0;s:3:"pos";i:0;s:8:"max_rows";i:25;s:12:"repeat_cells";i:100;s:20:"possible_as_geometry";b:0;s:18:"table_limit_offset";i:0;s:21:"table_limit_offset_db";s:8:"db_chess";}two_factor_check|b:1;git_location|N;is_git_revision|b:0;ConfigFile1|a:3:{s:6:"Import";a:1:{s:7:"charset";s:5:"utf-8";}s:7:"Console";a:2:{s:4:"Mode";s:8:"collapse";s:6:"Height";d:324.93999999999994;}s:7:"Servers";a:1:{i:1;a:2:{s:7:"only_db";s:0:"";s:7:"hide_db";s:0:"";}}}debug|a:0:{}Import_message|a:2:{s:7:"message";N;s:11:"go_back_url";s:14:"server_sql.php";}is_multi_query|b:1;sql_from_query_box|b:1;sql_history|a:19:{i:0;a:3:{s:2:"db";s:0:"";s:5:"table";s:0:"";s:8:"sqlquery";s:14:"SHOW DATABASES";}i:1;a:3:{s:2:"db";s:11:"beatsaber_2";s:5:"table";s:0:"";s:8:"sqlquery";s:25:"DROP DATABASE beatsaber_2";}i:2;a:3:{s:2:"db";s:15:"db_articlemgmnt";s:5:"table";s:0:"";s:8:"sqlquery";s:29:"DROP DATABASE db_articlemgmnt";}i:3;a:3:{s:2:"db";s:7:"db_blog";s:5:"table";s:0:"";s:8:"sqlquery";s:21:"DROP DATABASE db_blog";}i:4;a:3:{s:2:"db";s:11:"db_business";s:5:"table";s:0:"";s:8:"sqlquery";s:27:"DROP DATABASE 
+db_business";}i:5;a:3:{s:2:"db";s:8:"db_chess";s:5:"table";s:0:"";s:8:"sqlquery";s:24:"DROP DATABASE 
+db_chess";}i:6;a:3:{s:2:"db";s:22:"db_compagnes_marketing";s:5:"table";s:0:"";s:8:"sqlquery";s:38:"DROP DATABASE 
+db_compagnes_marketing";}i:7;a:3:{s:2:"db";s:6:"db_fgs";s:5:"table";s:0:"";s:8:"sqlquery";s:20:"DROP DATABASE db_fgs";}i:8;a:3:{s:2:"db";s:10:"db_library";s:5:"table";s:0:"";s:8:"sqlquery";s:24:"DROP DATABASE db_library";}i:9;a:3:{s:2:"db";s:9:"db_market";s:5:"table";s:0:"";s:8:"sqlquery";s:23:"DROP DATABASE db_market";}i:10;a:3:{s:2:"db";s:11:"db_market_2";s:5:"table";s:0:"";s:8:"sqlquery";s:25:"DROP DATABASE db_market_2";}i:11;a:3:{s:2:"db";s:22:"db_nickname_dorcapelli";s:5:"table";s:0:"";s:8:"sqlquery";s:36:"DROP DATABASE db_nickname_dorcapelli";}i:12;a:3:{s:2:"db";s:7:"db_p042";s:5:"table";s:0:"";s:8:"sqlquery";s:21:"DROP DATABASE db_p042";}i:13;a:3:{s:2:"db";s:8:"db_perso";s:5:"table";s:0:"";s:8:"sqlquery";s:22:"DROP DATABASE db_perso";}i:14;a:3:{s:2:"db";s:13:"db_terracoast";s:5:"table";s:0:"";s:8:"sqlquery";s:27:"DROP DATABASE db_terracoast";}i:15;a:3:{s:2:"db";s:7:"db_test";s:5:"table";s:0:"";s:8:"sqlquery";s:21:"DROP DATABASE db_test";}i:16;a:3:{s:2:"db";s:12:"db_x_musique";s:5:"table";s:0:"";s:8:"sqlquery";s:26:"DROP DATABASE db_x_musique";}i:17;a:3:{s:2:"db";s:15:"reading_passion";s:5:"table";s:0:"";s:8:"sqlquery";s:29:"DROP DATABASE reading_passion";}i:18;a:3:{s:2:"db";s:8:"db_chess";s:5:"table";s:0:"";s:8:"sqlquery";s:630:"-- Index Section
+-- _____________ 
+/*
+create unique index ID_t_user_IND
+     on t_user (idUser);
+
+create unique index ID_t_member_IND
+     on t_member (idMember);
+
+create index FKt_toAcquire_IND
+     on t_member (idTitle);
+
+create index FKt_toBelongTo_IND
+     on t_member (idCategory);
+
+create unique index ID_t_category_IND
+     on t_category (idCategory);
+
+create unique index ID_t_title_IND
+     on t_title (idTitle);
+
+create index FKt_p_t_t_IND
+     on t_play (idTeam);
+
+create unique index FKt_p_t_m_IND
+     on t_play (idMember);
+
+create unique index ID_t_team_IND
+     on t_team (idTeam);
+
+*/";}}errors|a:0:{}

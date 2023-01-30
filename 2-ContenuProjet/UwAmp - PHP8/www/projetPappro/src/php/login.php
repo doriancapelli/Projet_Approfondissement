@@ -1,7 +1,7 @@
 <?php
 ///Auteur      : Dorian Capelli 
-///Date        : 10.06.2022
-///Description : Page de login
+///Date        : 30.01.2023
+///Description : Page of login
 
     session_start();
     require "dbManage.php";
