@@ -9,7 +9,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://unpkg.com/tailwindcss@1.7.0/dist/tailwind.min.css" rel="stylesheet">
         <link rel="icon" href="https://i.pinimg.com/736x/d9/20/52/d920527f39800943d9fc5f5264acc866.jpg" />
-        <title>Wesh c'est trop bien - Erreur 404</title>
+        <title>Gestion de membre d'un club d'échec - Erreur 404</title>
     </head>
     <body class="h-screen overflow-hidden flex items-center justify-center" style="background: #edf2f7;">
         <div class="h-screen w-screen bg-gray-300 flex items-center">

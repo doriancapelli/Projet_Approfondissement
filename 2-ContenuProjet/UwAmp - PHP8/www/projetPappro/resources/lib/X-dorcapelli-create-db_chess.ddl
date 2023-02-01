@@ -46,7 +46,7 @@ create table t_member (
      CONSTRAINT FKt_toBelongTo_FK FOREIGN KEY (fkCategory) REFERENCES t_category (idCategory));
 
 create table t_team (
-     idTeam INT NOT NULL AUTO_INCREMENT PRIMARY KEY);
+     idTeam INT NOT NULL PRIMARY KEY);
 
 create table t_play (
      fkMember INT NOT NULL,
