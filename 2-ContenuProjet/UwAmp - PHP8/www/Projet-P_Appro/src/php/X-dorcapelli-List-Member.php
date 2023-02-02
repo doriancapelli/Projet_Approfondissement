@@ -12,7 +12,12 @@
         $user = $_SESSION['user'];
     }
 
+    #Get All Member of Club
     $allMembers = $database->getAllMembers();
+
+    #Variable that determines an action
+    $detail = 1;
+    $modify = 2;
  ?>
 
 <!DOCTYPE html>
@@ -51,6 +56,7 @@
             </tr>
             <tr>
             <?php
+                #displays all club members one by one in a table
                 foreach($allMembers as $member){
             		$idMember = $member['idMember'];
             		$memLastName = $member['memLastName'];
@@ -63,10 +69,9 @@
                     echo "<td>$memLastName</td>";
                     echo "<td>$memRanking</td>";
                     echo "<td>$catName</td>";
-                    //echo "<td><a href='X-dorcapelli-detail'><img src='../../resources/images/icons8-zoomer-24.png' alt='Loupe'></a></td>";
-                    echo "<form action='X-dorcapelli-detail' method='post'><button type='submit' name='idmember' value=$idMember class='btn-link'><img src='../../resources/images/icons8-zoomer-24.png' alt='Loupe'></button></form>";
-                    echo "<td><a href='X-dorcapelli-modify'><img src='../../resources/images/icons8-crayon-24.png' alt='Crayon'></a></td>";
-                    echo "<td><a href='X-dorcapelli-modify'><img src='../../resources/images/icons8-poubelle-24.png' alt='poubelle'></a></td>";
+                    echo "<td><a href='X-dorcapelli-detail?idMember=$idMember&action=$detail'><img src='../../resources/images/icons8-zoomer-24.png' alt='Loupe'></a></td>";
+                    echo "<td><a href='X-dorcapelli-detail?idMember=$idMember&action=$modify'><img src='../../resources/images/icons8-crayon-24.png' alt='Crayon'></a></td>";
+                    echo "<td><a href='X-dorcapelli-delete?idMember=$idMember'><img src='../../resources/images/icons8-poubelle-24.png' alt='poubelle'></a></td>";
             	}
             ?> 
             </tr> 
@@ -74,5 +79,4 @@
         <footer>
             <p>© Dorian Capelli</p>
         </footer>
-        <script src="../js/script.js"></script>
     </body>

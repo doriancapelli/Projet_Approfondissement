@@ -73,6 +73,23 @@ class dbManage
 	}
 
 	/**
+	 * Function delete a member
+	 */
+	public function deleteMember($idMember){
+		$reqSQL = "DELETE FROM t_play WHERE fkMember = :idMember";
+		$binds[] = array("variable"=>$idMember, "bind" => "idMember", "type" => PDO::PARAM_INT);
+		$req = $this->queryPrepareExecute($reqSQL, $binds);
+		$result = $this->formatData($req);
+		$this->unsetData($req);
+
+		$reqSQL = "DELETE FROM t_member WHERE idMember = :idMember";
+		$binds[] = array("variable"=>$idMember, "bind" => "idMember", "type" => PDO::PARAM_INT);
+		$req = $this->queryPrepareExecute($reqSQL, $binds);
+		$result = $this->formatData($req);
+		$this->unsetData($req);
+	}
+
+	/**
      * Function that add a team
      */
 	public function addTeam()
