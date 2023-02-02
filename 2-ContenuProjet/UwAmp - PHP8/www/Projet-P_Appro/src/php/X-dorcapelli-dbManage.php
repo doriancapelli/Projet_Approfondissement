@@ -54,28 +54,28 @@ class dbManage
     }
 
     /**
-     * Function that created book
+     * Function that created a member
      */
-	public function addBook($booName, $booNbPage, $booExtract, $booResume, $booYearEdit, $fkCategory, $fkEditor, $fkAuthor)
+	public function addMember($memLastName, $memFirstName, $memDateBirth, $memPhoneNumber, $memLicencing, $memRanking, $fkTitle, $fkCategory)
 	{
-		$reqSQL = "INSERT INTO t_book(booName, booNbPage, booExtract, booResume, booYearEdit, fkCategory,fkEditor, fkAuthor) VALUES(:booName, :booNbPage, :booExtract, :booResume, :booYearEdit, :fkCategory, :fkEditor, :fkAuthor)";
-		$binds[] = array("variable"=>$booName, "bind" => "booName", "type" => PDO::PARAM_STR);
-        $binds[] = array("variable"=>$booNbPage, "bind" => "booNbPage", "type" => PDO::PARAM_INT);
-        $binds[] = array("variable"=>$booExtract, "bind" => "booExtract", "type" => PDO::PARAM_STR);
-        $binds[] = array("variable"=>$booResume, "bind" => "booResume", "type" => PDO::PARAM_STR);
-        $binds[] = array("variable"=>$booYearEdit, "bind" => "booYearEdit", "type" => PDO::PARAM_STR);
+		$reqSQL = "INSERT INTO t_member(memLastName, memFirstName, memDateBirth, memPhoneNumber, memLicencing, memRanking, fkTitle, fkCategory) VALUES(:memLastName, :memFirstName, :memDateBirth, :memPhoneNumber, :memLicencing, :memRanking, :fkTitle, :fkCategory)";
+		$binds[] = array("variable"=>$memLastName, "bind" => "memLastName", "type" => PDO::PARAM_STR);
+        $binds[] = array("variable"=>$memFirstName, "bind" => "memFirstName", "type" => PDO::PARAM_STR);
+        $binds[] = array("variable"=>$memDateBirth, "bind" => "memDateBirth", "type" => PDO::PARAM_STR);
+        $binds[] = array("variable"=>$memPhoneNumber, "bind" => "booRmemPhoneNumberesume", "type" => PDO::PARAM_STR);
+        $binds[] = array("variable"=>$memLicencing, "bind" => "memLicencing", "type" => PDO::PARAM_STR);
+        $binds[] = array("variable"=>$memRanking, "bind" => "memRanking", "type" => PDO::PARAM_INT);
+        $binds[] = array("variable"=>$fkTitle, "bind" => "fkTitle", "type" => PDO::PARAM_INT);
         $binds[] = array("variable"=>$fkCategory, "bind" => "fkCategory", "type" => PDO::PARAM_INT);
-        $binds[] = array("variable"=>$fkEditor, "bind" => "fkEditor", "type" => PDO::PARAM_INT);
-        $binds[] = array("variable"=>$fkAuthor, "bind" => "fkAuthor", "type" => PDO::PARAM_INT);
         $req = $this->queryPrepareExecute($reqSQL, $binds);;
 		$this->unsetData($req);
 		return $this->connector->lastInsertId();
 	}
 
 	/**
-     * Function that add a notice to a book
+     * Function that add a team
      */
-	public function addNotice($notNote, $notText, $fkUser, $fkBook)
+	public function addTeam()
 	{
 		$reqSQL = "INSERT INTO t_notice(notNote, notText, fkUser, fkBook) VALUES(:notNote, :notText, :fkUser, :fkBook)";
 		$binds[] = array("variable"=>$notNote, "bind" => "notNote", "type" => PDO::PARAM_INT);
@@ -84,27 +84,29 @@ class dbManage
         $binds[] = array("variable"=>$fkBook, "bind" => "fkBook", "type" => PDO::PARAM_INT);
         $req = $this->queryPrepareExecute($reqSQL, $binds);
 		$this->unsetData($req);
+		return $this->connector->lastInsertId();
 	}
 
 	/**
-     * Function that show you all the book of the database order by category
+     * Function that add a member on a team
      */
-	public function bookCategory($id)
+	public function addPlay($fkMember, $fkTeam, $IsCaptain)
 	{
-		$reqSQL = "SELECT * FROM t_book JOIN t_author ON t_author.idAuthor = fkAuthor WHERE t_book.fkCategory = :idCategory";
-		$binds[] = array("variable"=>$id, "bind" => "idCategory", "type" => PDO::PARAM_INT);
-		$req = $this->queryPrepareExecute($reqSQL, $binds);
-		$result = $this->formatData($req);
+		$reqSQL = "INSERT INTO t_play(fkMember, fkTeam, IsCaptain) VALUES(:fkMember, :fkTeam, :IsCaptain)";
+		$binds[] = array("variable"=>$fkMember, "bind" => "fkMember", "type" => PDO::PARAM_INT);
+		$binds[] = array("variable"=>$fkTeam, "bind" => "fkTeam", "type" => PDO::PARAM_INT);
+		$binds[] = array("variable"=>$IsCaptain, "bind" => "IsCaptain", "type" => PDO::PARAM_INT);
+		$req = $this->queryPrepareExecute($reqSQL, $binds);;
 		$this->unsetData($req);
-		return $result;
+		return $this->connector->lastInsertId();
 	}
 
 	/**
-     * Function that show all information about all Stock
+     * Function that show all information about all member
      */
-	public function getAllStock()
+	public function getAllMembers()
 	{
-		$reqSQL = "SELECT * FROM t_stock";
+		$reqSQL = "SELECT * FROM t_member JOIN t_category ON t_member.fkCategory = t_category.idCategory JOIN t_title ON t_member.fkTitle = t_title.idTitle";
 		$req = $this->querySimpleExecute($reqSQL);
 		$result = $this->formatData($req);
 		$this->unsetData($req);
@@ -112,12 +114,76 @@ class dbManage
 	}
 
 	/**
-     * Function that show all informations about a book
+     * Function that show all information about all members
      */
-	public function getOneBook($id)
+	public function getAllMembersInRange($startId, $endId)
 	{
-		$reqSQL = "SELECT * FROM t_book JOIN t_author ON t_book.idBook = t_author.idAuthor WHERE idBook = :idBook";
-		$binds[] = array("variable"=>$id, "bind" => "idBook", "type" => PDO::PARAM_INT);
+		if($startId > $endId){
+			return "L'écart est négatif";
+		}
+
+		$reqSQL = "SELECT * FROM t_member WHERE idMember BETWEEN :startId AND :endId  ";
+		$binds[] = array("variable"=>$startId, "bind" => "startId", "type" => PDO::PARAM_INT);
+		$binds[] = array("variable"=>$endId, "bind" => "endId", "type" => PDO::PARAM_INT);
+		$req = $this->queryPrepareExecute($reqSQL, $binds);
+		$result = $this->formatData($req);
+		$this->unsetData($req);
+		return $result;
+	}
+
+	/**
+     * Function that show all members that refers to criterions (default value= '%' and add '%valueEnter%')
+     */
+	public function getMemberCriterion($memLastName, $memFirstName, $memDateBirth, $memPhoneNumber, $memLicencing, $memRanking, $fkTitle, $fkCategory)
+	{
+		$reqSQL = "SELECT  idMember, memLastName, memFirstName, memDateBirth, memPhoneNumber, memLicencing, memRanking, fkTitle, fkCategory FROM t_member WHERE";
+		if($memLastName){
+			$reqSQL .= " memLastName LIKE :memLastName AND";
+			$binds[] = array("variable"=>"%".$memLastName."%", "bind" => "memLastName", "type" => PDO::PARAM_STR);
+		}
+		if($memFirstName){
+			$reqSQL .= " memFirstName LIKE :memFirstName AND";
+			$binds[] = array("variable"=>"%".$memFirstName."%", "bind" => "memFirstName", "type" => PDO::PARAM_STR);
+		}
+		if($memDateBirth){
+			$reqSQL .= " memDateBirth LIKE :memDateBirth AND";
+			$binds[] = array("variable"=>"%".$memDateBirth."%", "bind" => "memDateBirth", "type" => PDO::PARAM_STR);
+		}
+        if($memPhoneNumber){
+			$reqSQL .= 	" memPhoneNumber LIKE :memPhoneNumber AND";
+			$binds[] = array("variable"=>"%".$memPhoneNumber."%", "bind" => "memPhoneNumber", "type" => PDO::PARAM_STR);
+		}
+		if($memLicencing){
+			$reqSQL .= " memLicencing LIKE :memLicencing AND";
+			$binds[] = array("variable"=>"%".$memLicencing."%", "bind" => "memLicencing", "type" => PDO::PARAM_STR);
+		}
+		if($memRanking){
+			$reqSQL .= " memRanking LIKE :memRanking AND";
+			$binds[] = array("variable"=>"%".$memRanking."%", "bind" => "memRanking", "type" => PDO::PARAM_INT);
+		}
+		if($fkTitle){
+			$reqSQL .= " fkTitle LIKE :fkTitle AND";
+			$binds[] = array("variable"=>"%".$fkTitle."%", "bind" => "fkTitle", "type" => PDO::PARAM_INT);
+		}
+		if($fkCategory){        
+			$reqSQL .= " fkCategory LIKE :fkCategory AND";
+			$binds[] = array("variable"=>"%".$fkCategory."%", "bind" => "fkCategory", "type" => PDO::PARAM_INT);
+		}
+		//remove the last 3 characters to remove the last AND and not have an sql error
+		$reqSQL = substr($reqSQL, 0, -3);
+        $req = $this->queryPrepareExecute($reqSQL, $binds);
+		$result = $this->formatData($req);
+		$this->unsetData($req);
+		return $result;
+	}
+
+	/**
+     * Function that show all informations about a member
+     */
+	public function getOneMember($idMember)
+	{
+		$reqSQL = "SELECT * FROM t_member JOIN t_title ON t_member.fkTitle = t_title.idTitle JOIN t_category ON t_member.fkCategory = t_category.idCategory WHERE idMember = :idMember";
+		$binds[] = array("variable"=>$idMember, "bind" => "idMember", "type" => PDO::PARAM_INT);
 		$req = $this->queryPrepareExecute($reqSQL, $binds);
 		$result = $this->formatData($req);
 		$this->unsetData($req);
@@ -125,51 +191,12 @@ class dbManage
     }
 
     /**
-     * Function that going to get the average of all the notice about a book
+     * Function that going to check if a user exists or not in the table user
      */
-    public function getNoticeAverage($idBook)
+    public function connectuser($useName)
     {
-    	$reqSQL = "SELECT (AVG(notNote)) AS Average FROM t_notice WHERE fkBook = :idBook";
-		$binds[] = array("variable"=>$idBook, "bind" => "idBook", "type" => PDO::PARAM_INT);
-		$req = $this->queryPrepareExecute($reqSQL, $binds);
-		$result = $this->formatData($req);
-		$this->unsetData($req);
-		return $result;
-    }
-
-    /**
-     * Function that going to get the average of all the notice about a user
-     */
-    public function getAllPrepose($idUser)
-    {
-    	$reqSQL = "SELECT notNote, notText, usePseudo FROM t_notice JOIN t_user ON fkUser = idUser WHERE fkUser = :idUser ";
-		$binds[] = array("variable"=>$idUser, "bind" => "idUser", "type" => PDO::PARAM_INT);
-		$req = $this->queryPrepareExecute($reqSQL, $binds);
-		$result = $this->formatData($req);
-		$this->unsetData($req);
-		return $result;
-    }
-
-    /**
-     * Function that going to check if a user exists or not in the table artiste
-     */
-    public function connectArtiste($artIdentifiant)
-    {
-    	$reqSQL = "SELECT artIdentifiant, artMdp FROM t_artiste WHERE artIdentifiant = :artIdentifiant LIMIT 1";
-		$binds[] = array("variable" => $artIdentifiant, "bind" => "artIdentifiant", "type" => PDO::PARAM_STR);
-		$req = $this->queryPrepareExecute($reqSQL, $binds);
-		$result = $this->formatData($req);
-		$this->unsetData($req);
-		return $result;
-    }
-
-    /**
-     * Function that going to check if a user exists or not in the table caisse
-     */
-    public function connectCaisse($caiIdentifiant)
-    {
-    	$reqSQL = "SELECT caiIdentifiant, caiMdp FROM t_caisse WHERE caiIdentifiant = :caiIdentifiant LIMIT 1";
-		$binds[] = array("variable" => $caiIdentifiant, "bind" => "caiIdentifiant", "type" => PDO::PARAM_STR);
+    	$reqSQL = "SELECT useName, usePassword FROM t_user WHERE useName = :useName LIMIT 1";
+		$binds[] = array("variable" => $useName, "bind" => "useName", "type" => PDO::PARAM_STR);
 		$req = $this->queryPrepareExecute($reqSQL, $binds);
 		$result = $this->formatData($req);
 		$this->unsetData($req);
@@ -183,40 +210,6 @@ class dbManage
     {
     	$reqSQL = "SELECT CURRENT_USER()";
 		$req = $this->querySimpleExecute($reqSQL);
-		$result = $this->formatData($req);
-		$this->unsetData($req);
-		return $result;
-    }
-
-    public function addEditor($ediName)
-    {
-		$reqSQL = "INSERT INTO t_editor(ediName) VALUES (:ediName)";
-		$binds[] = array("variable"=>$ediName, "bind" => "ediName", "type" => PDO::PARAM_STR);
-		$req = $this->queryPrepareExecute($reqSQL, $binds);
-		$this->unsetData($req);
-
-		$reqSQL = "SELECT * FROM t_editor WHERE ediName LIKE :ediName";
-		$binds[] = array("variable"=>$ediName, "bind" => "ediName", "type" => PDO::PARAM_STR);
-		$req = $this->queryPrepareExecute($reqSQL, $binds);
-		$result = $this->formatData($req);
-		$this->unsetData($req);
-		return $result;
-    }
-
-    public function updateUser($idUser)
-    {
-    	$reqSQL = "UPDATE t_user SET usePrepose = usePrepose + 1 WHERE idUser = :idUser";
-		$binds[] = array("variable"=>$idUser, "bind" => "idUser", "type" => PDO::PARAM_INT);
-		$req = $this->queryPrepareExecute($reqSQL, $binds);
-		$this->unsetData($req);
-    }
-
-    public function verifyNotice($fkUser, $fkBook)
-    {
-    	$reqSQL = "SELECT * FROM t_notice WHERE fkUser = :fkUser AND fkBook = :fkBook";
-		$binds[] = array("variable" => $fkUser, "bind" => "fkUser", "type" => PDO::PARAM_INT);
-		$binds[] = array("variable" => $fkBook, "bind" => "fkBook", "type" => PDO::PARAM_INT);
-		$req = $this->queryPrepareExecute($reqSQL, $binds);
 		$result = $this->formatData($req);
 		$this->unsetData($req);
 		return $result;

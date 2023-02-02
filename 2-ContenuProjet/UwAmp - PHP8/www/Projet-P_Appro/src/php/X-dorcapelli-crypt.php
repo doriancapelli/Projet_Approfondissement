@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<!--
+	Author      : Dorian Capelli
+	Date        : 01.02.2023
+	Description : Page crypt password
+	-->
+	<meta charset="UTF-8" />
+	<title>Gestion de membre d'un club d'échec - Crypt</title>
 </head>
 <body>
-	<form method="post" action="crypt.php">
+	<form method="post" action="X-dorcapelli-crypt.php">
 		<label>Votre texte à encrypter:</label>
 		<br>
 		<input type="text" name="txtToCrypt" required>

@@ -1,6 +1,6 @@
 <?php
 ///Auteur      : Dorian Capelli 
-///Date        : 30.01.2023
+///Date        : 01.02.2023
 ///Description : Page of login
 
     session_start();
@@ -15,63 +15,23 @@
     else{
     	if(isset($_POST['btn']))
     	{
-        	$login = $_POST['username'];
-        	$password = $_POST['password'];
+        	$login = $_POST['userName'];
+        	$password = $_POST['usePassword'];
 
-
-        	$artiste = $database->connectArtiste($login);
-            $admin = $database->getCurrentUser();
-			$caisse = $database->connectCaisse($login);
-
-        	//If user exists
-        	if(!empty($artiste))
-        	{
-            	//Verify the password
-            	if(password_verify($password, $artiste[0]['artMdp']))
-            	{
-                	$_SESSION['isConnected'] = true;
-                	$_SESSION['user'] = $artiste;
-
-            		header("Location:formArtiste.php");
-                	die();
-            	}
-            	else{
-                	$error = true;
-            	}
-        	}
-        	elseif (!empty($caisse)) 
-        	{
-        		//Verify the password
-            	if(password_verify($password, $caisse[0]['caiMdp']))
-            	{
-                	$_SESSION['isConnected'] = true;
-                	$_SESSION['user'] = $caisse;
-
-            		header("Location:formCaisse.php");
-                	die();
-            	}
-            	else{
-                	$error = true;
-            	}
-        	}
-            elseif (!empty($admin)) 
+            $user = $database->connectuser($login);
+            
+            //Verify the password
+            if(password_verify($password, $user[0]['usePassword']))
             {
-                //Verify the password
-                if($login == $admin[0]["CURRENT_USER()"])
-                {
-                    $_SESSION['isConnected'] = true;
-                    $_SESSION['user'] = $admin;
+                $_SESSION['isConnected'] = true;
+                $_SESSION['user'] = $login;
 
-                    header("Location:formAdmin.php");
-                    die();
-                }
-                else{
-                    $error = true;
-                }
+                header("Location:X-dorcapelli-List-Member");
+                die();
             }
-        	else{
-        	    $error = true;
-        	}
+            else{
+                $error = true;
+            }
     	}	
     }
  ?>
@@ -82,23 +42,19 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Gestion de membre d'un club d'échec - Connexion</title>
-         <!--<link rel="icon" href="https://i.pinimg.com/736x/d9/20/52/d920527f39800943d9fc5f5264acc866.jpg" />-->
+        <link rel="icon" href="../../resources/images/chess-pawn.png" />
         <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" />
-         <!--<link rel="stylesheet" type="text/css" href="../../resources/css/loginCSS.css"/>-->
     </head>
     <body class="flex h-screen bg-gray-200">   
         <div class="max-w-sm w-full m-auto bg-gray-400 rounded p-5">   
-            <header>
-                <!--<img class="w-20 mx-auto mb-5" src="https://i.pinimg.com/736x/d9/20/52/d920527f39800943d9fc5f5264acc866.jpg" /> -->
-            </header>
             <form action="X-dorcapelli-login.php" method="post">
                 <div>
-                    <label class="block mb-2 text-gray-900" for="username">Nom utilisateur</label>
-                    <input class="w-full p-2 mb-6 text-gray-900 border-b-2 border-indigo-500 outline-none focus:bg-gray-300" type="text" name="username">
+                    <label class="block mb-2 text-gray-900" for="userName">Nom utilisateur</label>
+                    <input class="w-full p-2 mb-6 text-gray-900 border-b-2 border-indigo-500 outline-none focus:bg-gray-300" type="text" name="userName">
                 </div>
                 <div>
-                    <label class="block mb-2 text-gray-900" for="password">Mot de passe</label>
-                    <input class="w-full p-2 mb-6 text-gray-900 border-b-2 border-indigo-500 outline-none focus:bg-gray-300" type="password" name="password">
+                    <label class="block mb-2 text-gray-900" for="usePassword">Mot de passe</label>
+                    <input class="w-full p-2 mb-6 text-gray-900 border-b-2 border-indigo-500 outline-none focus:bg-gray-300" type="password" name="usePassword">
                 </div>
                 <div>
                     <input class="w-full bg-gray-900 hover:bg-gray-500 text-white hover:text-gray-900 font-bold py-2 px-4 mb-6 rounded" value="Connexion" type="submit" name="btn">

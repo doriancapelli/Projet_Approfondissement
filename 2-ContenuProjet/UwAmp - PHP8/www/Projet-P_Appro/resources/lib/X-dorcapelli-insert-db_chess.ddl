@@ -39,4 +39,4 @@ INSERT INTO t_play (fkMember, fkTeam, IsCaptain)
 		   (2, 1, False);
 
 INSERT INTO t_user (useName, usePassword)
-	VALUES ("admin", "admin");
+	VALUES ("admin", "$2y$10$PkJAgwnXwzmIbHSO9310T.GDh2janmPqBYcrEQGnGdCSL5hUyhvXK");
