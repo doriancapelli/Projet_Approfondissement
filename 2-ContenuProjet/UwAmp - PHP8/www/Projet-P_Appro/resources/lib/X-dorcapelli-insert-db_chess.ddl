@@ -11,8 +11,10 @@ CREATE USER 'chess'@'%' IDENTIFIED BY 'chess';
 GRANT ALL PRIVILEGES  ON db_chess.* TO 'chess'@'%';
 
 INSERT INTO t_title (titName)
-	VALUES ("Maitre"),
-		   ("Grand Maitre");
+	VALUES ("Candidat Maitre"),
+		   ("Maitre FIDE"),
+		   ("Maitre International"),
+		   ("Grand Maitre International");
 
 INSERT INTO t_team (idTeam)
 	VALUES (1),
@@ -21,7 +23,7 @@ INSERT INTO t_team (idTeam)
 
 INSERT INTO t_category (catName)
 	VALUES ("Vétéran"),
-		   ("Novice"),
+		   ("Sénior"),
 		   ("U20"),
 		   ("U18"),
 		   ("U16"),

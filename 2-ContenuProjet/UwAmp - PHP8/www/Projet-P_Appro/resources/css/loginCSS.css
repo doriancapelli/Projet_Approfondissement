@@ -4,11 +4,6 @@
 * Date        : 01.02.2023
 * Description : CSS for the page of login
 */
-body{
- 	background-image: url("https://www.wallpaperflare.com/static/87/362/502/books-stack-book-store-stack-of-books-wallpaper.jpg");
-
-}
-
 .loginTitle {
     text-align: center;
     font-weight: bold;

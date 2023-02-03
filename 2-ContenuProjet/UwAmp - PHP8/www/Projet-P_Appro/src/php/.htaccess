@@ -1,4 +1,4 @@
-ErrorDocument 404 /projetPappro/src/php/X-dorcapelli-404.php
+ErrorDocument 404 /projetPappro/src/php/404.php
 
 RewriteEngine On
  
