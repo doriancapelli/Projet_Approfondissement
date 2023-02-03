@@ -21,13 +21,18 @@
             $user = $database->connectuser($login);
             
             //Verify the password
-            if(password_verify($password, $user[0]['usePassword']))
-            {
-                $_SESSION['isConnected'] = true;
-                $_SESSION['user'] = $login;
+            if($user){
+                if(password_verify($password, $user[0]['usePassword']))
+                {
+                    $_SESSION['isConnected'] = true;
+                    $_SESSION['user'] = $login;
 
-                header("Location:X-dorcapelli-List-Member");
-                die();
+                    header("Location:X-dorcapelli-List-Member");
+                    die();
+                }
+                else{
+                    $error = true;
+                }
             }
             else{
                 $error = true;
@@ -47,7 +52,7 @@
     </head>
     <body class="flex h-screen bg-gray-200">   
         <div class="max-w-sm w-full m-auto bg-gray-400 rounded p-5">   
-            <form action="X-dorcapelli-login.php" method="post">
+            <form action="X-dorcapelli-login" method="post">
                 <div>
                     <label class="block mb-2 text-gray-900" for="userName">Nom utilisateur</label>
                     <input class="w-full p-2 mb-6 text-gray-900 border-b-2 border-indigo-500 outline-none focus:bg-gray-300" type="text" name="userName">
@@ -66,8 +71,9 @@
                         }
                     ?>  
                 <?php
-                 if($error){ 
-                    echo '<div class="bg-red-50 border-l-8 border-red-900 mb-2">
+                 if($error){
+                    ?>
+                    <div class="bg-red-50 border-l-8 border-red-900 mb-2">
                          <div class="flex items-center">
                              <div class="p-2">
                                  <div class="flex items-center">
@@ -84,8 +90,8 @@
                                  </div>
                              </div>
                          </div>
-                     </div>';    
-                 }
+                     </div>  
+                 <?php }
                  ?>  
             </form>
         </div>

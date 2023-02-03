@@ -1,4 +1,5 @@
-<?php  
+<?php
+///ETML
 ///Author      : Dorian Capelli
 ///Date        : 01.02.2023
 ///Description : Database management
@@ -14,7 +15,7 @@ class dbManage
     {
         try
         {
-		    $this->connector = new PDO("mysql:host=localhost;dbname=db_chess;charset=utf8","root","root");
+		    $this->connector = new PDO("mysql:host=localhost;dbname=db_chess;charset=utf8","chess","chess");
 		}
 		catch (PDOException $e)
 		{
@@ -62,7 +63,7 @@ class dbManage
 		$binds[] = array("variable"=>$memLastName, "bind" => "memLastName", "type" => PDO::PARAM_STR);
         $binds[] = array("variable"=>$memFirstName, "bind" => "memFirstName", "type" => PDO::PARAM_STR);
         $binds[] = array("variable"=>$memDateBirth, "bind" => "memDateBirth", "type" => PDO::PARAM_STR);
-        $binds[] = array("variable"=>$memPhoneNumber, "bind" => "booRmemPhoneNumberesume", "type" => PDO::PARAM_STR);
+        $binds[] = array("variable"=>$memPhoneNumber, "bind" => "memPhoneNumber", "type" => PDO::PARAM_STR);
         $binds[] = array("variable"=>$memLicencing, "bind" => "memLicencing", "type" => PDO::PARAM_STR);
         $binds[] = array("variable"=>$memRanking, "bind" => "memRanking", "type" => PDO::PARAM_INT);
         $binds[] = array("variable"=>$fkTitle, "bind" => "fkTitle", "type" => PDO::PARAM_INT);
@@ -94,7 +95,7 @@ class dbManage
      */
 	public function addTeam()
 	{
-		$reqSQL = "INSERT INTO t_notice(notNote, notText, fkUser, fkBook) VALUES(:notNote, :notText, :fkUser, :fkBook)";
+		$reqSQL = "INSERT INTO t_team(notNote, notText, fkUser, fkBook) VALUES(:notNote, :notText, :fkUser, :fkBook)";
 		$binds[] = array("variable"=>$notNote, "bind" => "notNote", "type" => PDO::PARAM_INT);
         $binds[] = array("variable"=>$notText, "bind" => "notText", "type" => PDO::PARAM_STR);
         $binds[] = array("variable"=>$fkUser, "bind" => "fkUser", "type" => PDO::PARAM_INT);
@@ -139,7 +140,7 @@ class dbManage
 			return "L'écart est négatif";
 		}
 
-		$reqSQL = "SELECT * FROM t_member WHERE idMember BETWEEN :startId AND :endId  ";
+		$reqSQL = "SELECT * FROM t_member JOIN t_category ON t_member.fkCategory = t_category.idCategory JOIN t_title ON t_member.fkTitle = t_title.idTitle WHERE idMember BETWEEN :startId AND :endId  ";
 		$binds[] = array("variable"=>$startId, "bind" => "startId", "type" => PDO::PARAM_INT);
 		$binds[] = array("variable"=>$endId, "bind" => "endId", "type" => PDO::PARAM_INT);
 		$req = $this->queryPrepareExecute($reqSQL, $binds);
@@ -219,18 +220,5 @@ class dbManage
 		$this->unsetData($req);
 		return $result;
     }
-
-    /**
-     * Function that show all informations about all users
-     */
-    public function getCurrentUser()
-    {
-    	$reqSQL = "SELECT CURRENT_USER()";
-		$req = $this->querySimpleExecute($reqSQL);
-		$result = $this->formatData($req);
-		$this->unsetData($req);
-		return $result;
-    }
 }
-
 ?>
