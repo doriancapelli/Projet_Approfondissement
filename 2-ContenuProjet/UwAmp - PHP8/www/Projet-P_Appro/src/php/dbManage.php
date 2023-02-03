@@ -91,6 +91,51 @@ class dbManage
 	}
 
 	/**
+	 * Function update data of a member
+	 */
+	public function updateMember($idMember, $memLastName, $memFirstName, $memDateBirth, $memPhoneNumber, $memLicencing, $memRanking, $fkTitle, $fkCategory)
+    {
+    	$reqSQL = "UPDATE t_member SET ";
+		$binds[] = array("variable"=>$idMember, "bind" => "idMember", "type" => PDO::PARAM_INT);
+		if($memLastName){
+			$reqSQL .= " memLastName = :memLastName,";
+			$binds[] = array("variable"=>"%".$memLastName."%", "bind" => "memLastName", "type" => PDO::PARAM_STR);
+		}
+		if($memFirstName){
+			$reqSQL .= " memFirstName = :memFirstName,";
+			$binds[] = array("variable"=>"%".$memFirstName."%", "bind" => "memFirstName", "type" => PDO::PARAM_STR);
+		}
+		if($memDateBirth){
+			$reqSQL .= " memDateBirth = :memDateBirth,";
+			$binds[] = array("variable"=>"%".$memDateBirth."%", "bind" => "memDateBirth", "type" => PDO::PARAM_STR);
+		}
+        if($memPhoneNumber){
+			$reqSQL .= 	" memPhoneNumber = :memPhoneNumber,";
+			$binds[] = array("variable"=>"%".$memPhoneNumber."%", "bind" => "memPhoneNumber", "type" => PDO::PARAM_STR);
+		}
+		if($memLicencing){
+			$reqSQL .= " memLicencing = :memLicencing,";
+			$binds[] = array("variable"=>"%".$memLicencing."%", "bind" => "memLicencing", "type" => PDO::PARAM_STR);
+		}
+		if($memRanking){
+			$reqSQL .= " memRanking = :memRanking,";
+			$binds[] = array("variable"=>"%".$memRanking."%", "bind" => "memRanking", "type" => PDO::PARAM_INT);
+		}
+		if($fkTitle){
+			$reqSQL .= " fkTitle = :fkTitle,";
+			$binds[] = array("variable"=>"%".$fkTitle."%", "bind" => "fkTitle", "type" => PDO::PARAM_INT);
+		}
+		if($fkCategory){        
+			$reqSQL .= " fkCategory = :fkCategory,";
+			$binds[] = array("variable"=>"%".$fkCategory."%", "bind" => "fkCategory", "type" => PDO::PARAM_INT);
+		}
+		$reqSQL = substr($reqSQL, 0, -1);
+		$reqSQL .= "WHERE idMember = :idMember";
+		$req = $this->queryPrepareExecute($reqSQL, $binds);
+		$this->unsetData($req);
+    }
+
+	/**
      * Function that add a team
      */
 	public function addTeam()
@@ -203,6 +248,24 @@ class dbManage
 		$reqSQL = "SELECT * FROM t_member JOIN t_title ON t_member.fkTitle = t_title.idTitle JOIN t_category ON t_member.fkCategory = t_category.idCategory WHERE idMember = :idMember";
 		$binds[] = array("variable"=>$idMember, "bind" => "idMember", "type" => PDO::PARAM_INT);
 		$req = $this->queryPrepareExecute($reqSQL, $binds);
+		$result = $this->formatData($req);
+		$this->unsetData($req);
+		return $result;
+    }
+
+	public function getAllTitle()
+	{
+		$reqSQL = "SELECT * FROM t_title";
+		$req = $this->querySimpleExecute($reqSQL);
+		$result = $this->formatData($req);
+		$this->unsetData($req);
+		return $result;
+    }
+
+	public function getAllCategory()
+	{
+		$reqSQL = "SELECT * FROM t_category";
+		$req = $this->querySimpleExecute($reqSQL);
 		$result = $this->formatData($req);
 		$this->unsetData($req);
 		return $result;
