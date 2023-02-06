@@ -12,7 +12,7 @@
 -- Database Section
 -- ________________ 
 DROP DATABASE IF EXISTS db_chess;
-create database db_chess;
+create database db_chess CHARACTER SET utf8;
 use db_chess;
 
 
@@ -30,7 +30,7 @@ create table t_category (
 
 create table t_title (
      idTitle INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-     titName varchar(25) not null);
+     titName varchar(30) not null);
 
 create table t_member (
      idMember INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
@@ -40,7 +40,7 @@ create table t_member (
      memPhoneNumber char(20) not null,
      memLicencing char(50) not null,
      memRanking int not null,
-     fkTitle int not null,
+     fkTitle int,
      fkCategory int not null,
      CONSTRAINT FKt_toAcquire_FK FOREIGN KEY (fkTitle) REFERENCES t_title (idTitle),
      CONSTRAINT FKt_toBelongTo_FK FOREIGN KEY (fkCategory) REFERENCES t_category (idCategory));

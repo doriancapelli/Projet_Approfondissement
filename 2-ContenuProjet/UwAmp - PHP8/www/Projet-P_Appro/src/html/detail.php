@@ -18,7 +18,10 @@
     }
 
     $action = $_GET['action'];
-    $idMember = $_GET['idMember'];
+
+    if(isset($_GET['idMember'])){
+        $idMember = $_GET['idMember'];
+    }
     
     $detailDisplay = "None";
     $modifyDisplay = "None";
@@ -133,11 +136,64 @@
                 $html .= "<input type='text' id='memLicencing' value='$memLicencing'><br>";
                 $html .= "<label>Elo:</label><br>";
                 $html .= "<input type='num' id='memRanking' value='$memRanking'><br>";
-                $html .= "<input type='submit' value='Submit'>";
+                $html .= "<select name='fkTitle' id='fkTitle'>";
+                $html .= "<option value='' selected>--Please choose an option--</option>'>";
+                    foreach($titles as $title){
+                        if(isset($titName) and ($titName == $title['titName'])){
+                            $html .= "<option value='" . $title['idTitle'] . "' selected>" . $title['titName'] . "</option>";
+                        }
+                        else{
+                            $html .= "<option value='" . $title['idTitle'] . "'>" . $title['titName'] . "</option>";
+                        }
+                    }
+                $html .= "</select></br>";
+                $html .= "<select name='fkCategory' id='fkCategory'>";
+                    foreach($categorys as $category){
+                        if(isset($catName) and ($catName == $category['catName'])){
+                            $html .= "<option value='" . $category['idCategory'] . "' selected>" . $category['catName'] . "</option>";
+                        }
+                        else{
+                            $html .= "<option value='" . $category['idCategory'] . "'>" . $category['catName'] . "</option>";
+                        }
+                    }
+                $html .= "</select></br></br>";
+                $html .= "<input type='submit' id='btn' value='Enregistrer' class='px-4 py-2 text-center bg-blue-500 text-white md:rounded' style='margin-left: 1.5vw'>";
+                $html .= "</form>" ;
+                echo $html;
+            }
+            else{
+                $html =  "<form action=''>";
+                $html .= "<label>Prénom:</label><br>";
+                $html .= "<input type='text' id='memFirstName'><br>";
+                $html .= "<label>Nom:</label><br>";
+                $html .= "<input type='text' id='memLastName'><br>";
+                $html .= "<label>Date de naissance:</label><br>";
+                $html .= "<input type='date' id='memDateBirth'><br>";
+                $html .= "<label>Numéro de téléphone:</label><br>";
+                $html .= "<input type='text' id='memPhoneNumber'><br>";
+                $html .= "<label>Licence:</label><br>";
+                $html .= "<input type='text' id='memLicencing'><br>";
+                $html .= "<label>Elo:</label><br>";
+                $html .= "<input type='num' id='memRanking'><br>";
+                $html .= "<select name='fkTitle' id='fkTitle'>";
+                    $html .= "<option value='' selected>--Please choose an option--</option>'>";
+                    foreach($titles as $title){
+                        $html .= "<option value='" . $title['idTitle'] . "'>" . $title['titName'] . "</option>";
+                    }
+                $html .= "</select></br></br>";
+                $html .= "<select name='fkCategory' id='fkCategory'>";
+                    $html .= "<option value='' selected disabled>--Please choose an option--</option>'>";
+                    foreach($categorys as $category){
+                        $html .= "<option value='" . $category['idCategory'] . "'>" . $category['catName'] . "</option>";
+                    }
+                $html .= "</select></br></br>";
+                $html .= "<input type='submit' id='btn' value='Ajouter' class='px-4 py-2 text-center bg-blue-500 text-white md:rounded' style='margin-left: 1.5vw'>";
                 $html .= "</form>" ;
                 echo $html;
             }
             ?> 
+            </br>
+            <a href='List-Member' class='px-4 py-2 text-center bg-red-500 text-white md:rounded' style='margin-left: 1.5vw'>Retour</a>
         <footer>
             <p>© Dorian Capelli</p>
         </footer>

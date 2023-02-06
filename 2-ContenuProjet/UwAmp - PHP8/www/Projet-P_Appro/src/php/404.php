@@ -1,26 +1,54 @@
-<!-- Auteur : Dorian Capelli -->
-<!-- Date : 10.06.2022 -->
-<!-- Lieu : ETML, Lausanne -->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
     <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://unpkg.com/tailwindcss@1.7.0/dist/tailwind.min.css" rel="stylesheet">
-        <link rel="icon" href="https://i.pinimg.com/736x/d9/20/52/d920527f39800943d9fc5f5264acc866.jpg" />
-        <title>Gestion de membre d'un club d'échec - Erreur 404</title>
+        <!--
+        Author      : Dorian Capelli
+        Date        : 06.02.2023
+        Description : Page error 404
+        -->
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <title>Gestion de membre d'un club d'échec - 404</title>
+        <link href="../../resources/css/styles.css" rel="stylesheet" />
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
-    <body class="h-screen overflow-hidden flex items-center justify-center" style="background: #edf2f7;">
-        <div class="h-screen w-screen bg-gray-300 flex items-center">
-	        <div class="container flex flex-col md:flex-row items-center justify-center px-5 text-gray-900">
-   		        <div class="max-w-md">
-      		        <div class="text-5xl font-dark font-bold">404</div>
-                    <p class="text-2xl md:text-3xl font-light leading-normal">Désolé, nous n'avons pas pu trouver cette page.</p>
-                    <p class="mb-8">Mais ne vous inquiétez pas, vous pouvez trouver plein d'autres choses sur notre site.</p>
-                    <button class="px-4 inline py-2 text-sm font-medium leading-5 shadow text-white transition-colors duration-150 border border-transparent rounded-lg focus:outline-none focus:shadow-outline-blue bg-gray-900 active:bg-blue-600 hover:bg-gray-700"><a href="login"> Retour à la page de login></button>
-                </div>
-            <div class="max-w-lg"> 
+    <body>
+        <div id="layoutError">
+            <div id="layoutError_content">
+                <main>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-6">
+                                <div class="text-center mt-4">
+                                    <img class="mb-4 img-error" src="../../resources/images/error-404-monochrome.svg" />
+                                    <p class="lead">L'URL demandée n'a pas été trouvée sur ce serveur.</p>
+                                    <a href="List-Member">
+                                        <i class="fas fa-arrow-left me-1"></i>
+                                        Retourner à la liste des membres
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <div id="layoutError_footer">
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; Your Website 2022 © Dorian Capelli</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
         </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="../js/scripts.js"></script>
     </body>
 </html>

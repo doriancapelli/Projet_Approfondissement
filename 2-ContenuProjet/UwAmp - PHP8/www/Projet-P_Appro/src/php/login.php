@@ -40,60 +40,87 @@
     	}	
     }
  ?>
-
 <!DOCTYPE html>
 <html lang="fr">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <title>Gestion de membre d'un club d'échec - Connexion</title>
-        <link rel="icon" href="../../resources/images/chess-pawn.png" />
+        <link href="../../resources/css/styles.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" />
+        <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
-    <body class="flex h-screen bg-gray-200">   
-        <div class="max-w-sm w-full m-auto bg-gray-400 rounded p-5">   
-            <form action="login" method="post">
-                <div>
-                    <label class="block mb-2 text-gray-900" for="userName">Nom utilisateur</label>
-                    <input class="w-full p-2 mb-6 text-gray-900 border-b-2 border-indigo-500 outline-none focus:bg-gray-300" type="text" name="userName">
-                </div>
-                <div>
-                    <label class="block mb-2 text-gray-900" for="usePassword">Mot de passe</label>
-                    <input class="w-full p-2 mb-6 text-gray-900 border-b-2 border-indigo-500 outline-none focus:bg-gray-300" type="password" name="usePassword">
-                </div>
-                <div>
-                    <input class="w-full bg-gray-900 hover:bg-gray-500 text-white hover:text-gray-900 font-bold py-2 px-4 mb-6 rounded" value="Connexion" type="submit" name="btn">
-                </div>       
-                </form>
-                    <?php
-                        if (isset($_GET["page"])){
-                            echo '<input type="hidden" name="page" value="'.$_GET["page"].'">';
-                        }
-                    ?>  
-                <?php
-                 if($error){
-                    ?>
-                    <div class="bg-red-50 border-l-8 border-red-900 mb-2">
-                         <div class="flex items-center">
-                             <div class="p-2">
-                                 <div class="flex items-center">
-                                     <div class="ml-2">
-                                         <svg class="h-8 w-8 text-red-900 mr-2 cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-                                         </svg>
-                                     </div>
-                                     <p class="px-6 py-4 text-red-900 font-semibold text-md">le nom ou/et le mot de passe sont incorrect ou vide</p>
-                                 </div>
-                                 <div class="px-16 mb-4">
-                                     <li class="text-md font-bold text-red-500 text-sm">Vérifier le nom</li>
-                                     <li class="text-md font-bold text-red-500 text-sm">Vérifier le mot de passe</li>
-                                 </div>
-                             </div>
-                         </div>
-                     </div>  
-                 <?php }
-                 ?>  
-            </form>
+    <body class="bg-primary">
+        <div id="layoutAuthentication">
+            <div id="layoutAuthentication_content">
+                <main>
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-5">
+                                <div class="card shadow-lg border-0 rounded-lg mt-5">
+                                    <div class="card-header"><h3 class="text-center font-weight-light my-4">Connexion</h3></div>
+                                    <div class="card-body">
+                                        <form action="login" method="post">
+                                            <div class="form-floating mb-3">
+                                                <input class="form-control" id="userName" name="userName" type="text" placeholder="Ex: Admin" />
+                                                <label for="userName">Nom utilisateur</label>
+                                            </div>
+                                            <div class="form-floating mb-3">
+                                                <input class="form-control" id="usePassword" name="usePassword" type="password" placeholder="Password" />
+                                                <label for="usePassword">Mot de passe</label>
+                                            </div>
+                                            <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+                                                <input type="submit" class="btn btn-primary" name="btn" value="Connexion"/>
+                                            </div>
+                                        </form>
+                                        </br>
+                                        <?php
+                                        if($error){
+                                        ?>
+                                            <div class="bg-red-50 border-l-8 border-red-900 mb-2">
+                                                <div class="flex items-center">
+                                                    <div class="p-2">
+                                                        <div class="flex items-center">
+                                                            <div class="ml-2">
+                                                                <svg class="h-8 w-8 text-red-900 mr-2 cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                                                </svg>
+                                                            </div>
+                                                            <p class="px-6 py-4 text-red-900 font-semibold text-md">le nom ou/et le mot de passe sont incorrect ou vide</p>
+                                                        </div>
+                                                        <div class="px-16 mb-4">
+                                                            <li class="text-md font-bold text-red-500 text-sm">Vérifier le nom</li>
+                                                            <li class="text-md font-bold text-red-500 text-sm">Vérifier le mot de passe</li>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>  
+                                        <?php }
+                                        ?>  
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+            <div id="layoutAuthentication_footer">
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid px-4">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; Gestion des membres d'un club d'échecs 2023 © Dorian Capelli</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
         </div>
-    </body>  
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
+        <script src="../js/scripts.js"></script>
+    </body>
 </html>

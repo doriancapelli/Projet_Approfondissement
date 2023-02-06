@@ -94,6 +94,9 @@ INSERT INTO t_member (memLastName, memFirstName, memDateBirth, memPhoneNumber, m
 		   ("Philipona", "Sylvain", "2004-05-11","0791989200", "ABCDEF", 1200, 2, 2),
 		   ("Duruz", "Sébastien", "1997-07-25", "0791989200", "ABCDEFGHIJK", 1500, 1, 1);
 
+INSERT INTO t_member (memLastName, memFirstName, memDateBirth, memPhoneNumber, memLicencing, memRanking,  fkCategory)
+	VALUES ("Praz", "Nolan", "2004-05-11","0791989200", "ABCDEF", 1200, 5);
+
 INSERT INTO t_play (fkMember, fkTeam, IsCaptain)
 	VALUES (1, 2, True),
 		   (2, 1, False),
