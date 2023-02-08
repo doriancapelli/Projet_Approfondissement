@@ -219,7 +219,11 @@ class dbManage
      */
 	public function getOneMember($idMember)
 	{
-		$reqSQL = "SELECT * FROM t_member LEFT JOIN t_title ON t_member.fkTitle = t_title.idTitle JOIN t_category ON t_member.fkCategory = t_category.idCategory WHERE idMember = :idMember";
+		/**
+		 * Add the following line to format the date in dd/mm/yyyy
+		 * DATE_FORMAT ((SELECT memDateBirth from t_member WHERE idMember = :idMember), '%d.%c.%Y') as 
+		 */
+		$reqSQL = "SELECT idMember, memLastName, memFirstName, memDateBirth, memPhoneNumber, memLicencing, memRanking, fkTitle, fkCategory, catName, titName  FROM t_member LEFT JOIN t_title ON t_member.fkTitle = t_title.idTitle JOIN t_category ON t_member.fkCategory = t_category.idCategory WHERE idMember = :idMember";
 		$binds[] = array("variable"=>$idMember, "bind" => "idMember", "type" => PDO::PARAM_INT);
 		$req = $this->queryPrepareExecute($reqSQL, $binds);
 		$result = $this->formatData($req);

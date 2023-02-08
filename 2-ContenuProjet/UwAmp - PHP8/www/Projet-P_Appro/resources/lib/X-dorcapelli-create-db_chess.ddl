@@ -34,12 +34,12 @@ create table t_title (
 
 create table t_member (
      idMember INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
-     memLastName varchar(25) not null,
+     memLastName varchar(50) not null,
      memFirstName varchar(50) not null,
      memDateBirth date not null,
      memPhoneNumber char(20) not null,
-     memLicencing char(50) not null,
-     memRanking int not null,
+     memLicencing char(50),
+     memRanking int,
      fkTitle int,
      fkCategory int not null,
      CONSTRAINT FKt_toAcquire_FK FOREIGN KEY (fkTitle) REFERENCES t_title (idTitle),

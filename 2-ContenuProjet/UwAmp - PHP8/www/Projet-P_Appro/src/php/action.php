@@ -7,7 +7,16 @@
     session_start();
     require "dbManage.php";
     $database = new dbManage();
-
+    $error = FALSE;
+    $AllErrors = array();
+    // $errorFirstName = FALSE;
+    // $errorLastName = FALSE;
+    // $errorPhoneNumber = FALSE;
+    // $errorDateBirth = FALSE;
+    // $errorLicencing = FALSE;
+    // $errorRanking = FALSE;
+    // $errorTitle = FALSE;
+    // $errorCategory = FALSE;
 
     if(isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == true){
         $user = $_SESSION['user'];
@@ -49,7 +58,7 @@
     }
 
     if(($action == 2) && $_POST['btn']){
-        $action = 1;
+        // $action = 1;
         $idMember;
         $memFirstName = $_POST['memFirstName'];
         $memLastName = $_POST['memLastName'];
@@ -61,8 +70,89 @@
         $fkCategory = $_POST['fkCategory'];
 
 
-            $database->updateMember($idMember, $memLastName, $memFirstName, $memDateBirth, $memPhoneNumber, $memLicencing, $memRanking, $fkTitle, $fkCategory);
-            header("Location: action?idMember=$idMember&action=$action");
+        if(!preg_match("#^[A-Z]{1}[a-z_-]{3,49}|[a-z_-]{3,50}$#", $memFirstName)){
+            $error = true;
+            $AllErrors[] = "Vérifier le Prénom";
+            //$errorFirstName = true;
+        }
+
+        if(!preg_match("#^[A-Z_-]{3,49}|[A-Z]{1}[a-z_-]{3,49}|[a-z_-]{3,50}$#", $memLastName)){
+            $error = true;
+            $AllErrors[] = "Vérifier le Nom";
+
+            //$errorLastName = true;
+        }
+
+        if(!preg_match("#^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$#", $memPhoneNumber)){
+            $error = true;
+            $AllErrors[] = "Vérifier le numéro de téléphone";
+
+            // $errorPhoneNumber = true;
+        }
+
+        if(!preg_match("#^(19[0-9][0-9]|20[0-3][0-9])(-(0[13578]|1[02]))?-(0[1-9]|[12][0-9]|3[01])$|^(19[0-9][0-9]|20[0-3][0-9])-(02)-(0[1-9]|1[0-9]|2[0-8])$|^(19[0-9][0-9]|20[0-3][0-9])-(02)-29$#", $memDateBirth)){
+            $error = true;
+            $AllErrors[] = "Vérifier la date de naissance";
+
+            // $errorDateBirth = true;   
+        }
+
+        if(!($memLicencing == "" || preg_match("#^[A-Z][0-9]{5}$#", $memLicencing))){
+            $error = true;
+            $AllErrors[] = "Vérifier la licence";
+
+            // $errorLicencing = true; 
+        }
+
+        if(!($memRanking == "" || preg_match("#^([5-9][0-9]{2}|[1-1][0-9][0-9]{2}|[2-2][0-9][0-9]{2}|[3-3][0-4][0-9]{2}|3500)$#", $memRanking))){
+            $error = true;
+            $AllErrors[] = "Vérifier l'élo";
+
+            // $errorRanking = true;    
+        }
+
+        if(!($fkTitle == 0 || (is_numeric($fkTitle) && $fkTitle < 5))){
+            $error = true;
+            $AllErrors[] = "Vérifier le titre";
+
+            // $errorTitle = true;
+        }
+
+        if(!(is_numeric($fkCategory) && $fkCategory < 10)){
+            $error = true;
+            $AllErrors[] = "Vérifier la catégorie";
+
+            // $errorCategory = true;
+        }
+
+        //$AllErrors = array("errorFirstName" => $errorFirstName, "errorLastName" => $errorLastName, "errorPhoneNumber" => $errorPhoneNumber, "errorDateBirth" => $errorDateBirth, "errorLicencing" => $errorLicencing, "errorRanking" => $errorRanking, "errorTitle" => $errorTitle, "errorCategory" => $errorCategory);
+
+        if(!$error){
+            // $database->updateMember($idMember, $memLastName, $memFirstName, $memDateBirth, $memPhoneNumber, $memLicencing, $memRanking, $fkTitle, $fkCategory);
+            // header("Location: action?idMember=$idMember&action=$action");
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     }
     elseif(($action == 3) && $_POST['btn']){
@@ -114,7 +204,7 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-            <a class="navbar-brand ps-3" href="index.html">Gestion des Membres d'un Club d'echecs</a>
+            <a class="navbar-brand ps-3" href="List-Member">Gestion des Membres d'un Club d'echecs</a>
             <!-- Navbar-->
             <ul class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <li class="nav-item dropdown">
@@ -173,7 +263,7 @@
                                 elseif($modifyDisplay == "True"){
                                     foreach($member as $detail){
                                         $idMember = $detail['idMember'];
-
+                                        
                                         $memFirstName = $detail['memFirstName'];
                                         $memLastName = $detail['memLastName'];
                                         $memDateBirth = $detail['memDateBirth'];
@@ -185,19 +275,19 @@
                                     }
                                     $html =  "<form action='action?idMember=$idMember&action=$action' method='post'>";
                                         $html .= "<label for='memFirstName'>Prénom:</label><br>";
-                                        $html .= "<input name='memFirstName' type='text' id='memFirstName' value='$memFirstName'><br>";
+                                        $html .= "<input name='memFirstName' type='text' id='memFirstName' value='$memFirstName' required><br>";
                                         $html .= "<label for='memLastName'>Nom:</label><br>";
-                                        $html .= "<input name='memLastName'type='text' id='memLastName' value='$memLastName'><br>";
+                                        $html .= "<input name='memLastName'type='text' id='memLastName' value='$memLastName' required><br>";
                                         $html .= "<label for='memDateBirth'>Date de naissance:</label><br>";
-                                        $html .= "<input name='memDateBirth'type='date' id='memDateBirth' value='$memDateBirth'><br>";
+                                        $html .= "<input name='memDateBirth'type='date' id='memDateBirth' value='$memDateBirth' required><br>";
                                         $html .= "<label for='memPhoneNumber'>Numéro de téléphone:</label><br>";
-                                        $html .= "<input name='memPhoneNumber'type='text' id='memPhoneNumber' value='$memPhoneNumber'><br>";
+                                        $html .= "<input name='memPhoneNumber'type='text' id='memPhoneNumber' value='$memPhoneNumber' required><br>";
                                         $html .= "<label for='memLicencing'>Licence:</label><br>";
                                         $html .= "<input name='memLicencing' type='text' id='memLicencing' value='$memLicencing'><br>";
                                         $html .= "<label for='memRanking'>Elo:</label><br>";
                                         $html .= "<input name='memRanking' type='num' id='memRanking' value='$memRanking'><br>";
                                         $html .= "<select name='fkTitle' id='fkTitle'>";
-                                        $html .= "<option value='' selected>--Please choose an option--</option>'>";
+                                        $html .= "<option value='0' selected>--Please choose an option--</option>'>";
                                             foreach($titles as $title){
                                                 if(isset($titName) and ($titName == $title['titName'])){
                                                     $html .= "<option value='" . $title['idTitle'] . "' selected>" . $title['titName'] . "</option>";
@@ -219,30 +309,29 @@
                                         $html .= "</select></br></br>";
                                         $html .= "<input type='submit' name='btn' id='btn' value='Enregistrer' class='px-4 py-2 text-center bg-blue-500 text-white md:rounded' style='margin-left: 1.5vw'>";
                                     $html .= "</form>" ;
-                                    echo $html;
-                                    var_dump($_POST);
+                                    echo $html;                                    
                                 }
                                 else{
                                     $html =  "<form action='' method='post'>";
                                     $html .= "<label for='memFirstName'>Prénom:</label><br>";
-                                    $html .= "<input name='memFirstName' type='text' id='memFirstName'><br>";
+                                    $html .= "<input name='memFirstName' type='text' id='memFirstName' required><br>";
                                     $html .= "<label for='memLastName'>Nom:</label><br>";
-                                    $html .= "<input name='memLastName' type='text' id='memLastName'><br>";
+                                    $html .= "<input name='memLastName' type='text' id='memLastName' required><br>";
                                     $html .= "<label for='memDateBirth'>Date de naissance:</label><br>";
-                                    $html .= "<input name='memDateBirth' type='date' id='memDateBirth'><br><br>";
+                                    $html .= "<input name='memDateBirth' type='date' id='memDateBirth' required><br><br>";
                                     $html .= "<label for='memPhoneNumber'>Numéro de téléphone:</label><br>";
-                                    $html .= "<input name='memPhoneNumber' type='text' id='memPhoneNumber'><br>";
+                                    $html .= "<input name='memPhoneNumber' type='text' id='memPhoneNumber' required><br>";
                                     $html .= "<label for='memLicencing'>Licence:</label><br>";
                                     $html .= "<input name='memLicencing' type='text' id='memLicencing'><br>";
                                     $html .= "<label for='memRanking'>Elo:</label><br>";
                                     $html .= "<input name='memRanking' type='num' id='memRanking'><br>";
                                     $html .= "<select name='fkTitle' id='fkTitle'>";
-                                        $html .= "<option value='' selected>--Please choose an option--</option>'>";
+                                        $html .= "<option value='0' selected>--Please choose an option--</option>'>";
                                         foreach($titles as $title){
                                             $html .= "<option value='" . $title['idTitle'] . "'>" . $title['titName'] . "</option>";
                                         }
                                     $html .= "</select></br></br>";
-                                    $html .= "<select name='fkCategory' id='fkCategory'>";
+                                    $html .= "<select name='fkCategory' id='fkCategory' required>";
                                         $html .= "<option value='' selected disabled>--Please choose an option--</option>'>";
                                         foreach($categorys as $category){
                                             $html .= "<option value='" . $category['idCategory'] . "'>" . $category['catName'] . "</option>";
@@ -251,13 +340,40 @@
                                     $html .= "<input type='submit' name='btn' id='btn' value='Ajouter' class='px-4 py-2 text-center bg-blue-500 text-white md:rounded' style='margin-left: 1.5vw'>";
                                     $html .= "</form>" ;
                                     echo $html;
-                                    var_dump($_POST);
                                 }
                                 ?>
                                  </br> 
                                 </br>
                                 <!-- <a href='List-Member' class='px-4 py-2 text-center bg-red-500 text-white md:rounded' style='margin-left: 1.5vw'>Retour</a> -->
                             </div>
+                            <?php
+                                if($error){
+                            ?>
+                                <div class="bg-red-50 border-l-8 border-red-900 mb-2">
+                                    <div class="flex items-center">
+                                        <div class="p-2">
+                                            <div class="flex items-center">
+                                                <div class="ml-2">
+                                                    <svg class="h-8 w-8 text-red-900 mr-2 cursor-pointer" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 14l2-2m0 0l2-2m-2 2l-2-2m2 2l2 2m7-2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                                    </svg>
+                                                </div>
+                                                <p class="px-6 py-4 text-red-900 font-semibold text-md">le nom ou/et le mot de passe sont incorrect ou vide</p>
+                                            </div>
+                                            <div class="px-16 mb-4">
+                                            <?php
+                                                foreach($AllErrors as $tamere){
+
+                                                    echo "<li class='text-md font-bold text-red-500 text-sm'>$tamere</li>";
+                                                }
+                                            ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>  
+                            <?php 
+                                }
+                            ?> 
                         </div>
                     </div>
                 </main>
