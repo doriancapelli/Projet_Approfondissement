@@ -9,14 +9,6 @@
     $database = new dbManage();
     $error = FALSE;
     $AllErrors = array();
-    // $errorFirstName = FALSE;
-    // $errorLastName = FALSE;
-    // $errorPhoneNumber = FALSE;
-    // $errorDateBirth = FALSE;
-    // $errorLicencing = FALSE;
-    // $errorRanking = FALSE;
-    // $errorTitle = FALSE;
-    // $errorCategory = FALSE;
 
     if(isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == true){
         $user = $_SESSION['user'];
@@ -58,7 +50,7 @@
     }
 
     if(($action == 2) && $_POST['btn']){
-        // $action = 1;
+        $action = 1;
         $idMember;
         $memFirstName = $_POST['memFirstName'];
         $memLastName = $_POST['memLastName'];
@@ -70,90 +62,60 @@
         $fkCategory = $_POST['fkCategory'];
 
 
-        if(!preg_match("#^[A-Z]{1}[a-z_-]{3,49}|[a-z_-]{3,50}$#", $memFirstName)){
+        if(!preg_match("#^[A-Za-z_ -éèêëàáâãäåìíîïòóôõöùúûüýñç]{3,50}$#", $memFirstName)){
             $error = true;
             $AllErrors[] = "Vérifier le Prénom";
-            //$errorFirstName = true;
         }
 
-        if(!preg_match("#^[A-Z_-]{3,49}|[A-Z]{1}[a-z_-]{3,49}|[a-z_-]{3,50}$#", $memLastName)){
+        if(!preg_match("#^[A-Za-z_ -éèêëàáâãäåìíîïòóôõöùúûüýñç]{3,50}$#", $memLastName)){
             $error = true;
             $AllErrors[] = "Vérifier le Nom";
-
-            //$errorLastName = true;
         }
 
         if(!preg_match("#^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$#", $memPhoneNumber)){
             $error = true;
             $AllErrors[] = "Vérifier le numéro de téléphone";
-
-            // $errorPhoneNumber = true;
         }
 
         if(!preg_match("#^(19[0-9][0-9]|20[0-3][0-9])(-(0[13578]|1[02]))?-(0[1-9]|[12][0-9]|3[01])$|^(19[0-9][0-9]|20[0-3][0-9])-(02)-(0[1-9]|1[0-9]|2[0-8])$|^(19[0-9][0-9]|20[0-3][0-9])-(02)-29$#", $memDateBirth)){
             $error = true;
             $AllErrors[] = "Vérifier la date de naissance";
-
-            // $errorDateBirth = true;   
         }
 
-        if(!($memLicencing == "" || preg_match("#^[A-Z][0-9]{5}$#", $memLicencing))){
+        if(!($memLicencing == NULL || preg_match("#^[A-Z][0-9]{5}$#", $memLicencing))){
             $error = true;
             $AllErrors[] = "Vérifier la licence";
-
-            // $errorLicencing = true; 
         }
 
-        if(!($memRanking == "" || preg_match("#^([5-9][0-9]{2}|[1-1][0-9][0-9]{2}|[2-2][0-9][0-9]{2}|[3-3][0-4][0-9]{2}|3500)$#", $memRanking))){
-            $error = true;
-            $AllErrors[] = "Vérifier l'élo";
-
-            // $errorRanking = true;    
+        if(!($memRanking == NULL) ){
+            if(!(preg_match("#^([5-9][0-9]{2}|[1-1][0-9][0-9]{2}|[2-2][0-9][0-9]{2}|[3-3][0-4][0-9]{2}|3500)$#", $memRanking))){
+                $error = true;
+                $AllErrors[] = "Vérifier l'élo";    
+            }
+        }
+        else{
+            $memRanking = NULL;
         }
 
-        if(!($fkTitle == 0 || (is_numeric($fkTitle) && $fkTitle < 5))){
-            $error = true;
-            $AllErrors[] = "Vérifier le titre";
-
-            // $errorTitle = true;
+        if(!($fkTitle == 0)){
+            if(!(is_numeric($fkTitle) && $fkTitle < 5)){
+                $error = true;
+                $AllErrors[] = "Vérifier le titre";
+            }
+        }
+        else{
+            $fkTitle = NULL;
         }
 
         if(!(is_numeric($fkCategory) && $fkCategory < 10)){
             $error = true;
             $AllErrors[] = "Vérifier la catégorie";
-
-            // $errorCategory = true;
         }
-
-        //$AllErrors = array("errorFirstName" => $errorFirstName, "errorLastName" => $errorLastName, "errorPhoneNumber" => $errorPhoneNumber, "errorDateBirth" => $errorDateBirth, "errorLicencing" => $errorLicencing, "errorRanking" => $errorRanking, "errorTitle" => $errorTitle, "errorCategory" => $errorCategory);
 
         if(!$error){
-            // $database->updateMember($idMember, $memLastName, $memFirstName, $memDateBirth, $memPhoneNumber, $memLicencing, $memRanking, $fkTitle, $fkCategory);
-            // header("Location: action?idMember=$idMember&action=$action");
+            $database->updateMember($idMember, $memLastName, $memFirstName, $memDateBirth, $memPhoneNumber, $memLicencing, $memRanking, $fkTitle, $fkCategory);
+            header("Location: action?idMember=$idMember&action=$action");
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     }
     elseif(($action == 3) && $_POST['btn']){
         $action = 1;
@@ -166,12 +128,61 @@
         $fkTitle = $_POST['fkTitle'];
         $fkCategory = $_POST['fkCategory'];
 
+        if(!preg_match("#^[A-Za-z_ -éèêëàáâãäåìíîïòóôõöùúûüýñç]{3,50}$#", $memFirstName)){
+            $error = true;
+            $AllErrors[] = "Vérifier le Prénom";
+        }
 
-        $idMember = $database->addMember($memLastName, $memFirstName, $memDateBirth, $memPhoneNumber, $memLicencing, $memRanking, $fkTitle, $fkCategory);
-        header("Location: action?idMember=$idMember&action=$action");
+        if(!preg_match("#^[A-Za-z_ -éèêëàáâãäåìíîïòóôõöùúûüýñç]{3,50}$#", $memLastName)){
+            $error = true;
+            $AllErrors[] = "Vérifier le Nom";
+        }
 
+        if(!preg_match("#^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$#", $memPhoneNumber)){
+            $error = true;
+            $AllErrors[] = "Vérifier le numéro de téléphone";
+        }
+
+        if(!preg_match("#^(19[0-9][0-9]|20[0-3][0-9])(-(0[13578]|1[02]))?-(0[1-9]|[12][0-9]|3[01])$|^(19[0-9][0-9]|20[0-3][0-9])-(02)-(0[1-9]|1[0-9]|2[0-8])$|^(19[0-9][0-9]|20[0-3][0-9])-(02)-29$#", $memDateBirth)){
+            $error = true;
+            $AllErrors[] = "Vérifier la date de naissance";
+        }
+
+        if(!($memLicencing == NULL || preg_match("#^[A-Z][0-9]{5}$#", $memLicencing))){
+            $error = true;
+            $AllErrors[] = "Vérifier la licence";
+        }
+
+        if(!($memRanking == NULL) ){
+            if(!(preg_match("#^([5-9][0-9]{2}|[1-1][0-9][0-9]{2}|[2-2][0-9][0-9]{2}|[3-3][0-4][0-9]{2}|3500)$#", $memRanking))){
+                $error = true;
+                $AllErrors[] = "Vérifier l'élo";    
+            }
+        }
+        else{
+            $memRanking = NULL;
+        }
+
+        if(!($fkTitle == 0)){
+            if(!(is_numeric($fkTitle) && $fkTitle < 5)){
+                $error = true;
+                $AllErrors[] = "Vérifier le titre";
+            }
+        }
+        else{
+            $fkTitle = NULL;
+        }
+
+        if(!(is_numeric($fkCategory) && $fkCategory < 10)){
+            $error = true;
+            $AllErrors[] = "Vérifier la catégorie";
+        }
+
+        if(!$error){
+            $idMember = $database->addMember($memLastName, $memFirstName, $memDateBirth, $memPhoneNumber, $memLicencing, $memRanking, $fkTitle, $fkCategory);
+            header("Location: action?idMember=$idMember&action=$action");
+        }
     }
-
  ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -275,17 +286,17 @@
                                     }
                                     $html =  "<form action='action?idMember=$idMember&action=$action' method='post'>";
                                         $html .= "<label for='memFirstName'>Prénom:</label><br>";
-                                        $html .= "<input name='memFirstName' type='text' id='memFirstName' value='$memFirstName' required><br>";
+                                        $html .= "<input name='memFirstName'pattern='^[A-Za-z_ -éèêëàáâãäåìíîïòóôõöùúûüýñ]{3,50}$' type='text' id='memFirstName' value='$memFirstName' required><br>";
                                         $html .= "<label for='memLastName'>Nom:</label><br>";
-                                        $html .= "<input name='memLastName'type='text' id='memLastName' value='$memLastName' required><br>";
+                                        $html .= "<input name='memLastName' pattern='^[A-Za-z_ -éèêëàáâãäåìíîïòóôõöùúûüýñ]{3,50}$' type='text' id='memLastName' value='$memLastName' required><br>";
                                         $html .= "<label for='memDateBirth'>Date de naissance:</label><br>";
-                                        $html .= "<input name='memDateBirth'type='date' id='memDateBirth' value='$memDateBirth' required><br>";
+                                        $html .= "<input name='memDateBirth' pattern='^(19[0-9][0-9]|20[0-3][0-9])(-(0[13578]|1[02]))?-(0[1-9]|[12][0-9]|3[01])$|^(19[0-9][0-9]|20[0-3][0-9])-(02)-(0[1-9]|1[0-9]|2[0-8])$|^(19[0-9][0-9]|20[0-3][0-9])-(02)-29$' type='date' id='memDateBirth' value='$memDateBirth' ><br>";
                                         $html .= "<label for='memPhoneNumber'>Numéro de téléphone:</label><br>";
-                                        $html .= "<input name='memPhoneNumber'type='text' id='memPhoneNumber' value='$memPhoneNumber' required><br>";
+                                        $html .= "<input name='memPhoneNumber' pattern='^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$' type='text' id='memPhoneNumber' value='$memPhoneNumber' required><br>";
                                         $html .= "<label for='memLicencing'>Licence:</label><br>";
-                                        $html .= "<input name='memLicencing' type='text' id='memLicencing' value='$memLicencing'><br>";
+                                        $html .= "<input name='memLicencing' pattern='^[A-Z][0-9]{5}$' type='text' id='memLicencing' value='$memLicencing'><br>";
                                         $html .= "<label for='memRanking'>Elo:</label><br>";
-                                        $html .= "<input name='memRanking' type='num' id='memRanking' value='$memRanking'><br>";
+                                        $html .= "<input name='memRanking' pattern='^([5-9][0-9]{2}|[1-1][0-9][0-9]{2}|[2-2][0-9][0-9]{2}|[3-3][0-4][0-9]{2}|3500)$' type='number' id='memRanking' value='$memRanking'><br>";
                                         $html .= "<select name='fkTitle' id='fkTitle'>";
                                         $html .= "<option value='0' selected>--Please choose an option--</option>'>";
                                             foreach($titles as $title){
@@ -314,17 +325,17 @@
                                 else{
                                     $html =  "<form action='' method='post'>";
                                     $html .= "<label for='memFirstName'>Prénom:</label><br>";
-                                    $html .= "<input name='memFirstName' type='text' id='memFirstName' required><br>";
+                                    $html .= "<input name='memFirstName' pattern='^[A-Za-z_ -éèêëàáâãäåìíîïòóôõöùúûüýñ]{3,50}$' type='text' id='memFirstName' required><br>";
                                     $html .= "<label for='memLastName'>Nom:</label><br>";
-                                    $html .= "<input name='memLastName' type='text' id='memLastName' required><br>";
+                                    $html .= "<input name='memLastName'pattern='^[A-Za-z_ -éèêëàáâãäåìíîïòóôõöùúûüýñ]{3,50}$' type='text' id='memLastName' required><br>";
                                     $html .= "<label for='memDateBirth'>Date de naissance:</label><br>";
-                                    $html .= "<input name='memDateBirth' type='date' id='memDateBirth' required><br><br>";
+                                    $html .= "<input name='memDateBirth' pattern='^(19[0-9][0-9]|20[0-3][0-9])(-(0[13578]|1[02]))?-(0[1-9]|[12][0-9]|3[01])$|^(19[0-9][0-9]|20[0-3][0-9])-(02)-(0[1-9]|1[0-9]|2[0-8])$|^(19[0-9][0-9]|20[0-3][0-9])-(02)-29$' type='date' id='memDateBirth' required><br><br>";
                                     $html .= "<label for='memPhoneNumber'>Numéro de téléphone:</label><br>";
-                                    $html .= "<input name='memPhoneNumber' type='text' id='memPhoneNumber' required><br>";
+                                    $html .= "<input name='memPhoneNumber' pattern='^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$' type='text' id='memPhoneNumber' required><br>";
                                     $html .= "<label for='memLicencing'>Licence:</label><br>";
-                                    $html .= "<input name='memLicencing' type='text' id='memLicencing'><br>";
+                                    $html .= "<input name='memLicencing' pattern='^[A-Z][0-9]{5}$' type='text' id='memLicencing'><br>";
                                     $html .= "<label for='memRanking'>Elo:</label><br>";
-                                    $html .= "<input name='memRanking' type='num' id='memRanking'><br>";
+                                    $html .= "<input name='memRanking' pattern='^([5-9][0-9]{2}|[1-1][0-9][0-9]{2}|[2-2][0-9][0-9]{2}|[3-3][0-4][0-9]{2}|3500)$' type='number' id='memRanking'><br>";
                                     $html .= "<select name='fkTitle' id='fkTitle'>";
                                         $html .= "<option value='0' selected>--Please choose an option--</option>'>";
                                         foreach($titles as $title){
@@ -344,7 +355,7 @@
                                 ?>
                                  </br> 
                                 </br>
-                                <!-- <a href='List-Member' class='px-4 py-2 text-center bg-red-500 text-white md:rounded' style='margin-left: 1.5vw'>Retour</a> -->
+                                <a href='List-Member' class='px-4 py-2 text-center bg-red-500 text-white md:rounded' style='margin-left: 1.5vw'>Retour</a>
                             </div>
                             <?php
                                 if($error){
@@ -362,9 +373,8 @@
                                             </div>
                                             <div class="px-16 mb-4">
                                             <?php
-                                                foreach($AllErrors as $tamere){
-
-                                                    echo "<li class='text-md font-bold text-red-500 text-sm'>$tamere</li>";
+                                                foreach($AllErrors as $detailError){
+                                                    echo "<li class='text-md font-bold text-red-500 text-sm'>$detailError</li>";
                                                 }
                                             ?>
                                             </div>
