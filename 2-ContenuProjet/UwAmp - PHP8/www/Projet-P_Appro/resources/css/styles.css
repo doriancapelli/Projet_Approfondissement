@@ -11699,3 +11699,20 @@ body {
   font-size: 0.75rem;
   border-radius: 0.25rem !important;
 }
+
+.multiSearch{
+  display: grid;
+  gap: 5px;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+
+.blockInput{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.multiSearchInput{
+  border: 2px solid black;
+  border-radius: 5px;
+}

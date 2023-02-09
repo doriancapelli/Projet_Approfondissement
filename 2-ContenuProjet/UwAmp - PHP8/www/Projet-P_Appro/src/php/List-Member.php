@@ -15,19 +15,66 @@
 
     #Get All Member of Club
     $allMembers = $database->getAllMembers();
+    $titles = $database->getAllTitle();
+    $categorys = $database->getAllCategory();
+
 
     #Variable that determines an action
     $detail = 1;
     $modify = 2;
     $create = 3;
+
+    if(isset($_GET['btn'])){
+        $memFirstName = $_GET['memFirstName'];
+        $memLastName = $_GET['memLastName'];
+        $memDateBirth = $_GET['memDateBirth'];
+        $memPhoneNumber = $_GET['memPhoneNumber'];
+        $memLicencing = $_GET['memLicencing'];
+        $memRanking = $_GET['memRanking'];
+        $fkTitle = $_GET['fkTitle'];
+        $fkCategory = $_GET['fkCategory'];
+
+        if($memFirstName == NULL){
+            $memFirstName = NULL;
+        }
+
+        if($memLastName == NULL){
+            $memLastName = NULL;
+        }
+
+        if($memDateBirth == NULL){
+            $memDateBirth = NULL;
+        }
+
+        if($memPhoneNumber == NULL){
+            $memPhoneNumber = NULL;
+        }
+
+        if($memLicencing == NULL){
+            $memLicencing = NULL;
+        }
+
+        if($memRanking == NULL){
+            $memRanking = NULL;
+        }
+
+        if($fkTitle == 0){
+            $fkTitle = NULL;
+        }
+
+        if($fkCategory == 0){
+            $fkCategory = NULL;
+        }
+        
+        $allMembers = $database->getMemberCriterion($memLastName, $memFirstName, $memDateBirth, $memPhoneNumber, $memLicencing, $memRanking, $fkTitle, $fkCategory);
+    }
  ?>
 <!DOCTYPE html>
 <html lang="fr">
     <head>
         <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <title>Gestion de membre d'un club d'échec - List des Membre</title>
+        <!-- <link rel="icon" href="../../resources/images/chess-pawn.png" /> -->
         <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="../../resources/css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -77,6 +124,70 @@
                 <main>
                     <div class="container-fluid px-4">
                         <h1 class="mt-4">Liste des membres</h1>
+                        <div>
+                            <form action="List-Member" method="GET">
+                                <div class="multiSearch">
+                                    <input type="checkbox" name="advancedSearch" value="1" checked style="display: none;">
+
+                                    <div class="blockInput">
+                                        <label for='memFirstName' class="multiSearchLabel">Prénom:</label>
+                                        <input name='memFirstName' type='text' id='memFirstName' class="multiSearchInput">
+                                    </div>
+
+                                    <div class="blockInput">
+                                        <label for='memLastName' class="multiSearchLabel">Nom:</label>
+                                        <input name='memLastName' type='text' id='memLastName' class="multiSearchInput">
+                                    </div>
+
+                                    <div class="blockInput">
+                                        <label for='memDateBirth' class="multiSearchLabel">Date de naissance:</label>
+                                        <input name='memDateBirth' type='date' id='memDateBirth' class="multiSearchInput">
+                                    </div>
+
+                                    <div class="blockInput">
+                                        <label for='memPhoneNumber' class="multiSearchLabel">Numéro de téléphone:</label>
+                                        <input name='memPhoneNumber' type='text' id='memPhoneNumber' class="multiSearchInput">
+                                    </div>
+
+                                    <div class="blockInput">
+                                        <label for='memLicencing' class="multiSearchLabel">Licence:</label>
+                                        <input name='memLicencing' type='text' id='memLicencing' class="multiSearchInput">
+                                    </div>
+
+                                    <div class="blockInput">
+                                        <label for='memRanking' class="multiSearchLabel">Elo:</label>
+                                        <input name='memRanking' type='number' id='memRanking' class="multiSearchInput">
+                                    </div>
+
+                                    <div class="blockInput">
+                                        <select name='fkTitle' id='fkTitle' class='multiSearchInput'>
+                                        <option value='0' selected>--Choisissez un titre--</option>
+                                        <?php
+                                            foreach($titles as $title){
+                                                echo "<option value='" . $title['idTitle'] . "'>" . $title['titName'] . "</option>";
+                                            }
+                                        ?>
+                                        </select>
+                                    </div>
+
+                                    <div class="blockInput">
+                                        <select name='fkCategory' id='fkCategory' class='multiSearchInput'>
+                                        <option value='0' selected>--Choisissez une catégorie--</option>'>
+                                        <?php
+                                            foreach($categorys as $category){
+                                                    echo "<option value='" . $category['idCategory'] . "'>" . $category['catName'] . "</option>";
+                                            }
+                                        ?>
+                                        </select>
+                                    </div>
+                                    
+                                    <div class="blockInput">
+                                        <input type='submit' name='btn' id='btn' value='Rechercher' class=''>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>

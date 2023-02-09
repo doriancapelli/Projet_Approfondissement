@@ -11,7 +11,7 @@
     $AllErrors = array();
 
     if(isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == true){
-        $user = $_SESSION['user'];
+        $user = $_SESSION['userName'];
     }
     else{
         header('Location: login');
@@ -49,138 +49,140 @@
         die();
     }
 
-    if(($action == 2) && $_POST['btn']){
-        $action = 1;
-        $idMember;
-        $memFirstName = $_POST['memFirstName'];
-        $memLastName = $_POST['memLastName'];
-        $memDateBirth = $_POST['memDateBirth'];
-        $memPhoneNumber = $_POST['memPhoneNumber'];
-        $memLicencing = $_POST['memLicencing'];
-        $memRanking = $_POST['memRanking'];
-        $fkTitle = $_POST['fkTitle'];
-        $fkCategory = $_POST['fkCategory'];
+    if(isset($_POST['btn'])){
+        if($action == 2){
+            $action = 1;
+            $idMember;
+            $memFirstName = $_POST['memFirstName'];
+            $memLastName = $_POST['memLastName'];
+            $memDateBirth = $_POST['memDateBirth'];
+            $memPhoneNumber = $_POST['memPhoneNumber'];
+            $memLicencing = $_POST['memLicencing'];
+            $memRanking = $_POST['memRanking'];
+            $fkTitle = $_POST['fkTitle'];
+            $fkCategory = $_POST['fkCategory'];
 
 
-        if(!preg_match("#^[A-Za-z_ -éèêëàáâãäåìíîïòóôõöùúûüýñç]{3,50}$#", $memFirstName)){
-            $error = true;
-            $AllErrors[] = "Vérifier le Prénom";
-        }
-
-        if(!preg_match("#^[A-Za-z_ -éèêëàáâãäåìíîïòóôõöùúûüýñç]{3,50}$#", $memLastName)){
-            $error = true;
-            $AllErrors[] = "Vérifier le Nom";
-        }
-
-        if(!preg_match("#^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$#", $memPhoneNumber)){
-            $error = true;
-            $AllErrors[] = "Vérifier le numéro de téléphone";
-        }
-
-        if(!preg_match("#^(19[0-9][0-9]|20[0-3][0-9])(-(0[13578]|1[02]))?-(0[1-9]|[12][0-9]|3[01])$|^(19[0-9][0-9]|20[0-3][0-9])-(02)-(0[1-9]|1[0-9]|2[0-8])$|^(19[0-9][0-9]|20[0-3][0-9])-(02)-29$#", $memDateBirth)){
-            $error = true;
-            $AllErrors[] = "Vérifier la date de naissance";
-        }
-
-        if(!($memLicencing == NULL || preg_match("#^[A-Z][0-9]{5}$#", $memLicencing))){
-            $error = true;
-            $AllErrors[] = "Vérifier la licence";
-        }
-
-        if(!($memRanking == NULL) ){
-            if(!(preg_match("#^([5-9][0-9]{2}|[1-1][0-9][0-9]{2}|[2-2][0-9][0-9]{2}|[3-3][0-4][0-9]{2}|3500)$#", $memRanking))){
+            if(!preg_match("#^[A-Za-z_ -éèêëàáâãäåìíîïòóôõöùúûüýñç]{3,50}$#", $memFirstName)){
                 $error = true;
-                $AllErrors[] = "Vérifier l'élo";    
+                $AllErrors[] = "Vérifier le Prénom";
+            }
+
+            if(!preg_match("#^[A-Za-z_ -éèêëàáâãäåìíîïòóôõöùúûüýñç]{3,50}$#", $memLastName)){
+                $error = true;
+                $AllErrors[] = "Vérifier le Nom";
+            }
+
+            if(!preg_match("#^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$#", $memPhoneNumber)){
+                $error = true;
+                $AllErrors[] = "Vérifier le numéro de téléphone";
+            }
+
+            if(!preg_match("#^(19[0-9][0-9]|20[0-3][0-9])(-(0[13578]|1[02]))?-(0[1-9]|[12][0-9]|3[01])$|^(19[0-9][0-9]|20[0-3][0-9])-(02)-(0[1-9]|1[0-9]|2[0-8])$|^(19[0-9][0-9]|20[0-3][0-9])-(02)-29$#", $memDateBirth)){
+                $error = true;
+                $AllErrors[] = "Vérifier la date de naissance";
+            }
+
+            if(!($memLicencing == NULL || preg_match("#^[A-Z][0-9]{5}$#", $memLicencing))){
+                $error = true;
+                $AllErrors[] = "Vérifier la licence";
+            }
+
+            if(!($memRanking == NULL) ){
+                if(!(preg_match("#^([5-9][0-9]{2}|[1-1][0-9][0-9]{2}|[2-2][0-9][0-9]{2}|[3-3][0-4][0-9]{2}|3500)$#", $memRanking))){
+                    $error = true;
+                    $AllErrors[] = "Vérifier l'élo";    
+                }
+            }
+            else{
+                $memRanking = NULL;
+            }
+
+            if(!($fkTitle == 0)){
+                if(!(is_numeric($fkTitle) && $fkTitle < 5)){
+                    $error = true;
+                    $AllErrors[] = "Vérifier le titre";
+                }
+            }
+            else{
+                $fkTitle = NULL;
+            }
+
+            if(!(is_numeric($fkCategory) && $fkCategory < 10)){
+                $error = true;
+                $AllErrors[] = "Vérifier la catégorie";
+            }
+
+            if(!$error){
+                $database->updateMember($idMember, $memLastName, $memFirstName, $memDateBirth, $memPhoneNumber, $memLicencing, $memRanking, $fkTitle, $fkCategory);
+                header("Location: action?idMember=$idMember&action=$action");
             }
         }
-        else{
-            $memRanking = NULL;
-        }
+        elseif($action == 3){
+            $action = 1;
+            $memFirstName = $_POST['memFirstName'];
+            $memLastName = $_POST['memLastName'];
+            $memDateBirth = $_POST['memDateBirth'];
+            $memPhoneNumber = $_POST['memPhoneNumber'];
+            $memLicencing = $_POST['memLicencing'];
+            $memRanking = $_POST['memRanking'];
+            $fkTitle = $_POST['fkTitle'];
+            $fkCategory = $_POST['fkCategory'];
 
-        if(!($fkTitle == 0)){
-            if(!(is_numeric($fkTitle) && $fkTitle < 5)){
+            if(!preg_match("#^[A-Za-z_ -éèêëàáâãäåìíîïòóôõöùúûüýñç]{3,50}$#", $memFirstName)){
                 $error = true;
-                $AllErrors[] = "Vérifier le titre";
+                $AllErrors[] = "Vérifier le Prénom";
             }
-        }
-        else{
-            $fkTitle = NULL;
-        }
 
-        if(!(is_numeric($fkCategory) && $fkCategory < 10)){
-            $error = true;
-            $AllErrors[] = "Vérifier la catégorie";
-        }
-
-        if(!$error){
-            $database->updateMember($idMember, $memLastName, $memFirstName, $memDateBirth, $memPhoneNumber, $memLicencing, $memRanking, $fkTitle, $fkCategory);
-            header("Location: action?idMember=$idMember&action=$action");
-        }
-    }
-    elseif(($action == 3) && $_POST['btn']){
-        $action = 1;
-        $memFirstName = $_POST['memFirstName'];
-        $memLastName = $_POST['memLastName'];
-        $memDateBirth = $_POST['memDateBirth'];
-        $memPhoneNumber = $_POST['memPhoneNumber'];
-        $memLicencing = $_POST['memLicencing'];
-        $memRanking = $_POST['memRanking'];
-        $fkTitle = $_POST['fkTitle'];
-        $fkCategory = $_POST['fkCategory'];
-
-        if(!preg_match("#^[A-Za-z_ -éèêëàáâãäåìíîïòóôõöùúûüýñç]{3,50}$#", $memFirstName)){
-            $error = true;
-            $AllErrors[] = "Vérifier le Prénom";
-        }
-
-        if(!preg_match("#^[A-Za-z_ -éèêëàáâãäåìíîïòóôõöùúûüýñç]{3,50}$#", $memLastName)){
-            $error = true;
-            $AllErrors[] = "Vérifier le Nom";
-        }
-
-        if(!preg_match("#^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$#", $memPhoneNumber)){
-            $error = true;
-            $AllErrors[] = "Vérifier le numéro de téléphone";
-        }
-
-        if(!preg_match("#^(19[0-9][0-9]|20[0-3][0-9])(-(0[13578]|1[02]))?-(0[1-9]|[12][0-9]|3[01])$|^(19[0-9][0-9]|20[0-3][0-9])-(02)-(0[1-9]|1[0-9]|2[0-8])$|^(19[0-9][0-9]|20[0-3][0-9])-(02)-29$#", $memDateBirth)){
-            $error = true;
-            $AllErrors[] = "Vérifier la date de naissance";
-        }
-
-        if(!($memLicencing == NULL || preg_match("#^[A-Z][0-9]{5}$#", $memLicencing))){
-            $error = true;
-            $AllErrors[] = "Vérifier la licence";
-        }
-
-        if(!($memRanking == NULL) ){
-            if(!(preg_match("#^([5-9][0-9]{2}|[1-1][0-9][0-9]{2}|[2-2][0-9][0-9]{2}|[3-3][0-4][0-9]{2}|3500)$#", $memRanking))){
+            if(!preg_match("#^[A-Za-z_ -éèêëàáâãäåìíîïòóôõöùúûüýñç]{3,50}$#", $memLastName)){
                 $error = true;
-                $AllErrors[] = "Vérifier l'élo";    
+                $AllErrors[] = "Vérifier le Nom";
             }
-        }
-        else{
-            $memRanking = NULL;
-        }
 
-        if(!($fkTitle == 0)){
-            if(!(is_numeric($fkTitle) && $fkTitle < 5)){
+            if(!preg_match("#^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$#", $memPhoneNumber)){
                 $error = true;
-                $AllErrors[] = "Vérifier le titre";
+                $AllErrors[] = "Vérifier le numéro de téléphone";
             }
-        }
-        else{
-            $fkTitle = NULL;
-        }
 
-        if(!(is_numeric($fkCategory) && $fkCategory < 10)){
-            $error = true;
-            $AllErrors[] = "Vérifier la catégorie";
-        }
+            if(!preg_match("#^(19[0-9][0-9]|20[0-3][0-9])(-(0[13578]|1[02]))?-(0[1-9]|[12][0-9]|3[01])$|^(19[0-9][0-9]|20[0-3][0-9])-(02)-(0[1-9]|1[0-9]|2[0-8])$|^(19[0-9][0-9]|20[0-3][0-9])-(02)-29$#", $memDateBirth)){
+                $error = true;
+                $AllErrors[] = "Vérifier la date de naissance";
+            }
 
-        if(!$error){
-            $idMember = $database->addMember($memLastName, $memFirstName, $memDateBirth, $memPhoneNumber, $memLicencing, $memRanking, $fkTitle, $fkCategory);
-            header("Location: action?idMember=$idMember&action=$action");
+            if(!($memLicencing == NULL || preg_match("#^[A-Z][0-9]{5}$#", $memLicencing))){
+                $error = true;
+                $AllErrors[] = "Vérifier la licence";
+            }
+
+            if(!($memRanking == NULL) ){
+                if(!(preg_match("#^([5-9][0-9]{2}|[1-1][0-9][0-9]{2}|[2-2][0-9][0-9]{2}|[3-3][0-4][0-9]{2}|3500)$#", $memRanking))){
+                    $error = true;
+                    $AllErrors[] = "Vérifier l'élo";    
+                }
+            }
+            else{
+                $memRanking = NULL;
+            }
+
+            if(!($fkTitle == 0)){
+                if(!(is_numeric($fkTitle) && $fkTitle < 5)){
+                    $error = true;
+                    $AllErrors[] = "Vérifier le titre";
+                }
+            }
+            else{
+                $fkTitle = NULL;
+            }
+
+            if(!(is_numeric($fkCategory) && $fkCategory < 10)){
+                $error = true;
+                $AllErrors[] = "Vérifier la catégorie";
+            }
+
+            if(!$error){
+                $idMember = $database->addMember($memLastName, $memFirstName, $memDateBirth, $memPhoneNumber, $memLicencing, $memRanking, $fkTitle, $fkCategory);
+                header("Location: action?idMember=$idMember&action=$action");
+            }
         }
     }
  ?>
@@ -188,8 +190,7 @@
 <html lang="fr">
     <head>
         <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <link rel="icon" href="../../resources/images/chess-pawn.png" />
         <?php
             if($action == 1){
                 ?>
@@ -298,7 +299,7 @@
                                         $html .= "<label for='memRanking'>Elo:</label><br>";
                                         $html .= "<input name='memRanking' pattern='^([5-9][0-9]{2}|[1-1][0-9][0-9]{2}|[2-2][0-9][0-9]{2}|[3-3][0-4][0-9]{2}|3500)$' type='number' id='memRanking' value='$memRanking'><br>";
                                         $html .= "<select name='fkTitle' id='fkTitle'>";
-                                        $html .= "<option value='0' selected>--Please choose an option--</option>'>";
+                                        $html .= "<option value='0' selected>--Choisissez un titre--</option>'>";
                                             foreach($titles as $title){
                                                 if(isset($titName) and ($titName == $title['titName'])){
                                                     $html .= "<option value='" . $title['idTitle'] . "' selected>" . $title['titName'] . "</option>";
@@ -337,13 +338,13 @@
                                     $html .= "<label for='memRanking'>Elo:</label><br>";
                                     $html .= "<input name='memRanking' pattern='^([5-9][0-9]{2}|[1-1][0-9][0-9]{2}|[2-2][0-9][0-9]{2}|[3-3][0-4][0-9]{2}|3500)$' type='number' id='memRanking'><br>";
                                     $html .= "<select name='fkTitle' id='fkTitle'>";
-                                        $html .= "<option value='0' selected>--Please choose an option--</option>'>";
+                                        $html .= "<option value='0' selected>--Choisissez un titre--</option>'>";
                                         foreach($titles as $title){
                                             $html .= "<option value='" . $title['idTitle'] . "'>" . $title['titName'] . "</option>";
                                         }
                                     $html .= "</select></br></br>";
                                     $html .= "<select name='fkCategory' id='fkCategory' required>";
-                                        $html .= "<option value='' selected disabled>--Please choose an option--</option>'>";
+                                        $html .= "<option value='' selected disabled>--Choisissez une catégorie--</option>'>";
                                         foreach($categorys as $category){
                                             $html .= "<option value='" . $category['idCategory'] . "'>" . $category['catName'] . "</option>";
                                         }

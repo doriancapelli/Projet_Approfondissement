@@ -25,7 +25,7 @@
                 if(password_verify($password, $user[0]['usePassword']))
                 {
                     $_SESSION['isConnected'] = true;
-                    $_SESSION['user'] = $login;
+                    $_SESSION['userName'] = $login;
 
                     header("Location:List-Member");
                     die();
@@ -44,9 +44,8 @@
 <html lang="fr">
     <head>
         <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <title>Gestion de membre d'un club d'échec - Connexion</title>
+        <link rel="icon" href="../../resources/images/chess-pawn.png" />
         <link href="../../resources/css/styles.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>

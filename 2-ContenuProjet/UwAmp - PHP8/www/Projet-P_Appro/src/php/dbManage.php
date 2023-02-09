@@ -173,42 +173,75 @@ class dbManage
      */
 	public function getMemberCriterion($memLastName, $memFirstName, $memDateBirth, $memPhoneNumber, $memLicencing, $memRanking, $fkTitle, $fkCategory)
 	{
-		$reqSQL = "SELECT  idMember, memLastName, memFirstName, memDateBirth, memPhoneNumber, memLicencing, memRanking, fkTitle, fkCategory FROM t_member WHERE";
-		if($memLastName){
+		$paramNumber = 0;
+		$reqSQL = "SELECT  * FROM t_member JOIN t_category ON t_member.fkCategory = t_category.idCategory LEFT JOIN t_title ON t_member.fkTitle = t_title.idTitle WHERE";
+		if(!$memLastName == NULL){
 			$reqSQL .= " memLastName LIKE :memLastName AND";
 			$binds[] = array("variable"=>"%".$memLastName."%", "bind" => "memLastName", "type" => PDO::PARAM_STR);
 		}
-		if($memFirstName){
+		else{
+			$paramNumber += 1;
+		}
+		if(!$memFirstName == NULL){
 			$reqSQL .= " memFirstName LIKE :memFirstName AND";
 			$binds[] = array("variable"=>"%".$memFirstName."%", "bind" => "memFirstName", "type" => PDO::PARAM_STR);
 		}
-		if($memDateBirth){
+		else{
+			$paramNumber += 1;
+		}
+		if(!$memDateBirth == NULL){
 			$reqSQL .= " memDateBirth LIKE :memDateBirth AND";
 			$binds[] = array("variable"=>"%".$memDateBirth."%", "bind" => "memDateBirth", "type" => PDO::PARAM_STR);
 		}
-        if($memPhoneNumber){
+		else{
+			$paramNumber += 1;
+		}
+        if(!$memPhoneNumber == NULL){
 			$reqSQL .= 	" memPhoneNumber LIKE :memPhoneNumber AND";
 			$binds[] = array("variable"=>"%".$memPhoneNumber."%", "bind" => "memPhoneNumber", "type" => PDO::PARAM_STR);
 		}
-		if($memLicencing){
+		else{
+			$paramNumber += 1;
+		}
+		if(!$memLicencing == NULL){
 			$reqSQL .= " memLicencing LIKE :memLicencing AND";
 			$binds[] = array("variable"=>"%".$memLicencing."%", "bind" => "memLicencing", "type" => PDO::PARAM_STR);
 		}
-		if($memRanking){
+		else{
+			$paramNumber += 1;
+		}
+		if(!$memRanking == NULL){
 			$reqSQL .= " memRanking LIKE :memRanking AND";
 			$binds[] = array("variable"=>"%".$memRanking."%", "bind" => "memRanking", "type" => PDO::PARAM_INT);
 		}
-		if($fkTitle){
+		else{
+			$paramNumber += 1;
+		}
+		if(!$fkTitle == NULL){
 			$reqSQL .= " fkTitle LIKE :fkTitle AND";
-			$binds[] = array("variable"=>"%".$fkTitle."%", "bind" => "fkTitle", "type" => PDO::PARAM_INT);
+			$binds[] = array("variable"=>$fkTitle, "bind" => "fkTitle", "type" => PDO::PARAM_INT);
 		}
-		if($fkCategory){        
+		else{
+			$paramNumber += 1;
+		}
+		if(!$fkCategory == NULL){        
 			$reqSQL .= " fkCategory LIKE :fkCategory AND";
-			$binds[] = array("variable"=>"%".$fkCategory."%", "bind" => "fkCategory", "type" => PDO::PARAM_INT);
+			$binds[] = array("variable"=>$fkCategory, "bind" => "fkCategory", "type" => PDO::PARAM_INT);
 		}
-		//remove the last 3 characters to remove the last AND and not have an sql error
-		$reqSQL = substr($reqSQL, 0, -3);
-        $req = $this->queryPrepareExecute($reqSQL, $binds);
+		else{
+			$paramNumber += 1;
+		}
+
+		if($paramNumber == 8){
+			//remove the last 5 characters to remove the last AND and not have an sql error
+			$reqSQL = substr($reqSQL, 0, -5);
+			$req = $this->querySimpleExecute($reqSQL);
+		}
+		else{
+			//remove the last 3 characters to remove the last AND and not have an sql error
+			$reqSQL = substr($reqSQL, 0, -3);
+			$req = $this->queryPrepareExecute($reqSQL, $binds);
+		}
 		$result = $this->formatData($req);
 		$this->unsetData($req);
 		return $result;

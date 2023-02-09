@@ -10,6 +10,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <title>Gestion de membre d'un club d'échec - 404</title>
+        <link rel="icon" href="../../resources/images/chess-pawn.png" />
         <link href="../../resources/css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
