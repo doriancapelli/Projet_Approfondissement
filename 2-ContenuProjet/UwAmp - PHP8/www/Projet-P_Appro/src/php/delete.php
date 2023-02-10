@@ -3,6 +3,7 @@
 ///Date        : 02.02.2023
 ///Description : Page of Delete a member
 
+    session_start();
     require "dbManage.php";
     $database = new dbManage();
 

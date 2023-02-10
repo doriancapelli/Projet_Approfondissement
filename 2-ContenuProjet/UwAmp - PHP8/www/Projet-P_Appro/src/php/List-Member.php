@@ -7,11 +7,6 @@
     session_start();
     require "dbManage.php";
     $database = new dbManage();
-/*
-    echo "<pre>";
-    var_dump($_GET);
-    echo "</pre>";
- */
 
     if(isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == true){
         $user = $_SESSION['userName'];
@@ -44,8 +39,6 @@
         $fkCategory = $_GET['fkCategory'];
 
         $allMembers = $database->getMemberCriterion($memLastName, $memFirstName, $memDateBirth, $memPhoneNumber, $memLicencing, $memRanking, $fkTitle, $fkCategory);
-        
-        // $allMembers = $database->getMemberCriterion($_GET);
     }
  ?>
 <!DOCTYPE html>
@@ -53,11 +46,11 @@
     <head>
         <meta charset="utf-8" />
         <title>Gestion de membre d'un club d'échec - List des Membre</title>
-        <!-- <link rel="icon" href="../../resources/images/chess-pawn.png" /> -->
+        <link rel="icon" href="../../resources/images/chess-pawn.png" />
         <link href="../../resources/css/styles.css" rel="stylesheet" />
-       <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
-
+        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     </head>
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
@@ -68,7 +61,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="login">Logout</a></li>
+                        <li><a class="dropdown-item" href="login">Déconnexion</a></li>
                     </ul>
                 </li>
             </ul>
@@ -108,37 +101,30 @@
                             <form action="List-Member" method="GET">
                                 <div class="multiSearch">
                                     <input type="checkbox" name="advancedSearch" value="1" checked style="display: none;">
-
                                     <div class="blockInput">
                                         <label for='memFirstName' class="multiSearchLabel">Prénom:</label>
                                         <input name='memFirstName' type='text' id='memFirstName' class="multiSearchInput">
                                     </div>
-
                                     <div class="blockInput">
                                         <label for='memLastName' class="multiSearchLabel">Nom:</label>
                                         <input name='memLastName' type='text' id='memLastName' class="multiSearchInput">
                                     </div>
-
                                     <div class="blockInput">
                                         <label for='memDateBirth' class="multiSearchLabel">Date de naissance:</label>
                                         <input name='memDateBirth' type='date' id='memDateBirth' class="multiSearchInput">
                                     </div>
-
                                     <div class="blockInput">
                                         <label for='memPhoneNumber' class="multiSearchLabel">Numéro de téléphone:</label>
                                         <input name='memPhoneNumber' type='text' id='memPhoneNumber' class="multiSearchInput">
                                     </div>
-
                                     <div class="blockInput">
                                         <label for='memLicencing' class="multiSearchLabel">Licence:</label>
                                         <input name='memLicencing' type='text' id='memLicencing' class="multiSearchInput">
                                     </div>
-
                                     <div class="blockInput">
                                         <label for='memRanking' class="multiSearchLabel">Elo:</label>
                                         <input name='memRanking' type='number' id='memRanking' class="multiSearchInput">
                                     </div>
-
                                     <div class="blockInput">
                                         <select name='fkTitle' id='fkTitle' class='multiSearchInput'>
                                         <option value='0' selected>--Choisissez un titre--</option>
@@ -149,10 +135,9 @@
                                         ?>
                                         </select>
                                     </div>
-
                                     <div class="blockInput">
                                         <select name='fkCategory' id='fkCategory' class='multiSearchInput'>
-                                        <option value='0' selected>--Choisissez une catégorie--</option>'>
+                                        <option value='0' selected>--Choisissez une catégorie--</option>
                                         <?php
                                             foreach($categorys as $category){
                                                     echo "<option value='" . $category['idCategory'] . "'>" . $category['catName'] . "</option>";
@@ -160,14 +145,12 @@
                                         ?>
                                         </select>
                                     </div>
-                                    
                                     <div class="blockInput">
                                         <input type='submit' name='btn' id='btn' value='Rechercher' class='multiSearchInput'>
                                     </div>
                                 </div>
                             </form>
                         </div>
-
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table me-1"></i>
@@ -184,6 +167,15 @@
                                             <th>Action</th>
                                         </tr>
                                     </thead>
+                                    <tfoot>
+                                        <tr>
+                                            <th>Prénom</th>
+                                            <th>Nom</th>
+                                            <th>Élo</th>
+                                            <th>Catégorie</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </tfoot>
                                     <tbody>
                                     <?php
                                         #displays all club members one by one in a table
@@ -195,7 +187,7 @@
                                             $catName = $member['catName'];
 
                                             $html = "<tr>";
-                                            $html .= "<td class='px-7 py-3'>$memFirstName</td>";
+                                            $html .= "<td>$memFirstName</td>";
                                             $html .= "<td>$memLastName</td>";
                                             $html .= "<td>$memRanking</td>";
                                             $html .= "<td>$catName</td>";
@@ -212,25 +204,11 @@
                         </div>
                     </div>
                 </main>
-                <!-- <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid px-4">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2022 © Dorian Capelli</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
-                            </div>
-                        </div>
-                    </div>
-                </footer> -->
             </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="../js/scripts.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
-        <script src="../js/chart-area-demo.js"></script>
-        <script src="../js/chart-bar-demo.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
         <script src="../js/datatables-simple-demo.js"></script>
     </body>

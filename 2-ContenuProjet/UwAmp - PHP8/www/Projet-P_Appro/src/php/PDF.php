@@ -38,7 +38,7 @@ foreach($users as $user){
         "Élo: " . $user["memRanking"] . "   " .
         "Licence: " . $user["memLicencing"], 0, 1);
 
-    $pdf->Cell(0, 8, "", 0, 1);
+    // $pdf->Cell(0, 8, "", 0, 1);
 }
 
 $pdf->Output('I', "joca.pdf", true);
