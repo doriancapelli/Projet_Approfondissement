@@ -192,8 +192,8 @@
                                             $html .= "<td>$memRanking</td>";
                                             $html .= "<td>$catName</td>";
                                             $html .= "<td><a href='action?idMember=$idMember&action=$detail'><img src='../../resources/images/icons8-zoomer-24.png' alt='Loupe'></a> ";
-                                            $html .= "<a href='action?idMember=$idMember&action=$modify'><img src='../../resources/images/icons8-crayon-24.png' alt='Crayon'></a> ";
-                                            $html .= "<a href='delete?idMember=$idMember' onclick='return confirm(\"Voulez vous vraiment supprimer ce membre ?\")'><img src='../../resources/images/icons8-poubelle-24.png' alt='poubelle')'></a></td>";
+                                            $html .= "<a href='action?idMember=$idMember&action=$modify'><img src='../../resources/images/icons8-crayon-24.png' alt='Crayon'></a>";
+                                            $html .= "<a href='delete?idMember=$idMember' onclick='return confirm(\"Voulez vous vraiment supprimer ce membre ?\")'><img src='../../resources/images/icons8-poubelle-24.png' alt='poubelle'></a></td>";
                                             $html .= "</tr>";
                                             echo $html;
                                         }
