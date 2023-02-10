@@ -6,6 +6,14 @@
     require "dbManage.php";
     $database = new dbManage();
 
+    if(isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == true){
+        $user = $_SESSION['userName'];
+    }
+    else{
+        header('Location: login');
+        die();
+    }
+
     #retrieve the id of the member to be deleted
     $idMember = $_GET["idMember"];
     #Delete member

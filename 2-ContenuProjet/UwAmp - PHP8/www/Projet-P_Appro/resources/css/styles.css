@@ -11614,8 +11614,12 @@ body {
 }
 
 /* TABLE */
-.dataTable-table {
+main .dataTable-table {
   border-collapse: collapse;
+}
+
+.datatable-top {
+  display: none !important;
 }
 
 .dataTable-table > tbody > tr > td,

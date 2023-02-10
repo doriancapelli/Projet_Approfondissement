@@ -7,10 +7,18 @@
     session_start();
     require "dbManage.php";
     $database = new dbManage();
-
+/*
+    echo "<pre>";
+    var_dump($_GET);
+    echo "</pre>";
+ */
 
     if(isset($_SESSION['isConnected']) && $_SESSION['isConnected'] == true){
         $user = $_SESSION['userName'];
+    }
+    else{
+        header('Location: login');
+        die();
     }
 
     #Get All Member of Club
@@ -24,8 +32,9 @@
     $modify = 2;
     $create = 3;
 
-    if(isset($_GET['btn'])){
-        $memFirstName = $_GET['memFirstName'];
+    if (isset($_GET['btn'])) {
+        
+        $memFirstName = $_GET['memFirstName'] ?? '';
         $memLastName = $_GET['memLastName'];
         $memDateBirth = $_GET['memDateBirth'];
         $memPhoneNumber = $_GET['memPhoneNumber'];
@@ -34,39 +43,9 @@
         $fkTitle = $_GET['fkTitle'];
         $fkCategory = $_GET['fkCategory'];
 
-        if($memFirstName == NULL){
-            $memFirstName = NULL;
-        }
-
-        if($memLastName == NULL){
-            $memLastName = NULL;
-        }
-
-        if($memDateBirth == NULL){
-            $memDateBirth = NULL;
-        }
-
-        if($memPhoneNumber == NULL){
-            $memPhoneNumber = NULL;
-        }
-
-        if($memLicencing == NULL){
-            $memLicencing = NULL;
-        }
-
-        if($memRanking == NULL){
-            $memRanking = NULL;
-        }
-
-        if($fkTitle == 0){
-            $fkTitle = NULL;
-        }
-
-        if($fkCategory == 0){
-            $fkCategory = NULL;
-        }
-        
         $allMembers = $database->getMemberCriterion($memLastName, $memFirstName, $memDateBirth, $memPhoneNumber, $memLicencing, $memRanking, $fkTitle, $fkCategory);
+        
+        // $allMembers = $database->getMemberCriterion($_GET);
     }
  ?>
 <!DOCTYPE html>
@@ -75,8 +54,9 @@
         <meta charset="utf-8" />
         <title>Gestion de membre d'un club d'échec - List des Membre</title>
         <!-- <link rel="icon" href="../../resources/images/chess-pawn.png" /> -->
-        <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
         <link href="../../resources/css/styles.css" rel="stylesheet" />
+       <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
+
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
     <body class="sb-nav-fixed">
@@ -109,7 +89,7 @@
                                 <div class="sb-nav-link-icon"></div>
                                 Ajouter un membre
                             </a>
-                            <a class="nav-link" href="">
+                            <a class="nav-link" href="PDF" target="_blank">
                                 <div class="sb-nav-link-icon"></div>
                                 Exporter en PDF
                             </a>
@@ -182,7 +162,7 @@
                                     </div>
                                     
                                     <div class="blockInput">
-                                        <input type='submit' name='btn' id='btn' value='Rechercher' class=''>
+                                        <input type='submit' name='btn' id='btn' value='Rechercher' class='multiSearchInput'>
                                     </div>
                                 </div>
                             </form>
@@ -197,22 +177,13 @@
                                 <table id="datatablesSimple">
                                     <thead>
                                         <tr>
-                                            <th>Nom</th>
                                             <th>Prénom</th>
+                                            <th>Nom</th>
                                             <th>Élo</th>
                                             <th>Catégorie</th>
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>Nom</th>
-                                            <th>Prénom</th>
-                                            <th>Élo</th>
-                                            <th>Catégorie</th>
-                                            <th>Action</th>
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
                                     <?php
                                         #displays all club members one by one in a table
@@ -230,7 +201,7 @@
                                             $html .= "<td>$catName</td>";
                                             $html .= "<td><a href='action?idMember=$idMember&action=$detail'><img src='../../resources/images/icons8-zoomer-24.png' alt='Loupe'></a> ";
                                             $html .= "<a href='action?idMember=$idMember&action=$modify'><img src='../../resources/images/icons8-crayon-24.png' alt='Crayon'></a> ";
-                                            $html .= "<a href='delete?idMember=$idMember'><img src='../../resources/images/icons8-poubelle-24.png' alt='poubelle'></a></td>";
+                                            $html .= "<a href='delete?idMember=$idMember' onclick='return confirm(\"Voulez vous vraiment supprimer ce membre ?\")'><img src='../../resources/images/icons8-poubelle-24.png' alt='poubelle')'></a></td>";
                                             $html .= "</tr>";
                                             echo $html;
                                         }

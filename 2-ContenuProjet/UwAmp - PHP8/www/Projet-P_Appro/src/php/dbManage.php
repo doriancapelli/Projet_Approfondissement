@@ -175,56 +175,56 @@ class dbManage
 	{
 		$paramNumber = 0;
 		$reqSQL = "SELECT  * FROM t_member JOIN t_category ON t_member.fkCategory = t_category.idCategory LEFT JOIN t_title ON t_member.fkTitle = t_title.idTitle WHERE";
-		if(!$memLastName == NULL){
+		if(!empty($memLastName)){
 			$reqSQL .= " memLastName LIKE :memLastName AND";
 			$binds[] = array("variable"=>"%".$memLastName."%", "bind" => "memLastName", "type" => PDO::PARAM_STR);
 		}
 		else{
 			$paramNumber += 1;
 		}
-		if(!$memFirstName == NULL){
+		if(!empty($memFirstName)){
 			$reqSQL .= " memFirstName LIKE :memFirstName AND";
 			$binds[] = array("variable"=>"%".$memFirstName."%", "bind" => "memFirstName", "type" => PDO::PARAM_STR);
 		}
 		else{
 			$paramNumber += 1;
 		}
-		if(!$memDateBirth == NULL){
+		if(!empty($memDateBirth)){
 			$reqSQL .= " memDateBirth LIKE :memDateBirth AND";
 			$binds[] = array("variable"=>"%".$memDateBirth."%", "bind" => "memDateBirth", "type" => PDO::PARAM_STR);
 		}
 		else{
 			$paramNumber += 1;
 		}
-        if(!$memPhoneNumber == NULL){
+        if(!empty($memPhoneNumber)){
 			$reqSQL .= 	" memPhoneNumber LIKE :memPhoneNumber AND";
 			$binds[] = array("variable"=>"%".$memPhoneNumber."%", "bind" => "memPhoneNumber", "type" => PDO::PARAM_STR);
 		}
 		else{
 			$paramNumber += 1;
 		}
-		if(!$memLicencing == NULL){
+		if(!empty($memLicencing)){
 			$reqSQL .= " memLicencing LIKE :memLicencing AND";
 			$binds[] = array("variable"=>"%".$memLicencing."%", "bind" => "memLicencing", "type" => PDO::PARAM_STR);
 		}
 		else{
 			$paramNumber += 1;
 		}
-		if(!$memRanking == NULL){
+		if(!empty($memRanking)){
 			$reqSQL .= " memRanking LIKE :memRanking AND";
-			$binds[] = array("variable"=>"%".$memRanking."%", "bind" => "memRanking", "type" => PDO::PARAM_INT);
+			$binds[] = array("variable"=>$memRanking, "bind" => "memRanking", "type" => PDO::PARAM_INT);
 		}
 		else{
 			$paramNumber += 1;
 		}
-		if(!$fkTitle == NULL){
+		if(!empty($fkTitle)){
 			$reqSQL .= " fkTitle LIKE :fkTitle AND";
 			$binds[] = array("variable"=>$fkTitle, "bind" => "fkTitle", "type" => PDO::PARAM_INT);
 		}
 		else{
 			$paramNumber += 1;
 		}
-		if(!$fkCategory == NULL){        
+		if(!empty($fkCategory)){        
 			$reqSQL .= " fkCategory LIKE :fkCategory AND";
 			$binds[] = array("variable"=>$fkCategory, "bind" => "fkCategory", "type" => PDO::PARAM_INT);
 		}
