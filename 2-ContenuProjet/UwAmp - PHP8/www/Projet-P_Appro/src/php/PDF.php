@@ -33,9 +33,8 @@ foreach($users as $user){
     $pdf->Cell(0,8,
         $user["memFirstName"] . " " . 
         $user["memLastName"] . "   " . 
-        $user["titName"] . "   " .
+        $user["memPhoneNumber"] . "   " .
         $user["catName"] . "   " .
-        "Élo: " . $user["memRanking"] . "   " .
         "Licence: " . $user["memLicencing"], 0, 1);
 
     // $pdf->Cell(0, 8, "", 0, 1);

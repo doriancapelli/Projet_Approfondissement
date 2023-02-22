@@ -11164,3 +11164,22 @@ PHP Warning:  PHP Startup: Unable to load dynamic library 'curl' (tried: D:/Proj
 [Fri Feb 10 15:42:38.443771 2023] [mpm_winnt:notice] [pid 1164:tid 236] AH00354: Child: Starting 64 worker threads.
 [Fri Feb 10 15:50:39.310244 2023] [php:error] [pid 1164:tid 1284] [client ::1:59990] script 'D:/Projet_Approfondissement/2-ContenuProjet/UwAmp - PHP8/www/Projet-P_Appro/src/php/List-Member1.php' not found or unable to stat
 [Fri Feb 10 16:21:37.448412 2023] [mpm_winnt:crit] [pid 1164:tid 236] AH02538: Child: Parent process exited abruptly. Child process is ending
+[Wed Feb 22 11:51:58.018089 2023] [ssl:warn] [pid 7740:tid 596] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed Feb 22 11:51:58.019090 2023] [ssl:warn] [pid 7740:tid 596] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Feb 22 11:51:58.035477 2023] [core:warn] [pid 7740:tid 596] AH00098: pid file D:/Projet_Approfondissement/2-ContenuProjet/UwAmp - PHP8/bin/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Wed Feb 22 11:51:58.080081 2023] [ssl:warn] [pid 7740:tid 596] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Wed Feb 22 11:51:58.081083 2023] [ssl:warn] [pid 7740:tid 596] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed Feb 22 11:51:58.081083 2023] [ssl:warn] [pid 7740:tid 596] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+PHP Warning:  PHP Startup: Unable to load dynamic library 'curl' (tried: D:/Projet_Approfondissement/2-ContenuProjet/UwAmp - PHP8/bin/php/php-8.0.1/ext\\curl (Le module sp\xc3\xa9cifi\xc3\xa9 est introuvable), D:/Projet_Approfondissement/2-ContenuProjet/UwAmp - PHP8/bin/php/php-8.0.1/ext\\php_curl.dll (La proc\xc3\xa9dure sp\xc3\xa9cifi\xc3\xa9e est introuvable)) in Unknown on line 0
+[Wed Feb 22 11:51:58.628719 2023] [mpm_winnt:notice] [pid 7740:tid 596] AH00455: Apache/2.4.18 (Win32) OpenSSL/1.0.2f PHP/8.0.1 configured -- resuming normal operations
+[Wed Feb 22 11:51:58.628719 2023] [mpm_winnt:notice] [pid 7740:tid 596] AH00456: Server built: Jan 28 2016 09:58:25
+[Wed Feb 22 11:51:58.628719 2023] [core:notice] [pid 7740:tid 596] AH00094: Command line: 'D:\\Projet_Approfondissement\\2-ContenuProjet\\UwAmp - PHP8\\bin\\apache\\bin\\httpd.exe -d D:/Projet_Approfondissement/2-ContenuProjet/UwAmp - PHP8/bin/apache -f D:\\Projet_Approfondissement\\2-ContenuProjet\\UwAmp - PHP8\\bin\\apache\\conf\\httpd.conf'
+[Wed Feb 22 11:51:58.630843 2023] [mpm_winnt:notice] [pid 7740:tid 596] AH00418: Parent: Created child process 12732
+[Wed Feb 22 11:51:59.009579 2023] [ssl:warn] [pid 12732:tid 552] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed Feb 22 11:51:59.010579 2023] [ssl:warn] [pid 12732:tid 552] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Feb 22 11:51:59.069130 2023] [ssl:warn] [pid 12732:tid 552] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Wed Feb 22 11:51:59.069130 2023] [ssl:warn] [pid 12732:tid 552] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed Feb 22 11:51:59.069130 2023] [ssl:warn] [pid 12732:tid 552] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+PHP Warning:  PHP Startup: Unable to load dynamic library 'curl' (tried: D:/Projet_Approfondissement/2-ContenuProjet/UwAmp - PHP8/bin/php/php-8.0.1/ext\\curl (Le module sp\xc3\xa9cifi\xc3\xa9 est introuvable), D:/Projet_Approfondissement/2-ContenuProjet/UwAmp - PHP8/bin/php/php-8.0.1/ext\\php_curl.dll (La proc\xc3\xa9dure sp\xc3\xa9cifi\xc3\xa9e est introuvable)) in Unknown on line 0
+[Wed Feb 22 11:51:59.090302 2023] [mpm_winnt:notice] [pid 12732:tid 552] AH00354: Child: Starting 64 worker threads.
+[Wed Feb 22 12:13:50.951529 2023] [mpm_winnt:crit] [pid 12732:tid 552] AH02538: Child: Parent process exited abruptly. Child process is ending
