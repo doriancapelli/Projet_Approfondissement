@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="fr">
+<!--
+Author : Dorian Capelli
+Date : 30.01.2023
+Description : index page that redirects to the home page
+-->
+<head>
+    <meta charset="utf-8" />
+    <title>Gestion de membre d'un club d'échec</title>
+</head>
+<body>
+    <div>
+  <canvas id="myChart"></canvas>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('myChart');
+
+  new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels: ['août 2021', 'septembre 2021', 'octobre 2021', 'novembre 2021', 'décembre 2021', 'janvier 2022', 'février 2022', 'mars 2022', 'avril 2022', 'mai 2022', 'juin 2022', 'juillet 2022', 'août 2022', 'septembre 2022', 'octobre 2022', 'novembre 2022', 'décembre 2022', 'janvier 2023'],
+      datasets: [{
+        label: 'barquettes commandées',
+        data: [360,640,160,480,0,320,320,320,320,320,0,0,320,480,320,320,800,960],
+        borderWidth: 1
+      }],
+      scales: {
+        y: {
+          beginAtZero: true
+        }
+      }
+    }
+  });
+</script>
+</body>
+</html>

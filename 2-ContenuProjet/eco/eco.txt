@@ -1,0 +1,33 @@
+Tout fini pour le 10 mars
+
+	-vidéo
+		-présentation moi
+		-présentation métier informaticien
+		-présentation travail effectuer
+		-temps: environ 3min plus ou moins 1min 
+	eval vidéo:
+		-respect des trois point
+		-respect du temps 2-4min
+	6 heures pour le faire	
+
+	-Graphique consomation ÷Æ
+		-excel fournie 
+		-créer le tableau à prtir des données fournie
+	eval graphique:
+		-réaliser le graphique en format web (ex: chart.js si non excel) mois/quantité
+	12 heures pour le faire	
+
+	-Stastistique emballage
+		-monde
+		-suisse
+		(recherche web mis en forme word)(make epfl)
+	eval stat:
+		-mesurer l'impact des emballages repas / alimentaire
+		-le rapport (2 paragraphe (1 suisse 1 monde(avec les sources))) chaque membre de l'équipe aura une vision claire de l'impact des emballages
+	3 heures pour le faire
+
+	
+
+	
+		
+			
