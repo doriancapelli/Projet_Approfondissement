@@ -11246,3 +11246,63 @@ PHP Warning:  PHP Startup: Unable to load dynamic library 'curl' (tried: D:/Proj
 PHP Warning:  PHP Startup: Unable to load dynamic library 'curl' (tried: D:/Projet_Approfondissement/2-ContenuProjet/UwAmp - PHP8/bin/php/php-8.0.1/ext\\curl (Le module sp\xc3\xa9cifi\xc3\xa9 est introuvable), D:/Projet_Approfondissement/2-ContenuProjet/UwAmp - PHP8/bin/php/php-8.0.1/ext\\php_curl.dll (La proc\xc3\xa9dure sp\xc3\xa9cifi\xc3\xa9e est introuvable)) in Unknown on line 0
 [Fri Feb 24 08:06:56.276136 2023] [mpm_winnt:notice] [pid 6180:tid 532] AH00354: Child: Starting 64 worker threads.
 [Fri Feb 24 11:11:24.743934 2023] [mpm_winnt:crit] [pid 6180:tid 532] AH02538: Child: Parent process exited abruptly. Child process is ending
+[Wed Mar 01 08:30:50.135448 2023] [ssl:warn] [pid 3312:tid 620] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed Mar 01 08:30:50.135448 2023] [ssl:warn] [pid 3312:tid 620] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Mar 01 08:30:50.150923 2023] [core:warn] [pid 3312:tid 620] AH00098: pid file D:/Projet_Approfondissement/2-ContenuProjet/UwAmp - PHP8/bin/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Wed Mar 01 08:30:50.204310 2023] [ssl:warn] [pid 3312:tid 620] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Wed Mar 01 08:30:50.204310 2023] [ssl:warn] [pid 3312:tid 620] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed Mar 01 08:30:50.204310 2023] [ssl:warn] [pid 3312:tid 620] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+PHP Warning:  PHP Startup: Unable to load dynamic library 'curl' (tried: D:/Projet_Approfondissement/2-ContenuProjet/UwAmp - PHP8/bin/php/php-8.0.1/ext\\curl (Le module sp\xc3\xa9cifi\xc3\xa9 est introuvable), D:/Projet_Approfondissement/2-ContenuProjet/UwAmp - PHP8/bin/php/php-8.0.1/ext\\php_curl.dll (La proc\xc3\xa9dure sp\xc3\xa9cifi\xc3\xa9e est introuvable)) in Unknown on line 0
+[Wed Mar 01 08:30:50.752694 2023] [mpm_winnt:notice] [pid 3312:tid 620] AH00455: Apache/2.4.18 (Win32) OpenSSL/1.0.2f PHP/8.0.1 configured -- resuming normal operations
+[Wed Mar 01 08:30:50.752694 2023] [mpm_winnt:notice] [pid 3312:tid 620] AH00456: Server built: Jan 28 2016 09:58:25
+[Wed Mar 01 08:30:50.752694 2023] [core:notice] [pid 3312:tid 620] AH00094: Command line: 'D:\\Projet_Approfondissement\\2-ContenuProjet\\UwAmp - PHP8\\bin\\apache\\bin\\httpd.exe -d D:/Projet_Approfondissement/2-ContenuProjet/UwAmp - PHP8/bin/apache -f D:\\Projet_Approfondissement\\2-ContenuProjet\\UwAmp - PHP8\\bin\\apache\\conf\\httpd.conf'
+[Wed Mar 01 08:30:50.752694 2023] [mpm_winnt:notice] [pid 3312:tid 620] AH00418: Parent: Created child process 8724
+[Wed Mar 01 08:30:51.146781 2023] [ssl:warn] [pid 8724:tid 520] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed Mar 01 08:30:51.146781 2023] [ssl:warn] [pid 8724:tid 520] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+[Wed Mar 01 08:30:51.193654 2023] [ssl:warn] [pid 8724:tid 520] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Wed Mar 01 08:30:51.193654 2023] [ssl:warn] [pid 8724:tid 520] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Wed Mar 01 08:30:51.193654 2023] [ssl:warn] [pid 8724:tid 520] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+PHP Warning:  PHP Startup: Unable to load dynamic library 'curl' (tried: D:/Projet_Approfondissement/2-ContenuProjet/UwAmp - PHP8/bin/php/php-8.0.1/ext\\curl (Le module sp\xc3\xa9cifi\xc3\xa9 est introuvable), D:/Projet_Approfondissement/2-ContenuProjet/UwAmp - PHP8/bin/php/php-8.0.1/ext\\php_curl.dll (La proc\xc3\xa9dure sp\xc3\xa9cifi\xc3\xa9e est introuvable)) in Unknown on line 0
+[Wed Mar 01 08:30:51.215788 2023] [mpm_winnt:notice] [pid 8724:tid 520] AH00354: Child: Starting 64 worker threads.
+[Wed Mar 01 12:02:51.582195 2023] [mpm_winnt:crit] [pid 8724:tid 520] AH02538: Child: Parent process exited abruptly. Child process is ending
+[Thu Mar 02 15:19:13.133848 2023] [ssl:warn] [pid 1364:tid 604] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Thu Mar 02 15:19:13.134815 2023] [ssl:warn] [pid 1364:tid 604] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Mar 02 15:19:13.157178 2023] [core:warn] [pid 1364:tid 604] AH00098: pid file D:/Projet_Approfondissement/2-ContenuProjet/UwAmp - PHP8/bin/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Thu Mar 02 15:19:13.205955 2023] [ssl:warn] [pid 1364:tid 604] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Thu Mar 02 15:19:13.205955 2023] [ssl:warn] [pid 1364:tid 604] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Thu Mar 02 15:19:13.205955 2023] [ssl:warn] [pid 1364:tid 604] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+PHP Warning:  PHP Startup: Unable to load dynamic library 'curl' (tried: D:/Projet_Approfondissement/2-ContenuProjet/UwAmp - PHP8/bin/php/php-8.0.1/ext\\curl (Le module sp\xc3\xa9cifi\xc3\xa9 est introuvable), D:/Projet_Approfondissement/2-ContenuProjet/UwAmp - PHP8/bin/php/php-8.0.1/ext\\php_curl.dll (La proc\xc3\xa9dure sp\xc3\xa9cifi\xc3\xa9e est introuvable)) in Unknown on line 0
+[Thu Mar 02 15:19:13.718841 2023] [mpm_winnt:notice] [pid 1364:tid 604] AH00455: Apache/2.4.18 (Win32) OpenSSL/1.0.2f PHP/8.0.1 configured -- resuming normal operations
+[Thu Mar 02 15:19:13.718841 2023] [mpm_winnt:notice] [pid 1364:tid 604] AH00456: Server built: Jan 28 2016 09:58:25
+[Thu Mar 02 15:19:13.718841 2023] [core:notice] [pid 1364:tid 604] AH00094: Command line: 'D:\\Projet_Approfondissement\\2-ContenuProjet\\UwAmp - PHP8\\bin\\apache\\bin\\httpd.exe -d D:/Projet_Approfondissement/2-ContenuProjet/UwAmp - PHP8/bin/apache -f D:\\Projet_Approfondissement\\2-ContenuProjet\\UwAmp - PHP8\\bin\\apache\\conf\\httpd.conf'
+[Thu Mar 02 15:19:13.721968 2023] [mpm_winnt:notice] [pid 1364:tid 604] AH00418: Parent: Created child process 3256
+[Thu Mar 02 15:19:14.068557 2023] [ssl:warn] [pid 3256:tid 616] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Thu Mar 02 15:19:14.068557 2023] [ssl:warn] [pid 3256:tid 616] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Mar 02 15:19:14.134583 2023] [ssl:warn] [pid 3256:tid 616] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Thu Mar 02 15:19:14.135588 2023] [ssl:warn] [pid 3256:tid 616] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Thu Mar 02 15:19:14.135588 2023] [ssl:warn] [pid 3256:tid 616] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+PHP Warning:  PHP Startup: Unable to load dynamic library 'curl' (tried: D:/Projet_Approfondissement/2-ContenuProjet/UwAmp - PHP8/bin/php/php-8.0.1/ext\\curl (Le module sp\xc3\xa9cifi\xc3\xa9 est introuvable), D:/Projet_Approfondissement/2-ContenuProjet/UwAmp - PHP8/bin/php/php-8.0.1/ext\\php_curl.dll (La proc\xc3\xa9dure sp\xc3\xa9cifi\xc3\xa9e est introuvable)) in Unknown on line 0
+[Thu Mar 02 15:19:14.160820 2023] [mpm_winnt:notice] [pid 3256:tid 616] AH00354: Child: Starting 64 worker threads.
+[Thu Mar 02 15:20:29.374402 2023] [mpm_winnt:crit] [pid 3256:tid 616] AH02538: Child: Parent process exited abruptly. Child process is ending
+[Thu Mar 02 16:15:22.332339 2023] [ssl:warn] [pid 13264:tid 736] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Thu Mar 02 16:15:22.332339 2023] [ssl:warn] [pid 13264:tid 736] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Mar 02 16:15:22.354565 2023] [core:warn] [pid 13264:tid 736] AH00098: pid file D:/Projet_Approfondissement/2-ContenuProjet/UwAmp - PHP8/bin/apache/logs/httpd.pid overwritten -- Unclean shutdown of previous Apache run?
+[Thu Mar 02 16:15:22.410765 2023] [ssl:warn] [pid 13264:tid 736] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Thu Mar 02 16:15:22.410765 2023] [ssl:warn] [pid 13264:tid 736] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Thu Mar 02 16:15:22.410765 2023] [ssl:warn] [pid 13264:tid 736] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+PHP Warning:  PHP Startup: Unable to load dynamic library 'curl' (tried: D:/Projet_Approfondissement/2-ContenuProjet/UwAmp - PHP8/bin/php/php-8.0.1/ext\\curl (Le module sp\xc3\xa9cifi\xc3\xa9 est introuvable), D:/Projet_Approfondissement/2-ContenuProjet/UwAmp - PHP8/bin/php/php-8.0.1/ext\\php_curl.dll (La proc\xc3\xa9dure sp\xc3\xa9cifi\xc3\xa9e est introuvable)) in Unknown on line 0
+[Thu Mar 02 16:15:22.438206 2023] [mpm_winnt:notice] [pid 13264:tid 736] AH00455: Apache/2.4.18 (Win32) OpenSSL/1.0.2f PHP/8.0.1 configured -- resuming normal operations
+[Thu Mar 02 16:15:22.438206 2023] [mpm_winnt:notice] [pid 13264:tid 736] AH00456: Server built: Jan 28 2016 09:58:25
+[Thu Mar 02 16:15:22.438206 2023] [core:notice] [pid 13264:tid 736] AH00094: Command line: 'D:\\Projet_Approfondissement\\2-ContenuProjet\\UwAmp - PHP8\\bin\\apache\\bin\\httpd.exe -d D:/Projet_Approfondissement/2-ContenuProjet/UwAmp - PHP8/bin/apache -f D:\\Projet_Approfondissement\\2-ContenuProjet\\UwAmp - PHP8\\bin\\apache\\conf\\httpd.conf'
+[Thu Mar 02 16:15:22.441206 2023] [mpm_winnt:notice] [pid 13264:tid 736] AH00418: Parent: Created child process 16896
+[Thu Mar 02 16:15:22.836195 2023] [ssl:warn] [pid 16896:tid 668] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Thu Mar 02 16:15:22.836195 2023] [ssl:warn] [pid 16896:tid 668] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+[Thu Mar 02 16:15:22.913700 2023] [ssl:warn] [pid 16896:tid 668] AH01873: Init: Session Cache is not configured [hint: SSLSessionCache]
+[Thu Mar 02 16:15:22.914701 2023] [ssl:warn] [pid 16896:tid 668] AH01906: main-serveur:443:0 server certificate is a CA certificate (BasicConstraints: CA == TRUE !?)
+[Thu Mar 02 16:15:22.914701 2023] [ssl:warn] [pid 16896:tid 668] AH01909: main-serveur:443:0 server certificate does NOT include an ID which matches the server name
+PHP Warning:  PHP Startup: Unable to load dynamic library 'curl' (tried: D:/Projet_Approfondissement/2-ContenuProjet/UwAmp - PHP8/bin/php/php-8.0.1/ext\\curl (Le module sp\xc3\xa9cifi\xc3\xa9 est introuvable), D:/Projet_Approfondissement/2-ContenuProjet/UwAmp - PHP8/bin/php/php-8.0.1/ext\\php_curl.dll (La proc\xc3\xa9dure sp\xc3\xa9cifi\xc3\xa9e est introuvable)) in Unknown on line 0
+[Thu Mar 02 16:15:22.939737 2023] [mpm_winnt:notice] [pid 16896:tid 668] AH00354: Child: Starting 64 worker threads.
+[Thu Mar 02 16:24:18.469375 2023] [mpm_winnt:crit] [pid 16896:tid 668] AH02538: Child: Parent process exited abruptly. Child process is ending
+[Thu Mar 02 16:24:18.469375 2023] [mpm_winnt:warn] [pid 16896:tid 1504] (OS 995)L’opération d’entrée/sortie a été abandonnée en raison de l’arrêt d’un thread ou à la demande d’une application.  : AH00341: winnt_accept: Asynchronous AcceptEx failed.
+[Thu Mar 02 16:24:18.469375 2023] [mpm_winnt:warn] [pid 16896:tid 1588] (OS 995)L’opération d’entrée/sortie a été abandonnée en raison de l’arrêt d’un thread ou à la demande d’une application.  : AH00341: winnt_accept: Asynchronous AcceptEx failed.
+[Thu Mar 02 16:24:18.469375 2023] [mpm_winnt:warn] [pid 16896:tid 1572] (OS 995)L’opération d’entrée/sortie a été abandonnée en raison de l’arrêt d’un thread ou à la demande d’une application.  : AH00341: winnt_accept: Asynchronous AcceptEx failed.

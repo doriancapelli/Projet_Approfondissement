@@ -1,0 +1,721 @@
+ PMA_token |s:32:"446548583e66317b763f63655a305c49"; HMAC_secret |s:16:"o?L%qC8mt#'}_bL";browser_access_time|a:1:{s:7:"default";i:1677656692;}encryption_key|s:32:")u%z,k�y���j$���k'i���.G�r���";relation|a:1:{i:1;a:41:{s:11:"PMA_VERSION";s:5:"5.0.4";s:7:"relwork";b:1;s:11:"displaywork";b:1;s:12:"bookmarkwork";b:1;s:7:"pdfwork";b:1;s:8:"commwork";b:1;s:8:"mimework";b:1;s:11:"historywork";b:1;s:10:"recentwork";b:1;s:12:"favoritework";b:1;s:11:"uiprefswork";b:1;s:12:"trackingwork";b:1;s:14:"userconfigwork";b:1;s:9:"menuswork";b:1;s:7:"navwork";b:1;s:17:"savedsearcheswork";b:1;s:18:"centralcolumnswork";b:1;s:20:"designersettingswork";b:1;s:19:"exporttemplateswork";b:1;s:8:"allworks";b:1;s:4:"user";s:4:"root";s:2:"db";s:10:"phpmyadmin";s:8:"bookmark";s:13:"pma__bookmark";s:15:"central_columns";s:20:"pma__central_columns";s:11:"column_info";s:16:"pma__column_info";s:17:"designer_settings";s:22:"pma__designer_settings";s:16:"export_templates";s:21:"pma__export_templates";s:8:"favorite";s:13:"pma__favorite";s:7:"history";s:12:"pma__history";s:16:"navigationhiding";s:21:"pma__navigationhiding";s:9:"pdf_pages";s:14:"pma__pdf_pages";s:6:"recent";s:11:"pma__recent";s:8:"relation";s:13:"pma__relation";s:13:"savedsearches";s:18:"pma__savedsearches";s:12:"table_coords";s:17:"pma__table_coords";s:10:"table_info";s:15:"pma__table_info";s:13:"table_uiprefs";s:18:"pma__table_uiprefs";s:8:"tracking";s:13:"pma__tracking";s:10:"userconfig";s:15:"pma__userconfig";s:10:"usergroups";s:15:"pma__usergroups";s:5:"users";s:10:"pma__users";}}cache|a:3:{s:13:"server_1_root";a:15:{s:14:"mysql_cur_user";s:14:"root@localhost";s:17:"is_create_db_priv";b:1;s:14:"is_reload_priv";b:1;s:12:"db_to_create";s:0:"";s:30:"dbs_where_create_table_allowed";a:1:{i:0;s:1:"*";}s:11:"dbs_to_test";b:0;s:9:"proc_priv";b:1;s:10:"table_priv";b:1;s:8:"col_priv";b:1;s:7:"db_priv";b:1;s:12:"is_grantuser";b:1;s:13:"is_createuser";b:1;s:12:"is_superuser";b:1;s:11:"binary_logs";a:0:{}s:18:"menu-levels-server";a:13:{s:9:"databases";s:17:"Bases de données";s:3:"sql";s:3:"SQL";s:6:"status";s:5:"État";s:6:"rights";s:12:"Utilisateurs";s:6:"export";s:8:"Exporter";s:6:"import";s:8:"Importer";s:8:"settings";s:11:"Paramètres";s:6:"binlog";s:15:"Journal binaire";s:11:"replication";s:12:"Réplication";s:4:"vars";s:9:"Variables";s:7:"charset";s:19:"Jeux de caractères";s:7:"plugins";s:10:"Extensions";s:6:"engine";s:7:"Moteurs";}}s:8:"server_1";a:4:{s:15:"userprefs_mtime";s:10:"1677656686";s:14:"userprefs_type";s:2:"db";s:12:"config_mtime";i:1611133573;s:9:"userprefs";a:4:{s:6:"Import";a:1:{s:7:"charset";s:5:"utf-8";}s:6:"Server";a:2:{s:7:"hide_db";s:0:"";s:7:"only_db";s:0:"";}s:4:"lang";s:2:"fr";s:7:"Console";a:2:{s:4:"Mode";s:8:"collapse";s:6:"Height";d:324.93999999999994;}}}s:13:"version_check";a:2:{s:8:"response";s:420:"{
+    "date": "2023-02-08", 
+    "version": "5.2.1", 
+    "releases": [
+        {
+            "date": "2023-02-08", 
+            "php_versions": ">=7.2,<8.3", 
+            "version": "5.2.1", 
+            "mysql_versions": ">=5.5"
+        }, 
+        {
+            "date": "2023-02-08", 
+            "php_versions": ">=5.5,<8.0", 
+            "version": "4.9.11", 
+            "mysql_versions": ">=5.5"
+        }
+    ]
+}";s:9:"timestamp";i:1677655857;}}tmpval|a:12:{s:14:"favoriteTables";a:1:{i:1;a:0:{}}s:12:"recentTables";a:1:{i:1;a:10:{i:0;a:2:{s:2:"db";s:8:"db_chess";s:5:"table";s:8:"t_member";}i:1;a:2:{s:2:"db";s:8:"db_chess";s:5:"table";s:6:"t_user";}i:2;a:2:{s:2:"db";s:8:"db_chess";s:5:"table";s:10:"t_category";}i:3;a:2:{s:2:"db";s:8:"db_chess";s:5:"table";s:6:"t_play";}i:4;a:2:{s:2:"db";s:8:"db_chess";s:5:"table";s:6:"t_team";}i:5;a:2:{s:2:"db";s:8:"db_chess";s:5:"table";s:7:"t_title";}i:6;a:2:{s:2:"db";s:8:"db_perso";s:5:"table";s:9:"t_artiste";}i:7;a:2:{s:2:"db";s:8:"db_perso";s:5:"table";s:9:"t_produit";}i:8;a:2:{s:2:"db";s:8:"db_perso";s:5:"table";s:7:"t_achat";}i:9;a:2:{s:2:"db";s:8:"db_perso";s:5:"table";s:8:"t_causer";}}}s:5:"query";a:10:{s:32:"a904111bf35be2cdc0551593c238ff77";a:8:{s:3:"sql";s:31:"DROP USER IF EXISTS 'chess'@'%'";s:12:"repeat_cells";i:100;s:8:"max_rows";i:25;s:3:"pos";i:0;s:6:"pftext";s:1:"P";s:18:"relational_display";s:1:"K";s:9:"geoOption";s:4:"GEOM";s:14:"display_binary";b:1;}s:32:"bb8ad67a3fc98643f12843c34ecaec5b";a:8:{s:3:"sql";s:45:"CREATE USER 'chess'@'%' IDENTIFIED BY 'chess'";s:12:"repeat_cells";i:100;s:8:"max_rows";i:25;s:3:"pos";i:0;s:6:"pftext";s:1:"P";s:18:"relational_display";s:1:"K";s:9:"geoOption";s:4:"GEOM";s:14:"display_binary";b:1;}s:32:"3c32eef2b03182f0d29aed6f91dd59a6";a:8:{s:3:"sql";s:50:"GRANT ALL PRIVILEGES  ON db_chess.* TO 'chess'@'%'";s:12:"repeat_cells";i:100;s:8:"max_rows";i:25;s:3:"pos";i:0;s:6:"pftext";s:1:"P";s:18:"relational_display";s:1:"K";s:9:"geoOption";s:4:"GEOM";s:14:"display_binary";b:1;}s:32:"7a5b248999125936cc1596f104dc2086";a:8:{s:3:"sql";s:151:"INSERT INTO t_title (titName)
+	VALUES ("Candidat Maitre"),
+		   ("Maitre FIDE"),
+		   ("Maitre International"),
+		   ("Grand Maitre International")";s:12:"repeat_cells";i:100;s:8:"max_rows";i:25;s:3:"pos";i:0;s:6:"pftext";s:1:"P";s:18:"relational_display";s:1:"K";s:9:"geoOption";s:4:"GEOM";s:14:"display_binary";b:1;}s:32:"3fc4d447255cb958c46eec73aa21b59f";a:8:{s:3:"sql";s:62:"INSERT INTO t_team (idTeam)
+	VALUES (1),
+		   (2),
+		   (3)";s:12:"repeat_cells";i:100;s:8:"max_rows";i:25;s:3:"pos";i:0;s:6:"pftext";s:1:"P";s:18:"relational_display";s:1:"K";s:9:"geoOption";s:4:"GEOM";s:14:"display_binary";b:1;}s:32:"172c8306482f490825413573346d67f3";a:8:{s:3:"sql";s:178:"INSERT INTO t_category (catName)
+	VALUES ("Vétéran"),
+		   ("Sénior"),
+		   ("U20"),
+		   ("U18"),
+		   ("U16"),
+		   ("U14"),
+		   ("U12"),
+		   ("U10"),
+		   ("U8")";s:12:"repeat_cells";i:100;s:8:"max_rows";i:25;s:3:"pos";i:0;s:6:"pftext";s:1:"P";s:18:"relational_display";s:1:"K";s:9:"geoOption";s:4:"GEOM";s:14:"display_binary";b:1;}s:32:"c6481a744304d18858db9e9add20c633";a:8:{s:3:"sql";s:4927:"INSERT INTO t_member (memLastName, memFirstName, memDateBirth, memPhoneNumber, memLicencing, memRanking, fkTitle, fkCategory)
+	VALUES ("Philipona", "Sylvain", "2004-05-11","0791989200", "ABCDEF", 1200, 2, 2),
+		   ("Duruz", "Sébastien", "1997-07-25", "0791989200", "JOCA", 1500, 1, 1),
+		   ("Philipona", "Sylvain", "2004-05-11","0791989200", "ABCDEF", 1200, 2, 2),
+		   ("Duruz", "Sébastien", "1997-07-25", "0791989200", "JOCA", 1500, 1, 1),
+		   ("Philipona", "Sylvain", "2004-05-11","0791989200", "ABCDEF", 1200, 2, 2),
+		   ("Duruz", "Sébastien", "1997-07-25", "0791989200", "JOCA", 1500, 1, 1),
+		   ("Philipona", "Sylvain", "2004-05-11","0791989200", "ABCDEF", 1200, 2, 2),
+		   ("Duruz", "Sébastien", "1997-07-25", "0791989200", "JOCA", 1500, 1, 1),
+		   ("Philipona", "Sylvain", "2004-05-11","0791989200", "ABCDEF", 1200, 2, 2),
+		   ("Duruz", "Sébastien", "1997-07-25", "0791989200", "JOCA", 1500, 1, 1),
+		   ("Philipona", "Sylvain", "2004-05-11","0791989200", "ABCDEF", 1200, 2, 2),
+		   ("Duruz", "Sébastien", "1997-07-25", "0791989200", "JOCA", 1500, 1, 1),
+		   ("Philipona", "Sylvain", "2004-05-11","0791989200", "ABCDEF", 1200, 2, 2),
+		   ("Duruz", "Sébastien", "1997-07-25", "0791989200", "JOCA", 1500, 1, 1),
+		   ("Philipona", "Sylvain", "2004-05-11","0791989200", "ABCDEF", 1200, 2, 2),
+		   ("Duruz", "Sébastien", "1997-07-25", "0791989200", "JOCA", 1500, 1, 1),
+		   ("Philipona", "Sylvain", "2004-05-11","0791989200", "ABCDEF", 1200, 2, 2),
+		   ("Duruz", "Sébastien", "1997-07-25", "0791989200", "JOCA", 1500, 1, 1),
+		   ("Philipona", "Sylvain", "2004-05-11","0791989200", "ABCDEF", 1200, 2, 2),
+		   ("Duruz", "Sébastien", "1997-07-25", "0791989200", "JOCA", 1500, 1, 1),
+		   ("Philipona", "Sylvain", "2004-05-11","0791989200", "ABCDEF", 1200, 2, 2),
+		   ("Duruz", "Sébastien", "1997-07-25", "0791989200", "JOCA", 1500, 1, 1),
+		   ("Philipona", "Sylvain", "2004-05-11","0791989200", "ABCDEF", 1200, 2, 2),
+		   ("Duruz", "Sébastien", "1997-07-25", "0791989200", "JOCA", 1500, 1, 1),
+		   ("Philipona", "Sylvain", "2004-05-11","0791989200", "ABCDEF", 1200, 2, 2),
+		   ("Duruz", "Sébastien", "1997-07-25", "0791989200", "JOCA", 1500, 1, 1),
+		   ("Philipona", "Sylvain", "2004-05-11","0791989200", "ABCDEF", 1200, 2, 2),
+		   ("Duruz", "Sébastien", "1997-07-25", "0791989200", "JOCA", 1500, 1, 1),
+		   ("Philipona", "Sylvain", "2004-05-11","0791989200", "ABCDEF", 1200, 2, 2),
+		   ("Duruz", "Sébastien", "1997-07-25", "0791989200", "JOCA", 1500, 1, 1),
+		   ("Philipona", "Sylvain", "2004-05-11","0791989200", "ABCDEF", 1200, 2, 2),
+		   ("Duruz", "Sébastien", "1997-07-25", "0791989200", "JOCA", 1500, 1, 1),
+		   ("Philipona", "Sylvain", "2004-05-11","0791989200", "ABCDEF", 1200, 2, 2),
+		   ("Duruz", "Sébastien", "1997-07-25", "0791989200", "JOCA", 1500, 1, 1),
+		   ("Philipona", "Sylvain", "2004-05-11","0791989200", "ABCDEF", 1200, 2, 2),
+		   ("Duruz", "Sébastien", "1997-07-25", "0791989200", "JOCA", 1500, 1, 1),
+		   ("Philipona", "Sylvain", "2004-05-11","0791989200", "ABCDEF", 1200, 2, 2),
+		   ("Duruz", "Sébastien", "1997-07-25", "0791989200", "JOCA", 1500, 1, 1),
+		   ("Philipona", "Sylvain", "2004-05-11","0791989200", "ABCDEF", 1200, 2, 2),
+		   ("Duruz", "Sébastien", "1997-07-25", "0791989200", "JOCA", 1500, 1, 1),
+		   ("Philipona", "Sylvain", "2004-05-11","0791989200", "ABCDEF", 1200, 2, 2),
+		   ("Duruz", "Sébastien", "1997-07-25", "0791989200", "JOCA", 1500, 1, 1),
+		   ("Philipona", "Sylvain", "2004-05-11","0791989200", "ABCDEF", 1200, 2, 2),
+		   ("Duruz", "Sébastien", "1997-07-25", "0791989200", "JOCA", 1500, 1, 1),
+		   ("Philipona", "Sylvain", "2004-05-11","0791989200", "ABCDEF", 1200, 2, 2),
+		   ("Duruz", "Sébastien", "1997-07-25", "0791989200", "JOCA", 1500, 1, 1),
+		   ("Philipona", "Sylvain", "2004-05-11","0791989200", "ABCDEF", 1200, 2, 2),
+		   ("Duruz", "Sébastien", "1997-07-25", "0791989200", "JOCA", 1500, 1, 1),
+		   ("Philipona", "Sylvain", "2004-05-11","0791989200", "ABCDEF", 1200, 2, 2),
+		   ("Duruz", "Sébastien", "1997-07-25", "0791989200", "JOCA", 1500, 1, 1),
+		   ("Philipona", "Sylvain", "2004-05-11","0791989200", "ABCDEF", 1200, 2, 2),
+		   ("Duruz", "Sébastien", "1997-07-25", "0791989200", "JOCA", 1500, 1, 1),
+		   ("Philipona", "Sylvain", "2004-05-11","0791989200", "ABCDEF", 1200, 2, 2),
+		   ("Duruz", "Sébastien", "1997-07-25", "0791989200", "JOCA", 1500, 1, 1),
+		   ("Philipona", "Sylvain", "2004-05-11","0791989200", "ABCDEF", 1200, 2, 2),
+		   ("Duruz", "Sébastien", "1997-07-25", "0791989200", "JOCA", 1500, 1, 1),
+		   ("Philipona", "Sylvain", "2004-05-11","0791989200", "ABCDEF", 1200, 2, 2),
+		   ("Duruz", "Sébastien", "1997-07-25", "0791989200", "JOCA", 1500, 1, 1),
+		   ("Philipona", "Sylvain", "2004-05-11","0791989200", "ABCDEF", 1200, 2, 2),
+		   ("Duruz", "Sébastien", "1997-07-25", "0791989200", "JOCA", 1500, 1, 1)";s:12:"repeat_cells";i:100;s:8:"max_rows";i:25;s:3:"pos";i:0;s:6:"pftext";s:1:"P";s:18:"relational_display";s:1:"K";s:9:"geoOption";s:4:"GEOM";s:14:"display_binary";b:1;}s:32:"4c2f49d09cb1d2ed7ac0d68a479c21a2";a:8:{s:3:"sql";s:190:"INSERT INTO t_member (memLastName, memFirstName, memDateBirth, memPhoneNumber, memLicencing, memRanking,  fkCategory)
+	VALUES ("Praz", "Nolan", "2004-05-11","0791989200", "ABCDEF", 1200, 5)";s:12:"repeat_cells";i:100;s:8:"max_rows";i:25;s:3:"pos";i:0;s:6:"pftext";s:1:"P";s:18:"relational_display";s:1:"K";s:9:"geoOption";s:4:"GEOM";s:14:"display_binary";b:1;}s:32:"6047298293418d9980a543e77096c6c4";a:8:{s:3:"sql";s:1360:"INSERT INTO t_play (fkMember, fkTeam, IsCaptain)
+	VALUES (1, 2, True),
+		   (2, 1, False),
+		   (3, 1, False),
+		   (4, 1, False),
+		   (5, 1, False),
+		   (6, 1, False),
+		   (7, 1, False),
+		   (8, 1, False),
+		   (9, 1, False),
+		   (10, 1, False),
+		   (11, 1, False),
+		   (12, 1, False),
+		   (13, 1, False),
+		   (14, 1, False),
+		   (15, 1, False),
+		   (16, 1, False),
+		   (17, 1, False),
+		   (18, 1, False),
+		   (19, 1, False),
+		   (20, 1, False),
+		   (21, 1, False),
+		   (22, 1, False),
+		   (23, 1, False),
+		   (24, 1, False),
+		   (25, 1, False),
+		   (26, 1, False),
+		   (27, 1, False),
+		   (28, 1, False),
+		   (29, 1, False),
+		   (30, 1, False),
+		   (31, 1, False),
+		   (32, 1, False),
+		   (33, 1, False),
+		   (34, 1, False),
+		   (35, 1, False),
+		   (36, 1, False),
+		   (37, 1, False),
+		   (38, 1, False),
+		   (39, 1, False),
+		   (40, 1, False),
+		   (41, 1, False),
+		   (42, 1, False),
+		   (43, 1, False),
+		   (44, 1, False),
+		   (45, 1, False),
+		   (46, 1, False),
+		   (47, 1, False),
+		   (48, 1, False),
+		   (49, 1, False),
+		   (50, 1, False),
+		   (51, 1, False),
+		   (52, 1, False),
+		   (53, 1, False),
+		   (54, 1, False),
+		   (55, 1, False),
+		   (56, 1, False),
+		   (57, 1, False),
+		   (58, 1, False),
+		   (59, 1, False),
+		   (60, 1, False)";s:12:"repeat_cells";i:100;s:8:"max_rows";i:25;s:3:"pos";i:0;s:6:"pftext";s:1:"P";s:18:"relational_display";s:1:"K";s:9:"geoOption";s:4:"GEOM";s:14:"display_binary";b:1;}s:32:"7bb9908408f9d2528e383b8ba7d1ba25";a:8:{s:3:"sql";s:124:"INSERT INTO t_user (useName, usePassword)
+	VALUES ("admin", "$2y$10$PkJAgwnXwzmIbHSO9310T.GDh2janmPqBYcrEQGnGdCSL5hUyhvXK")";s:12:"repeat_cells";i:100;s:8:"max_rows";i:25;s:3:"pos";i:0;s:6:"pftext";s:1:"P";s:18:"relational_display";s:1:"K";s:9:"geoOption";s:4:"GEOM";s:14:"display_binary";b:1;}}s:6:"pftext";s:1:"P";s:18:"relational_display";s:1:"K";s:9:"geoOption";s:4:"GEOM";s:14:"display_binary";b:1;s:12:"display_blob";b:0;s:19:"hide_transformation";b:0;s:3:"pos";i:0;s:8:"max_rows";i:25;s:12:"repeat_cells";i:100;}two_factor_check|b:1;git_location|N;is_git_revision|b:0;ConfigFile1|a:3:{s:6:"Import";a:1:{s:7:"charset";s:5:"utf-8";}s:7:"Console";a:2:{s:4:"Mode";s:8:"collapse";s:6:"Height";d:324.93999999999994;}s:7:"Servers";a:1:{i:1;a:2:{s:7:"only_db";s:0:"";s:7:"hide_db";s:0:"";}}}debug|a:0:{}prev_errors|a:8:{s:32:"3061a3a291ea0e3b84dce9d0eea98071";O:16:"PhpMyAdmin\Error":12:{s:7:" * file";s:49:".\vendor\tecnickcom\tcpdf\include\tcpdf_fonts.php";s:7:" * line";i:1998;s:12:" * backtrace";a:8:{i:0;a:3:{s:4:"file";s:35:".\vendor\tecnickcom\tcpdf\tcpdf.php";s:4:"line";i:115;s:8:"function";s:12:"require_once";}i:1;a:4:{s:4:"file";s:33:".\vendor\composer\ClassLoader.php";s:4:"line";i:444;s:8:"function";s:7:"include";s:4:"args";a:1:{i:0;s:35:".\vendor\tecnickcom\tcpdf\tcpdf.php";}}i:2;a:4:{s:4:"file";s:33:".\vendor\composer\ClassLoader.php";s:4:"line";i:322;s:8:"function";s:29:"Composer\Autoload\includeFile";s:4:"args";a:1:{i:0;s:137:"string 'D:\\Projet_Approfondissement\\2-ContenuProjet\\UwAmp - PHP8\\phpapps\\phpmyadmin\\vendor\\composer/../tecnickcom/tcpdf/tcpdf.php'";}}i:3;a:4:{s:8:"function";s:9:"loadClass";s:5:"class";s:29:"Composer\Autoload\ClassLoader";s:4:"type";s:2:"->";s:4:"args";a:1:{i:0;s:14:"string 'TCPDF'";}}i:4;a:4:{s:4:"file";s:48:".\libraries\classes\Plugins\Export\ExportPdf.php";s:4:"line";i:25;s:8:"function";s:12:"class_exists";s:4:"args";a:1:{i:0;s:14:"string 'TCPDF'";}}i:5;a:4:{s:4:"file";s:31:".\libraries\classes\Plugins.php";s:4:"line";i:107;s:8:"function";s:12:"include_once";s:4:"args";a:1:{i:0;s:48:".\libraries\classes\Plugins\Export\ExportPdf.php";}}i:6;a:6:{s:4:"file";s:38:".\libraries\classes\Display\Export.php";s:4:"line";i:692;s:8:"function";s:10:"getPlugins";s:5:"class";s:18:"PhpMyAdmin\Plugins";s:4:"type";s:2:"::";s:4:"args";a:3:{i:0;s:15:"string 'export'";i:1;s:42:"string 'libraries/classes/Plugins/Export/'";i:2;s:5:"array";}}i:7;a:6:{s:4:"file";s:19:".\server_export.php";s:4:"line";i:49;s:8:"function";s:10:"getDisplay";s:5:"class";s:25:"PhpMyAdmin\Display\Export";s:4:"type";s:2:"->";s:4:"args";a:7:{i:0;s:15:"string 'server'";i:1;s:9:"string ''";i:2;s:9:"string ''";i:3;s:9:"string ''";i:4;s:9:"integer 0";i:5;s:9:"integer 0";i:6;s:3008:"string '&lt;div&gt;
+    &lt;p&gt;
+        &lt;a href=&quot;#&quot; onclick=&quot;Functions.setSelectOptions(\'dump\', \'db_select[]\', true); return false;&quot;&gt;
+            Tout sélectionner        &lt;/a&gt;
+        /
+        &lt;a href=&quot;#&quot; onclick=&quot;Functions.setSelectOptions(\'dump\', \'db_select[]\', false); return false;&quot;&gt;
+            Tout désélectionner        &lt;/a&gt;
+    &lt;/p&gt;
+
+    &lt;select name=&quot;db_select[]&quot; id=&quot;db_select&quot; size=&quot;10&quot; multiple&gt;
+                    &lt;option value=&quot;beatsaber_2&quot; selected&gt;
+                beatsaber_2
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_blog&quot; selected&gt;
+                db_blog
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_business&quot; selected&gt;
+                db_business
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_chess&quot; selected&gt;
+                db_chess
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_fgs&quot; selected&gt;
+                db_fgs
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_imported_hospital&quot; selected&gt;
+                db_imported_hospital
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_library&quot; selected&gt;
+                db_library
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_market&quot; selected&gt;
+                db_market
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_market_2&quot; selected&gt;
+                db_market_2
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_nickname_dorcapelli&quot; selected&gt;
+                db_nickname_dorcapelli
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_p042&quot; selected&gt;
+                db_p042
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_perso&quot; selected&gt;
+                db_perso
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_terracoast&quot; selected&gt;
+                db_terracoast
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_test&quot; selected&gt;
+                db_test
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_x_musique&quot; selected&gt;
+                db_x_musique
+            &lt;/option&gt;
+                    &lt;option value=&quot;mld&quot; selected&gt;
+                mld
+            &lt;/option&gt;
+                    &lt;option value=&quot;phpmyadmin&quot; selected&gt;
+                phpmyadmin
+            &lt;/option&gt;
+                    &lt;option value=&quot;reading_passion&quot; selected&gt;
+                reading_passion
+            &lt;/option&gt;
+                    &lt;option value=&quot;tis&quot; selected&gt;
+                tis
+            &lt;/option&gt;
+            &lt;/select&gt;
+&lt;/div&gt;
+'";}}}s:16:" * hide_location";b:0;s:9:" * number";i:8192;s:9:" * string";s:0:"";s:10:" * message";s:69:"Required parameter $currentfont follows optional parameter $isunicode";s:14:" * isDisplayed";b:1;s:12:" * useBBCode";b:0;s:7:" * hash";s:32:"3061a3a291ea0e3b84dce9d0eea98071";s:9:" * params";a:0:{}s:16:" * addedMessages";a:0:{}}s:32:"07550af0a5c7b1db77b284e715b2e8e7";O:16:"PhpMyAdmin\Error":12:{s:7:" * file";s:49:".\vendor\tecnickcom\tcpdf\include\tcpdf_fonts.php";s:7:" * line";i:2024;s:12:" * backtrace";a:8:{i:0;a:3:{s:4:"file";s:35:".\vendor\tecnickcom\tcpdf\tcpdf.php";s:4:"line";i:115;s:8:"function";s:12:"require_once";}i:1;a:4:{s:4:"file";s:33:".\vendor\composer\ClassLoader.php";s:4:"line";i:444;s:8:"function";s:7:"include";s:4:"args";a:1:{i:0;s:35:".\vendor\tecnickcom\tcpdf\tcpdf.php";}}i:2;a:4:{s:4:"file";s:33:".\vendor\composer\ClassLoader.php";s:4:"line";i:322;s:8:"function";s:29:"Composer\Autoload\includeFile";s:4:"args";a:1:{i:0;s:137:"string 'D:\\Projet_Approfondissement\\2-ContenuProjet\\UwAmp - PHP8\\phpapps\\phpmyadmin\\vendor\\composer/../tecnickcom/tcpdf/tcpdf.php'";}}i:3;a:4:{s:8:"function";s:9:"loadClass";s:5:"class";s:29:"Composer\Autoload\ClassLoader";s:4:"type";s:2:"->";s:4:"args";a:1:{i:0;s:14:"string 'TCPDF'";}}i:4;a:4:{s:4:"file";s:48:".\libraries\classes\Plugins\Export\ExportPdf.php";s:4:"line";i:25;s:8:"function";s:12:"class_exists";s:4:"args";a:1:{i:0;s:14:"string 'TCPDF'";}}i:5;a:4:{s:4:"file";s:31:".\libraries\classes\Plugins.php";s:4:"line";i:107;s:8:"function";s:12:"include_once";s:4:"args";a:1:{i:0;s:48:".\libraries\classes\Plugins\Export\ExportPdf.php";}}i:6;a:6:{s:4:"file";s:38:".\libraries\classes\Display\Export.php";s:4:"line";i:692;s:8:"function";s:10:"getPlugins";s:5:"class";s:18:"PhpMyAdmin\Plugins";s:4:"type";s:2:"::";s:4:"args";a:3:{i:0;s:15:"string 'export'";i:1;s:42:"string 'libraries/classes/Plugins/Export/'";i:2;s:5:"array";}}i:7;a:6:{s:4:"file";s:19:".\server_export.php";s:4:"line";i:49;s:8:"function";s:10:"getDisplay";s:5:"class";s:25:"PhpMyAdmin\Display\Export";s:4:"type";s:2:"->";s:4:"args";a:7:{i:0;s:15:"string 'server'";i:1;s:9:"string ''";i:2;s:9:"string ''";i:3;s:9:"string ''";i:4;s:9:"integer 0";i:5;s:9:"integer 0";i:6;s:3008:"string '&lt;div&gt;
+    &lt;p&gt;
+        &lt;a href=&quot;#&quot; onclick=&quot;Functions.setSelectOptions(\'dump\', \'db_select[]\', true); return false;&quot;&gt;
+            Tout sélectionner        &lt;/a&gt;
+        /
+        &lt;a href=&quot;#&quot; onclick=&quot;Functions.setSelectOptions(\'dump\', \'db_select[]\', false); return false;&quot;&gt;
+            Tout désélectionner        &lt;/a&gt;
+    &lt;/p&gt;
+
+    &lt;select name=&quot;db_select[]&quot; id=&quot;db_select&quot; size=&quot;10&quot; multiple&gt;
+                    &lt;option value=&quot;beatsaber_2&quot; selected&gt;
+                beatsaber_2
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_blog&quot; selected&gt;
+                db_blog
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_business&quot; selected&gt;
+                db_business
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_chess&quot; selected&gt;
+                db_chess
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_fgs&quot; selected&gt;
+                db_fgs
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_imported_hospital&quot; selected&gt;
+                db_imported_hospital
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_library&quot; selected&gt;
+                db_library
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_market&quot; selected&gt;
+                db_market
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_market_2&quot; selected&gt;
+                db_market_2
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_nickname_dorcapelli&quot; selected&gt;
+                db_nickname_dorcapelli
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_p042&quot; selected&gt;
+                db_p042
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_perso&quot; selected&gt;
+                db_perso
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_terracoast&quot; selected&gt;
+                db_terracoast
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_test&quot; selected&gt;
+                db_test
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_x_musique&quot; selected&gt;
+                db_x_musique
+            &lt;/option&gt;
+                    &lt;option value=&quot;mld&quot; selected&gt;
+                mld
+            &lt;/option&gt;
+                    &lt;option value=&quot;phpmyadmin&quot; selected&gt;
+                phpmyadmin
+            &lt;/option&gt;
+                    &lt;option value=&quot;reading_passion&quot; selected&gt;
+                reading_passion
+            &lt;/option&gt;
+                    &lt;option value=&quot;tis&quot; selected&gt;
+                tis
+            &lt;/option&gt;
+            &lt;/select&gt;
+&lt;/div&gt;
+'";}}}s:16:" * hide_location";b:0;s:9:" * number";i:8192;s:9:" * string";s:0:"";s:10:" * message";s:69:"Required parameter $currentfont follows optional parameter $isunicode";s:14:" * isDisplayed";b:1;s:12:" * useBBCode";b:0;s:7:" * hash";s:32:"07550af0a5c7b1db77b284e715b2e8e7";s:9:" * params";a:0:{}s:16:" * addedMessages";a:0:{}}s:32:"3641cc680f71e0cb9619e65fc1e63230";O:16:"PhpMyAdmin\Error":12:{s:7:" * file";s:49:".\vendor\tecnickcom\tcpdf\include\tcpdf_fonts.php";s:7:" * line";i:2040;s:12:" * backtrace";a:8:{i:0;a:3:{s:4:"file";s:35:".\vendor\tecnickcom\tcpdf\tcpdf.php";s:4:"line";i:115;s:8:"function";s:12:"require_once";}i:1;a:4:{s:4:"file";s:33:".\vendor\composer\ClassLoader.php";s:4:"line";i:444;s:8:"function";s:7:"include";s:4:"args";a:1:{i:0;s:35:".\vendor\tecnickcom\tcpdf\tcpdf.php";}}i:2;a:4:{s:4:"file";s:33:".\vendor\composer\ClassLoader.php";s:4:"line";i:322;s:8:"function";s:29:"Composer\Autoload\includeFile";s:4:"args";a:1:{i:0;s:137:"string 'D:\\Projet_Approfondissement\\2-ContenuProjet\\UwAmp - PHP8\\phpapps\\phpmyadmin\\vendor\\composer/../tecnickcom/tcpdf/tcpdf.php'";}}i:3;a:4:{s:8:"function";s:9:"loadClass";s:5:"class";s:29:"Composer\Autoload\ClassLoader";s:4:"type";s:2:"->";s:4:"args";a:1:{i:0;s:14:"string 'TCPDF'";}}i:4;a:4:{s:4:"file";s:48:".\libraries\classes\Plugins\Export\ExportPdf.php";s:4:"line";i:25;s:8:"function";s:12:"class_exists";s:4:"args";a:1:{i:0;s:14:"string 'TCPDF'";}}i:5;a:4:{s:4:"file";s:31:".\libraries\classes\Plugins.php";s:4:"line";i:107;s:8:"function";s:12:"include_once";s:4:"args";a:1:{i:0;s:48:".\libraries\classes\Plugins\Export\ExportPdf.php";}}i:6;a:6:{s:4:"file";s:38:".\libraries\classes\Display\Export.php";s:4:"line";i:692;s:8:"function";s:10:"getPlugins";s:5:"class";s:18:"PhpMyAdmin\Plugins";s:4:"type";s:2:"::";s:4:"args";a:3:{i:0;s:15:"string 'export'";i:1;s:42:"string 'libraries/classes/Plugins/Export/'";i:2;s:5:"array";}}i:7;a:6:{s:4:"file";s:19:".\server_export.php";s:4:"line";i:49;s:8:"function";s:10:"getDisplay";s:5:"class";s:25:"PhpMyAdmin\Display\Export";s:4:"type";s:2:"->";s:4:"args";a:7:{i:0;s:15:"string 'server'";i:1;s:9:"string ''";i:2;s:9:"string ''";i:3;s:9:"string ''";i:4;s:9:"integer 0";i:5;s:9:"integer 0";i:6;s:3008:"string '&lt;div&gt;
+    &lt;p&gt;
+        &lt;a href=&quot;#&quot; onclick=&quot;Functions.setSelectOptions(\'dump\', \'db_select[]\', true); return false;&quot;&gt;
+            Tout sélectionner        &lt;/a&gt;
+        /
+        &lt;a href=&quot;#&quot; onclick=&quot;Functions.setSelectOptions(\'dump\', \'db_select[]\', false); return false;&quot;&gt;
+            Tout désélectionner        &lt;/a&gt;
+    &lt;/p&gt;
+
+    &lt;select name=&quot;db_select[]&quot; id=&quot;db_select&quot; size=&quot;10&quot; multiple&gt;
+                    &lt;option value=&quot;beatsaber_2&quot; selected&gt;
+                beatsaber_2
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_blog&quot; selected&gt;
+                db_blog
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_business&quot; selected&gt;
+                db_business
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_chess&quot; selected&gt;
+                db_chess
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_fgs&quot; selected&gt;
+                db_fgs
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_imported_hospital&quot; selected&gt;
+                db_imported_hospital
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_library&quot; selected&gt;
+                db_library
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_market&quot; selected&gt;
+                db_market
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_market_2&quot; selected&gt;
+                db_market_2
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_nickname_dorcapelli&quot; selected&gt;
+                db_nickname_dorcapelli
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_p042&quot; selected&gt;
+                db_p042
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_perso&quot; selected&gt;
+                db_perso
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_terracoast&quot; selected&gt;
+                db_terracoast
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_test&quot; selected&gt;
+                db_test
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_x_musique&quot; selected&gt;
+                db_x_musique
+            &lt;/option&gt;
+                    &lt;option value=&quot;mld&quot; selected&gt;
+                mld
+            &lt;/option&gt;
+                    &lt;option value=&quot;phpmyadmin&quot; selected&gt;
+                phpmyadmin
+            &lt;/option&gt;
+                    &lt;option value=&quot;reading_passion&quot; selected&gt;
+                reading_passion
+            &lt;/option&gt;
+                    &lt;option value=&quot;tis&quot; selected&gt;
+                tis
+            &lt;/option&gt;
+            &lt;/select&gt;
+&lt;/div&gt;
+'";}}}s:16:" * hide_location";b:0;s:9:" * number";i:8192;s:9:" * string";s:0:"";s:10:" * message";s:66:"Required parameter $currentfont follows optional parameter $setbom";s:14:" * isDisplayed";b:1;s:12:" * useBBCode";b:0;s:7:" * hash";s:32:"3641cc680f71e0cb9619e65fc1e63230";s:9:" * params";a:0:{}s:16:" * addedMessages";a:0:{}}s:32:"dd3760c8144b998825905e4e81ce3281";O:16:"PhpMyAdmin\Error":12:{s:7:" * file";s:49:".\vendor\tecnickcom\tcpdf\include\tcpdf_fonts.php";s:7:" * line";i:2060;s:12:" * backtrace";a:8:{i:0;a:3:{s:4:"file";s:35:".\vendor\tecnickcom\tcpdf\tcpdf.php";s:4:"line";i:115;s:8:"function";s:12:"require_once";}i:1;a:4:{s:4:"file";s:33:".\vendor\composer\ClassLoader.php";s:4:"line";i:444;s:8:"function";s:7:"include";s:4:"args";a:1:{i:0;s:35:".\vendor\tecnickcom\tcpdf\tcpdf.php";}}i:2;a:4:{s:4:"file";s:33:".\vendor\composer\ClassLoader.php";s:4:"line";i:322;s:8:"function";s:29:"Composer\Autoload\includeFile";s:4:"args";a:1:{i:0;s:137:"string 'D:\\Projet_Approfondissement\\2-ContenuProjet\\UwAmp - PHP8\\phpapps\\phpmyadmin\\vendor\\composer/../tecnickcom/tcpdf/tcpdf.php'";}}i:3;a:4:{s:8:"function";s:9:"loadClass";s:5:"class";s:29:"Composer\Autoload\ClassLoader";s:4:"type";s:2:"->";s:4:"args";a:1:{i:0;s:14:"string 'TCPDF'";}}i:4;a:4:{s:4:"file";s:48:".\libraries\classes\Plugins\Export\ExportPdf.php";s:4:"line";i:25;s:8:"function";s:12:"class_exists";s:4:"args";a:1:{i:0;s:14:"string 'TCPDF'";}}i:5;a:4:{s:4:"file";s:31:".\libraries\classes\Plugins.php";s:4:"line";i:107;s:8:"function";s:12:"include_once";s:4:"args";a:1:{i:0;s:48:".\libraries\classes\Plugins\Export\ExportPdf.php";}}i:6;a:6:{s:4:"file";s:38:".\libraries\classes\Display\Export.php";s:4:"line";i:692;s:8:"function";s:10:"getPlugins";s:5:"class";s:18:"PhpMyAdmin\Plugins";s:4:"type";s:2:"::";s:4:"args";a:3:{i:0;s:15:"string 'export'";i:1;s:42:"string 'libraries/classes/Plugins/Export/'";i:2;s:5:"array";}}i:7;a:6:{s:4:"file";s:19:".\server_export.php";s:4:"line";i:49;s:8:"function";s:10:"getDisplay";s:5:"class";s:25:"PhpMyAdmin\Display\Export";s:4:"type";s:2:"->";s:4:"args";a:7:{i:0;s:15:"string 'server'";i:1;s:9:"string ''";i:2;s:9:"string ''";i:3;s:9:"string ''";i:4;s:9:"integer 0";i:5;s:9:"integer 0";i:6;s:3008:"string '&lt;div&gt;
+    &lt;p&gt;
+        &lt;a href=&quot;#&quot; onclick=&quot;Functions.setSelectOptions(\'dump\', \'db_select[]\', true); return false;&quot;&gt;
+            Tout sélectionner        &lt;/a&gt;
+        /
+        &lt;a href=&quot;#&quot; onclick=&quot;Functions.setSelectOptions(\'dump\', \'db_select[]\', false); return false;&quot;&gt;
+            Tout désélectionner        &lt;/a&gt;
+    &lt;/p&gt;
+
+    &lt;select name=&quot;db_select[]&quot; id=&quot;db_select&quot; size=&quot;10&quot; multiple&gt;
+                    &lt;option value=&quot;beatsaber_2&quot; selected&gt;
+                beatsaber_2
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_blog&quot; selected&gt;
+                db_blog
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_business&quot; selected&gt;
+                db_business
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_chess&quot; selected&gt;
+                db_chess
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_fgs&quot; selected&gt;
+                db_fgs
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_imported_hospital&quot; selected&gt;
+                db_imported_hospital
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_library&quot; selected&gt;
+                db_library
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_market&quot; selected&gt;
+                db_market
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_market_2&quot; selected&gt;
+                db_market_2
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_nickname_dorcapelli&quot; selected&gt;
+                db_nickname_dorcapelli
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_p042&quot; selected&gt;
+                db_p042
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_perso&quot; selected&gt;
+                db_perso
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_terracoast&quot; selected&gt;
+                db_terracoast
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_test&quot; selected&gt;
+                db_test
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_x_musique&quot; selected&gt;
+                db_x_musique
+            &lt;/option&gt;
+                    &lt;option value=&quot;mld&quot; selected&gt;
+                mld
+            &lt;/option&gt;
+                    &lt;option value=&quot;phpmyadmin&quot; selected&gt;
+                phpmyadmin
+            &lt;/option&gt;
+                    &lt;option value=&quot;reading_passion&quot; selected&gt;
+                reading_passion
+            &lt;/option&gt;
+                    &lt;option value=&quot;tis&quot; selected&gt;
+                tis
+            &lt;/option&gt;
+            &lt;/select&gt;
+&lt;/div&gt;
+'";}}}s:16:" * hide_location";b:0;s:9:" * number";i:8192;s:9:" * string";s:0:"";s:10:" * message";s:66:"Required parameter $currentfont follows optional parameter $setbom";s:14:" * isDisplayed";b:1;s:12:" * useBBCode";b:0;s:7:" * hash";s:32:"dd3760c8144b998825905e4e81ce3281";s:9:" * params";a:0:{}s:16:" * addedMessages";a:0:{}}s:32:"03acddee1d88f66fa4d60f987bb0e1c6";O:16:"PhpMyAdmin\Error":12:{s:7:" * file";s:49:".\vendor\tecnickcom\tcpdf\include\tcpdf_fonts.php";s:7:" * line";i:2077;s:12:" * backtrace";a:8:{i:0;a:3:{s:4:"file";s:35:".\vendor\tecnickcom\tcpdf\tcpdf.php";s:4:"line";i:115;s:8:"function";s:12:"require_once";}i:1;a:4:{s:4:"file";s:33:".\vendor\composer\ClassLoader.php";s:4:"line";i:444;s:8:"function";s:7:"include";s:4:"args";a:1:{i:0;s:35:".\vendor\tecnickcom\tcpdf\tcpdf.php";}}i:2;a:4:{s:4:"file";s:33:".\vendor\composer\ClassLoader.php";s:4:"line";i:322;s:8:"function";s:29:"Composer\Autoload\includeFile";s:4:"args";a:1:{i:0;s:137:"string 'D:\\Projet_Approfondissement\\2-ContenuProjet\\UwAmp - PHP8\\phpapps\\phpmyadmin\\vendor\\composer/../tecnickcom/tcpdf/tcpdf.php'";}}i:3;a:4:{s:8:"function";s:9:"loadClass";s:5:"class";s:29:"Composer\Autoload\ClassLoader";s:4:"type";s:2:"->";s:4:"args";a:1:{i:0;s:14:"string 'TCPDF'";}}i:4;a:4:{s:4:"file";s:48:".\libraries\classes\Plugins\Export\ExportPdf.php";s:4:"line";i:25;s:8:"function";s:12:"class_exists";s:4:"args";a:1:{i:0;s:14:"string 'TCPDF'";}}i:5;a:4:{s:4:"file";s:31:".\libraries\classes\Plugins.php";s:4:"line";i:107;s:8:"function";s:12:"include_once";s:4:"args";a:1:{i:0;s:48:".\libraries\classes\Plugins\Export\ExportPdf.php";}}i:6;a:6:{s:4:"file";s:38:".\libraries\classes\Display\Export.php";s:4:"line";i:692;s:8:"function";s:10:"getPlugins";s:5:"class";s:18:"PhpMyAdmin\Plugins";s:4:"type";s:2:"::";s:4:"args";a:3:{i:0;s:15:"string 'export'";i:1;s:42:"string 'libraries/classes/Plugins/Export/'";i:2;s:5:"array";}}i:7;a:6:{s:4:"file";s:19:".\server_export.php";s:4:"line";i:49;s:8:"function";s:10:"getDisplay";s:5:"class";s:25:"PhpMyAdmin\Display\Export";s:4:"type";s:2:"->";s:4:"args";a:7:{i:0;s:15:"string 'server'";i:1;s:9:"string ''";i:2;s:9:"string ''";i:3;s:9:"string ''";i:4;s:9:"integer 0";i:5;s:9:"integer 0";i:6;s:3008:"string '&lt;div&gt;
+    &lt;p&gt;
+        &lt;a href=&quot;#&quot; onclick=&quot;Functions.setSelectOptions(\'dump\', \'db_select[]\', true); return false;&quot;&gt;
+            Tout sélectionner        &lt;/a&gt;
+        /
+        &lt;a href=&quot;#&quot; onclick=&quot;Functions.setSelectOptions(\'dump\', \'db_select[]\', false); return false;&quot;&gt;
+            Tout désélectionner        &lt;/a&gt;
+    &lt;/p&gt;
+
+    &lt;select name=&quot;db_select[]&quot; id=&quot;db_select&quot; size=&quot;10&quot; multiple&gt;
+                    &lt;option value=&quot;beatsaber_2&quot; selected&gt;
+                beatsaber_2
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_blog&quot; selected&gt;
+                db_blog
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_business&quot; selected&gt;
+                db_business
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_chess&quot; selected&gt;
+                db_chess
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_fgs&quot; selected&gt;
+                db_fgs
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_imported_hospital&quot; selected&gt;
+                db_imported_hospital
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_library&quot; selected&gt;
+                db_library
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_market&quot; selected&gt;
+                db_market
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_market_2&quot; selected&gt;
+                db_market_2
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_nickname_dorcapelli&quot; selected&gt;
+                db_nickname_dorcapelli
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_p042&quot; selected&gt;
+                db_p042
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_perso&quot; selected&gt;
+                db_perso
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_terracoast&quot; selected&gt;
+                db_terracoast
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_test&quot; selected&gt;
+                db_test
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_x_musique&quot; selected&gt;
+                db_x_musique
+            &lt;/option&gt;
+                    &lt;option value=&quot;mld&quot; selected&gt;
+                mld
+            &lt;/option&gt;
+                    &lt;option value=&quot;phpmyadmin&quot; selected&gt;
+                phpmyadmin
+            &lt;/option&gt;
+                    &lt;option value=&quot;reading_passion&quot; selected&gt;
+                reading_passion
+            &lt;/option&gt;
+                    &lt;option value=&quot;tis&quot; selected&gt;
+                tis
+            &lt;/option&gt;
+            &lt;/select&gt;
+&lt;/div&gt;
+'";}}}s:16:" * hide_location";b:0;s:9:" * number";i:8192;s:9:" * string";s:0:"";s:10:" * message";s:63:"Required parameter $currentfont follows optional parameter $str";s:14:" * isDisplayed";b:1;s:12:" * useBBCode";b:0;s:7:" * hash";s:32:"03acddee1d88f66fa4d60f987bb0e1c6";s:9:" * params";a:0:{}s:16:" * addedMessages";a:0:{}}s:32:"ac098b9227052d3332c1aefb8af6552b";O:16:"PhpMyAdmin\Error":12:{s:7:" * file";s:49:".\vendor\tecnickcom\tcpdf\include\tcpdf_fonts.php";s:7:" * line";i:2093;s:12:" * backtrace";a:8:{i:0;a:3:{s:4:"file";s:35:".\vendor\tecnickcom\tcpdf\tcpdf.php";s:4:"line";i:115;s:8:"function";s:12:"require_once";}i:1;a:4:{s:4:"file";s:33:".\vendor\composer\ClassLoader.php";s:4:"line";i:444;s:8:"function";s:7:"include";s:4:"args";a:1:{i:0;s:35:".\vendor\tecnickcom\tcpdf\tcpdf.php";}}i:2;a:4:{s:4:"file";s:33:".\vendor\composer\ClassLoader.php";s:4:"line";i:322;s:8:"function";s:29:"Composer\Autoload\includeFile";s:4:"args";a:1:{i:0;s:137:"string 'D:\\Projet_Approfondissement\\2-ContenuProjet\\UwAmp - PHP8\\phpapps\\phpmyadmin\\vendor\\composer/../tecnickcom/tcpdf/tcpdf.php'";}}i:3;a:4:{s:8:"function";s:9:"loadClass";s:5:"class";s:29:"Composer\Autoload\ClassLoader";s:4:"type";s:2:"->";s:4:"args";a:1:{i:0;s:14:"string 'TCPDF'";}}i:4;a:4:{s:4:"file";s:48:".\libraries\classes\Plugins\Export\ExportPdf.php";s:4:"line";i:25;s:8:"function";s:12:"class_exists";s:4:"args";a:1:{i:0;s:14:"string 'TCPDF'";}}i:5;a:4:{s:4:"file";s:31:".\libraries\classes\Plugins.php";s:4:"line";i:107;s:8:"function";s:12:"include_once";s:4:"args";a:1:{i:0;s:48:".\libraries\classes\Plugins\Export\ExportPdf.php";}}i:6;a:6:{s:4:"file";s:38:".\libraries\classes\Display\Export.php";s:4:"line";i:692;s:8:"function";s:10:"getPlugins";s:5:"class";s:18:"PhpMyAdmin\Plugins";s:4:"type";s:2:"::";s:4:"args";a:3:{i:0;s:15:"string 'export'";i:1;s:42:"string 'libraries/classes/Plugins/Export/'";i:2;s:5:"array";}}i:7;a:6:{s:4:"file";s:19:".\server_export.php";s:4:"line";i:49;s:8:"function";s:10:"getDisplay";s:5:"class";s:25:"PhpMyAdmin\Display\Export";s:4:"type";s:2:"->";s:4:"args";a:7:{i:0;s:15:"string 'server'";i:1;s:9:"string ''";i:2;s:9:"string ''";i:3;s:9:"string ''";i:4;s:9:"integer 0";i:5;s:9:"integer 0";i:6;s:3008:"string '&lt;div&gt;
+    &lt;p&gt;
+        &lt;a href=&quot;#&quot; onclick=&quot;Functions.setSelectOptions(\'dump\', \'db_select[]\', true); return false;&quot;&gt;
+            Tout sélectionner        &lt;/a&gt;
+        /
+        &lt;a href=&quot;#&quot; onclick=&quot;Functions.setSelectOptions(\'dump\', \'db_select[]\', false); return false;&quot;&gt;
+            Tout désélectionner        &lt;/a&gt;
+    &lt;/p&gt;
+
+    &lt;select name=&quot;db_select[]&quot; id=&quot;db_select&quot; size=&quot;10&quot; multiple&gt;
+                    &lt;option value=&quot;beatsaber_2&quot; selected&gt;
+                beatsaber_2
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_blog&quot; selected&gt;
+                db_blog
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_business&quot; selected&gt;
+                db_business
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_chess&quot; selected&gt;
+                db_chess
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_fgs&quot; selected&gt;
+                db_fgs
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_imported_hospital&quot; selected&gt;
+                db_imported_hospital
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_library&quot; selected&gt;
+                db_library
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_market&quot; selected&gt;
+                db_market
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_market_2&quot; selected&gt;
+                db_market_2
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_nickname_dorcapelli&quot; selected&gt;
+                db_nickname_dorcapelli
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_p042&quot; selected&gt;
+                db_p042
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_perso&quot; selected&gt;
+                db_perso
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_terracoast&quot; selected&gt;
+                db_terracoast
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_test&quot; selected&gt;
+                db_test
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_x_musique&quot; selected&gt;
+                db_x_musique
+            &lt;/option&gt;
+                    &lt;option value=&quot;mld&quot; selected&gt;
+                mld
+            &lt;/option&gt;
+                    &lt;option value=&quot;phpmyadmin&quot; selected&gt;
+                phpmyadmin
+            &lt;/option&gt;
+                    &lt;option value=&quot;reading_passion&quot; selected&gt;
+                reading_passion
+            &lt;/option&gt;
+                    &lt;option value=&quot;tis&quot; selected&gt;
+                tis
+            &lt;/option&gt;
+            &lt;/select&gt;
+&lt;/div&gt;
+'";}}}s:16:" * hide_location";b:0;s:9:" * number";i:8192;s:9:" * string";s:0:"";s:10:" * message";s:63:"Required parameter $currentfont follows optional parameter $str";s:14:" * isDisplayed";b:1;s:12:" * useBBCode";b:0;s:7:" * hash";s:32:"ac098b9227052d3332c1aefb8af6552b";s:9:" * params";a:0:{}s:16:" * addedMessages";a:0:{}}s:32:"6d6794f86fcbf921ca736eccc7ee5d63";O:16:"PhpMyAdmin\Error":12:{s:7:" * file";s:50:".\vendor\tecnickcom\tcpdf\include\tcpdf_static.php";s:7:" * line";i:1139;s:12:" * backtrace";a:8:{i:0;a:3:{s:4:"file";s:35:".\vendor\tecnickcom\tcpdf\tcpdf.php";s:4:"line";i:121;s:8:"function";s:12:"require_once";}i:1;a:4:{s:4:"file";s:33:".\vendor\composer\ClassLoader.php";s:4:"line";i:444;s:8:"function";s:7:"include";s:4:"args";a:1:{i:0;s:35:".\vendor\tecnickcom\tcpdf\tcpdf.php";}}i:2;a:4:{s:4:"file";s:33:".\vendor\composer\ClassLoader.php";s:4:"line";i:322;s:8:"function";s:29:"Composer\Autoload\includeFile";s:4:"args";a:1:{i:0;s:137:"string 'D:\\Projet_Approfondissement\\2-ContenuProjet\\UwAmp - PHP8\\phpapps\\phpmyadmin\\vendor\\composer/../tecnickcom/tcpdf/tcpdf.php'";}}i:3;a:4:{s:8:"function";s:9:"loadClass";s:5:"class";s:29:"Composer\Autoload\ClassLoader";s:4:"type";s:2:"->";s:4:"args";a:1:{i:0;s:14:"string 'TCPDF'";}}i:4;a:4:{s:4:"file";s:48:".\libraries\classes\Plugins\Export\ExportPdf.php";s:4:"line";i:25;s:8:"function";s:12:"class_exists";s:4:"args";a:1:{i:0;s:14:"string 'TCPDF'";}}i:5;a:4:{s:4:"file";s:31:".\libraries\classes\Plugins.php";s:4:"line";i:107;s:8:"function";s:12:"include_once";s:4:"args";a:1:{i:0;s:48:".\libraries\classes\Plugins\Export\ExportPdf.php";}}i:6;a:6:{s:4:"file";s:38:".\libraries\classes\Display\Export.php";s:4:"line";i:692;s:8:"function";s:10:"getPlugins";s:5:"class";s:18:"PhpMyAdmin\Plugins";s:4:"type";s:2:"::";s:4:"args";a:3:{i:0;s:15:"string 'export'";i:1;s:42:"string 'libraries/classes/Plugins/Export/'";i:2;s:5:"array";}}i:7;a:6:{s:4:"file";s:19:".\server_export.php";s:4:"line";i:49;s:8:"function";s:10:"getDisplay";s:5:"class";s:25:"PhpMyAdmin\Display\Export";s:4:"type";s:2:"->";s:4:"args";a:7:{i:0;s:15:"string 'server'";i:1;s:9:"string ''";i:2;s:9:"string ''";i:3;s:9:"string ''";i:4;s:9:"integer 0";i:5;s:9:"integer 0";i:6;s:3008:"string '&lt;div&gt;
+    &lt;p&gt;
+        &lt;a href=&quot;#&quot; onclick=&quot;Functions.setSelectOptions(\'dump\', \'db_select[]\', true); return false;&quot;&gt;
+            Tout sélectionner        &lt;/a&gt;
+        /
+        &lt;a href=&quot;#&quot; onclick=&quot;Functions.setSelectOptions(\'dump\', \'db_select[]\', false); return false;&quot;&gt;
+            Tout désélectionner        &lt;/a&gt;
+    &lt;/p&gt;
+
+    &lt;select name=&quot;db_select[]&quot; id=&quot;db_select&quot; size=&quot;10&quot; multiple&gt;
+                    &lt;option value=&quot;beatsaber_2&quot; selected&gt;
+                beatsaber_2
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_blog&quot; selected&gt;
+                db_blog
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_business&quot; selected&gt;
+                db_business
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_chess&quot; selected&gt;
+                db_chess
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_fgs&quot; selected&gt;
+                db_fgs
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_imported_hospital&quot; selected&gt;
+                db_imported_hospital
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_library&quot; selected&gt;
+                db_library
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_market&quot; selected&gt;
+                db_market
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_market_2&quot; selected&gt;
+                db_market_2
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_nickname_dorcapelli&quot; selected&gt;
+                db_nickname_dorcapelli
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_p042&quot; selected&gt;
+                db_p042
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_perso&quot; selected&gt;
+                db_perso
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_terracoast&quot; selected&gt;
+                db_terracoast
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_test&quot; selected&gt;
+                db_test
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_x_musique&quot; selected&gt;
+                db_x_musique
+            &lt;/option&gt;
+                    &lt;option value=&quot;mld&quot; selected&gt;
+                mld
+            &lt;/option&gt;
+                    &lt;option value=&quot;phpmyadmin&quot; selected&gt;
+                phpmyadmin
+            &lt;/option&gt;
+                    &lt;option value=&quot;reading_passion&quot; selected&gt;
+                reading_passion
+            &lt;/option&gt;
+                    &lt;option value=&quot;tis&quot; selected&gt;
+                tis
+            &lt;/option&gt;
+            &lt;/select&gt;
+&lt;/div&gt;
+'";}}}s:16:" * hide_location";b:0;s:9:" * number";i:8192;s:9:" * string";s:0:"";s:10:" * message";s:70:"Required parameter $tagvspaces follows optional parameter $default_css";s:14:" * isDisplayed";b:1;s:12:" * useBBCode";b:0;s:7:" * hash";s:32:"6d6794f86fcbf921ca736eccc7ee5d63";s:9:" * params";a:0:{}s:16:" * addedMessages";a:0:{}}s:32:"f9ac99d0309c4c14f4f5393b9a60844d";O:16:"PhpMyAdmin\Error":12:{s:7:" * file";s:50:".\vendor\tecnickcom\tcpdf\include\tcpdf_static.php";s:7:" * line";i:2510;s:12:" * backtrace";a:8:{i:0;a:3:{s:4:"file";s:35:".\vendor\tecnickcom\tcpdf\tcpdf.php";s:4:"line";i:121;s:8:"function";s:12:"require_once";}i:1;a:4:{s:4:"file";s:33:".\vendor\composer\ClassLoader.php";s:4:"line";i:444;s:8:"function";s:7:"include";s:4:"args";a:1:{i:0;s:35:".\vendor\tecnickcom\tcpdf\tcpdf.php";}}i:2;a:4:{s:4:"file";s:33:".\vendor\composer\ClassLoader.php";s:4:"line";i:322;s:8:"function";s:29:"Composer\Autoload\includeFile";s:4:"args";a:1:{i:0;s:137:"string 'D:\\Projet_Approfondissement\\2-ContenuProjet\\UwAmp - PHP8\\phpapps\\phpmyadmin\\vendor\\composer/../tecnickcom/tcpdf/tcpdf.php'";}}i:3;a:4:{s:8:"function";s:9:"loadClass";s:5:"class";s:29:"Composer\Autoload\ClassLoader";s:4:"type";s:2:"->";s:4:"args";a:1:{i:0;s:14:"string 'TCPDF'";}}i:4;a:4:{s:4:"file";s:48:".\libraries\classes\Plugins\Export\ExportPdf.php";s:4:"line";i:25;s:8:"function";s:12:"class_exists";s:4:"args";a:1:{i:0;s:14:"string 'TCPDF'";}}i:5;a:4:{s:4:"file";s:31:".\libraries\classes\Plugins.php";s:4:"line";i:107;s:8:"function";s:12:"include_once";s:4:"args";a:1:{i:0;s:48:".\libraries\classes\Plugins\Export\ExportPdf.php";}}i:6;a:6:{s:4:"file";s:38:".\libraries\classes\Display\Export.php";s:4:"line";i:692;s:8:"function";s:10:"getPlugins";s:5:"class";s:18:"PhpMyAdmin\Plugins";s:4:"type";s:2:"::";s:4:"args";a:3:{i:0;s:15:"string 'export'";i:1;s:42:"string 'libraries/classes/Plugins/Export/'";i:2;s:5:"array";}}i:7;a:6:{s:4:"file";s:19:".\server_export.php";s:4:"line";i:49;s:8:"function";s:10:"getDisplay";s:5:"class";s:25:"PhpMyAdmin\Display\Export";s:4:"type";s:2:"->";s:4:"args";a:7:{i:0;s:15:"string 'server'";i:1;s:9:"string ''";i:2;s:9:"string ''";i:3;s:9:"string ''";i:4;s:9:"integer 0";i:5;s:9:"integer 0";i:6;s:3008:"string '&lt;div&gt;
+    &lt;p&gt;
+        &lt;a href=&quot;#&quot; onclick=&quot;Functions.setSelectOptions(\'dump\', \'db_select[]\', true); return false;&quot;&gt;
+            Tout sélectionner        &lt;/a&gt;
+        /
+        &lt;a href=&quot;#&quot; onclick=&quot;Functions.setSelectOptions(\'dump\', \'db_select[]\', false); return false;&quot;&gt;
+            Tout désélectionner        &lt;/a&gt;
+    &lt;/p&gt;
+
+    &lt;select name=&quot;db_select[]&quot; id=&quot;db_select&quot; size=&quot;10&quot; multiple&gt;
+                    &lt;option value=&quot;beatsaber_2&quot; selected&gt;
+                beatsaber_2
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_blog&quot; selected&gt;
+                db_blog
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_business&quot; selected&gt;
+                db_business
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_chess&quot; selected&gt;
+                db_chess
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_fgs&quot; selected&gt;
+                db_fgs
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_imported_hospital&quot; selected&gt;
+                db_imported_hospital
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_library&quot; selected&gt;
+                db_library
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_market&quot; selected&gt;
+                db_market
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_market_2&quot; selected&gt;
+                db_market_2
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_nickname_dorcapelli&quot; selected&gt;
+                db_nickname_dorcapelli
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_p042&quot; selected&gt;
+                db_p042
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_perso&quot; selected&gt;
+                db_perso
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_terracoast&quot; selected&gt;
+                db_terracoast
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_test&quot; selected&gt;
+                db_test
+            &lt;/option&gt;
+                    &lt;option value=&quot;db_x_musique&quot; selected&gt;
+                db_x_musique
+            &lt;/option&gt;
+                    &lt;option value=&quot;mld&quot; selected&gt;
+                mld
+            &lt;/option&gt;
+                    &lt;option value=&quot;phpmyadmin&quot; selected&gt;
+                phpmyadmin
+            &lt;/option&gt;
+                    &lt;option value=&quot;reading_passion&quot; selected&gt;
+                reading_passion
+            &lt;/option&gt;
+                    &lt;option value=&quot;tis&quot; selected&gt;
+                tis
+            &lt;/option&gt;
+            &lt;/select&gt;
+&lt;/div&gt;
+'";}}}s:16:" * hide_location";b:0;s:9:" * number";i:8192;s:9:" * string";s:0:"";s:10:" * message";s:56:"Required parameter $k follows optional parameter $points";s:14:" * isDisplayed";b:1;s:12:" * useBBCode";b:0;s:7:" * hash";s:32:"f9ac99d0309c4c14f4f5393b9a60844d";s:9:" * params";a:0:{}s:16:" * addedMessages";a:0:{}}}__upload_status|a:1:{s:7:"handler";s:47:"PhpMyAdmin\Plugins\Import\Upload\UploadNoplugin";}Import_message|a:2:{s:7:"message";s:190:"<div class="success"><img src="themes/dot.gif" title="" alt="" class="icon ic_s_success"> <em>L'importation a réussi, 11 requêtes exécutées.</em> (X-dorcapelli-insert-db_chess.sql)</div>";s:11:"go_back_url";s:17:"server_import.php";}is_multi_query|b:1;sql_history|a:3:{i:0;a:3:{s:2:"db";s:8:"db_chess";s:5:"table";s:0:"";s:8:"sqlquery";s:335:"create table t_play (
+     fkMember INT NOT NULL,
+     IsCaptain boolean not null,
+     fkTeam int not null,
+     CONSTRAINT ID_t_play_ID PRIMARY KEY (fkMember, fkTeam),
+     CONSTRAINT FKt_lead_FK FOREIGN KEY (fkMember) REFERENCES t_member (idMember),
+     CONSTRAINT FKt_team_FK FOREIGN KEY (fkTeam) REFERENCES t_team (idTeam))";}i:1;a:3:{s:2:"db";s:8:"db_chess";s:5:"table";s:0:"";s:8:"sqlquery";s:335:"create table t_play (
+     fkMember INT NOT NULL,
+     IsCaptain boolean not null,
+     fkTeam int not null,
+     CONSTRAINT ID_t_play_ID PRIMARY KEY (fkMember, fkTeam),
+     CONSTRAINT FKt_lead_FK FOREIGN KEY (fkMember) REFERENCES t_member (idMember),
+     CONSTRAINT FKt_team_FK FOREIGN KEY (fkTeam) REFERENCES t_team (idTeam))";}i:2;a:3:{s:2:"db";s:0:"";s:5:"table";s:0:"";s:8:"sqlquery";s:124:"INSERT INTO t_user (useName, usePassword)
+	VALUES ("admin", "$2y$10$PkJAgwnXwzmIbHSO9310T.GDh2janmPqBYcrEQGnGdCSL5hUyhvXK")";}}errors|a:0:{}
