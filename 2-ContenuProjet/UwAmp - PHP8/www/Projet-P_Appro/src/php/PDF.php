@@ -25,9 +25,6 @@ $pdf->AddPage();
 $pdf->AddFont('DejaVu','','DejaVuSansCondensed.ttf',true);
 $pdf->SetFont('DejaVu','',14);
 
-//Title
-// $pdf->Cell(0, 8, "Prénom:" . "     " . "Nom:" . "       " . "Licence:" . "   " . "Élo:" . "   " . "Catégorie:" . "   " . "Titre:", 0, 1);
-
 // Write the datas
 foreach($users as $user){
     $pdf->Cell(0,8,

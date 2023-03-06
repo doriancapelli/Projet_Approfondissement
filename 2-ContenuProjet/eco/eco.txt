@@ -2,6 +2,7 @@ Tout fini pour le 10 mars
 
 	-vidéo
 		-présentation moi
+			
 		-présentation métier informaticien
 		-présentation travail effectuer
 		-temps: environ 3min plus ou moins 1min 
@@ -10,7 +11,7 @@ Tout fini pour le 10 mars
 		-respect du temps 2-4min
 	6 heures pour le faire	
 
-	-Graphique consomation ÷Æ
+	-Graphique consomation
 		-excel fournie 
 		-créer le tableau à prtir des données fournie
 	eval graphique:

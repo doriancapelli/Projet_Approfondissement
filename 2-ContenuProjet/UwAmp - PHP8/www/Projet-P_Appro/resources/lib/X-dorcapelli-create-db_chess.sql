@@ -52,6 +52,6 @@ create table t_play (
      fkMember INT NOT NULL,
      IsCaptain boolean not null,
      fkTeam int not null,
-     CONSTRAINT ID_t_play_ID PRIMARY KEY (fkMember, fkTeam),
+     CONSTRAINT ID_t_play_ID PRIMARY KEY (fkMember),
      CONSTRAINT FKt_lead_FK FOREIGN KEY (fkMember) REFERENCES t_member (idMember),
      CONSTRAINT FKt_team_FK FOREIGN KEY (fkTeam) REFERENCES t_team (idTeam));
